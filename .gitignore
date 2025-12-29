@@ -1,0 +1,26 @@
+# Environment & secrets
+.env
+.env.*
+*.env
+
+# Node / Python
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Uploads & temp
+uploads/*
+!uploads/.gitkeep
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+coverage/
