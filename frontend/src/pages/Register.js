@@ -1,5 +1,3 @@
-// Add this import:
-import { FormControlLabel } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
@@ -22,7 +20,9 @@ import {
   Card,
   CardContent,
   LinearProgress,
-  IconButton
+  IconButton,
+  FormControlLabel,
+  Checkbox
 } from '@mui/material';
 import {
   Business,
@@ -45,8 +45,9 @@ const businessValidationSchema = yup.object({
   business_name: yup.string().required('Business name is required'),
   business_type: yup.string().required('Business type is required'),
   industry: yup.string().required('Industry is required'),
-  email: yup.string().email('Invalid email').required('Email is required'),
-  phone: yup.string().required('Phone number is required'),
+  business_email: yup.string().email('Invalid business email').required('Business email is required'),
+  mobile: yup.string().required('Mobile number is required'),
+  phone: yup.string().optional(),
   address: yup.string().required('Address is required'),
   city: yup.string().required('City is required'),
   state: yup.string().required('State is required'),
@@ -82,7 +83,8 @@ const Register = () => {
       business_name: '',
       business_type: '',
       industry: '',
-      email: '',
+      business_email: '',
+      mobile: '',
       phone: '',
       address: '',
       city: '',
@@ -127,8 +129,10 @@ const Register = () => {
     setLoading(true);
     setError('');
     
+    // Ensure mobile is sent (use phone if mobile is empty)
     const businessData = {
-      ...businessFormik.values
+      ...businessFormik.values,
+      mobile: businessFormik.values.mobile || businessFormik.values.phone
     };
 
     const ownerData = {
@@ -189,6 +193,7 @@ const Register = () => {
                   label="Business Name"
                   value={businessFormik.values.business_name}
                   onChange={businessFormik.handleChange}
+                  onBlur={businessFormik.handleBlur}
                   error={businessFormik.touched.business_name && Boolean(businessFormik.errors.business_name)}
                   helperText={businessFormik.touched.business_name && businessFormik.errors.business_name}
                   InputProps={{
@@ -208,6 +213,7 @@ const Register = () => {
                     value={businessFormik.values.business_type}
                     label="Business Type"
                     onChange={businessFormik.handleChange}
+                    onBlur={businessFormik.handleBlur}
                     error={businessFormik.touched.business_type && Boolean(businessFormik.errors.business_type)}
                   >
                     {businessTypes.map(type => (
@@ -224,6 +230,7 @@ const Register = () => {
                     value={businessFormik.values.industry}
                     label="Industry"
                     onChange={businessFormik.handleChange}
+                    onBlur={businessFormik.handleBlur}
                     error={businessFormik.touched.industry && Boolean(businessFormik.errors.industry)}
                   >
                     {industries.map(industry => (
@@ -235,12 +242,14 @@ const Register = () => {
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
-                  name="email"
+                  name="business_email"
                   label="Business Email"
-                  value={businessFormik.values.email}
+                  type="email"
+                  value={businessFormik.values.business_email}
                   onChange={businessFormik.handleChange}
-                  error={businessFormik.touched.email && Boolean(businessFormik.errors.email)}
-                  helperText={businessFormik.touched.email && businessFormik.errors.email}
+                  onBlur={businessFormik.handleBlur}
+                  error={businessFormik.touched.business_email && Boolean(businessFormik.errors.business_email)}
+                  helperText={businessFormik.touched.business_email && businessFormik.errors.business_email}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
@@ -253,12 +262,30 @@ const Register = () => {
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
+                  name="mobile"
+                  label="Business Mobile *"
+                  value={businessFormik.values.mobile}
+                  onChange={businessFormik.handleChange}
+                  onBlur={businessFormik.handleBlur}
+                  error={businessFormik.touched.mobile && Boolean(businessFormik.errors.mobile)}
+                  helperText={businessFormik.touched.mobile && businessFormik.errors.mobile}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Phone />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  fullWidth
                   name="phone"
-                  label="Business Phone"
+                  label="Business Phone (Optional)"
                   value={businessFormik.values.phone}
                   onChange={businessFormik.handleChange}
-                  error={businessFormik.touched.phone && Boolean(businessFormik.errors.phone)}
-                  helperText={businessFormik.touched.phone && businessFormik.errors.phone}
+                  onBlur={businessFormik.handleBlur}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
@@ -275,6 +302,7 @@ const Register = () => {
                   label="Country"
                   value={businessFormik.values.country}
                   onChange={businessFormik.handleChange}
+                  onBlur={businessFormik.handleBlur}
                   disabled
                 />
               </Grid>
@@ -285,6 +313,7 @@ const Register = () => {
                   label="Business Address"
                   value={businessFormik.values.address}
                   onChange={businessFormik.handleChange}
+                  onBlur={businessFormik.handleBlur}
                   error={businessFormik.touched.address && Boolean(businessFormik.errors.address)}
                   helperText={businessFormik.touched.address && businessFormik.errors.address}
                   InputProps={{
@@ -303,6 +332,7 @@ const Register = () => {
                   label="City"
                   value={businessFormik.values.city}
                   onChange={businessFormik.handleChange}
+                  onBlur={businessFormik.handleBlur}
                   error={businessFormik.touched.city && Boolean(businessFormik.errors.city)}
                   helperText={businessFormik.touched.city && businessFormik.errors.city}
                 />
@@ -314,6 +344,7 @@ const Register = () => {
                   label="State"
                   value={businessFormik.values.state}
                   onChange={businessFormik.handleChange}
+                  onBlur={businessFormik.handleBlur}
                   error={businessFormik.touched.state && Boolean(businessFormik.errors.state)}
                   helperText={businessFormik.touched.state && businessFormik.errors.state}
                 />
@@ -325,6 +356,7 @@ const Register = () => {
                   label="Pincode"
                   value={businessFormik.values.pincode}
                   onChange={businessFormik.handleChange}
+                  onBlur={businessFormik.handleBlur}
                   error={businessFormik.touched.pincode && Boolean(businessFormik.errors.pincode)}
                   helperText={businessFormik.touched.pincode && businessFormik.errors.pincode}
                 />
@@ -332,6 +364,8 @@ const Register = () => {
             </Grid>
           </Box>
         );
+
+      // ... rest of the code remains the same as previous version
 
       case 1:
         return (
@@ -348,6 +382,7 @@ const Register = () => {
                   label="Full Name"
                   value={ownerFormik.values.full_name}
                   onChange={ownerFormik.handleChange}
+                  onBlur={ownerFormik.handleBlur}
                   error={ownerFormik.touched.full_name && Boolean(ownerFormik.errors.full_name)}
                   helperText={ownerFormik.touched.full_name && ownerFormik.errors.full_name}
                   InputProps={{
@@ -366,6 +401,7 @@ const Register = () => {
                   label="Position"
                   value={ownerFormik.values.position}
                   onChange={ownerFormik.handleChange}
+                  onBlur={ownerFormik.handleBlur}
                   error={ownerFormik.touched.position && Boolean(ownerFormik.errors.position)}
                   helperText={ownerFormik.touched.position && ownerFormik.errors.position}
                 />
@@ -374,9 +410,11 @@ const Register = () => {
                 <TextField
                   fullWidth
                   name="email"
-                  label="Email Address"
+                  label="Personal Email"
+                  type="email"
                   value={ownerFormik.values.email}
                   onChange={ownerFormik.handleChange}
+                  onBlur={ownerFormik.handleBlur}
                   error={ownerFormik.touched.email && Boolean(ownerFormik.errors.email)}
                   helperText={ownerFormik.touched.email && ownerFormik.errors.email}
                   InputProps={{
@@ -392,9 +430,10 @@ const Register = () => {
                 <TextField
                   fullWidth
                   name="phone"
-                  label="Phone Number"
+                  label="Personal Phone"
                   value={ownerFormik.values.phone}
                   onChange={ownerFormik.handleChange}
+                  onBlur={ownerFormik.handleBlur}
                   error={ownerFormik.touched.phone && Boolean(ownerFormik.errors.phone)}
                   helperText={ownerFormik.touched.phone && ownerFormik.errors.phone}
                   InputProps={{
@@ -426,6 +465,7 @@ const Register = () => {
                   type="password"
                   value={accountFormik.values.password}
                   onChange={accountFormik.handleChange}
+                  onBlur={accountFormik.handleBlur}
                   error={accountFormik.touched.password && Boolean(accountFormik.errors.password)}
                   helperText={accountFormik.touched.password && accountFormik.errors.password}
                   InputProps={{
@@ -445,6 +485,7 @@ const Register = () => {
                   type="password"
                   value={accountFormik.values.confirm_password}
                   onChange={accountFormik.handleChange}
+                  onBlur={accountFormik.handleBlur}
                   error={accountFormik.touched.confirm_password && Boolean(accountFormik.errors.confirm_password)}
                   helperText={accountFormik.touched.confirm_password && accountFormik.errors.confirm_password}
                   InputProps={{
@@ -459,11 +500,12 @@ const Register = () => {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
-                    <input
-                      type="checkbox"
+                    <Checkbox
                       name="terms"
                       checked={accountFormik.values.terms}
                       onChange={accountFormik.handleChange}
+                      onBlur={accountFormik.handleBlur}
+                      color="primary"
                     />
                   }
                   label={
@@ -473,7 +515,7 @@ const Register = () => {
                   }
                 />
                 {accountFormik.touched.terms && accountFormik.errors.terms && (
-                  <Typography color="error" variant="caption">
+                  <Typography color="error" variant="caption" sx={{ display: 'block', mt: 1 }}>
                     {accountFormik.errors.terms}
                   </Typography>
                 )}
@@ -511,6 +553,14 @@ const Register = () => {
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Typography variant="body2" color="text.secondary">
+                      Business Email
+                    </Typography>
+                    <Typography variant="body1">
+                      {businessFormik.values.business_email}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <Typography variant="body2" color="text.secondary">
                       Industry
                     </Typography>
                     <Typography variant="body1">
@@ -519,10 +569,18 @@ const Register = () => {
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Typography variant="body2" color="text.secondary">
-                      Email
+                      Contact Email
                     </Typography>
                     <Typography variant="body1">
                       {ownerFormik.values.email}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <Typography variant="body2" color="text.secondary">
+                      Business Type
+                    </Typography>
+                    <Typography variant="body1">
+                      {businessFormik.values.business_type}
                     </Typography>
                   </Grid>
                   <Grid item xs={12} md={6}>

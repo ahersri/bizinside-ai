@@ -70,10 +70,12 @@ const InventoryPage = () => {
   const [products, setProducts] = useState([]);
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [stats, setStats] = useState(null);
   const [view, setView] = useState('overview');
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
+  const [transactionDialogOpen, setTransactionDialogOpen] = useState(false);
 
   useEffect(() => {
     fetchInventoryData();
@@ -81,34 +83,90 @@ const InventoryPage = () => {
 
   const fetchInventoryData = async () => {
     try {
+      setLoading(true);
+      setError(null);
+      
+      console.log('Fetching inventory data...');
+      
       const [overviewResponse, productsResponse, transactionsResponse] = await Promise.all([
         inventoryAPI.getOverview(),
         productAPI.getProducts(),
         inventoryAPI.getTransactions()
       ]);
-      setInventoryData(overviewResponse.data.data);
-      setProducts(productsResponse.data.data);
-      setTransactions(transactionsResponse.data.data);
+
+      // Debug log to see actual response structure
+      console.log('Overview Response:', overviewResponse);
+      console.log('Products Response:', productsResponse);
+      console.log('Transactions Response:', transactionsResponse);
+
+      // Extract data safely - handle different response structures
+      const inventoryResponse = overviewResponse.data?.data || overviewResponse.data || overviewResponse || [];
+      const productsResponseData = productsResponse.data?.data || productsResponse.data || productsResponse || [];
+      const transactionsResponseData = transactionsResponse.data?.data || transactionsResponse.data || transactionsResponse || [];
+
+      console.log('Inventory Data:', inventoryResponse);
+      console.log('Products Data:', productsResponseData);
+      console.log('Transactions Data:', transactionsResponseData);
+
+      // Ensure all data are arrays
+      const safeInventoryData = Array.isArray(inventoryResponse) ? inventoryResponse : [];
+      const safeProductsData = Array.isArray(productsResponseData) ? productsResponseData : [];
+      const safeTransactionsData = Array.isArray(transactionsResponseData) ? transactionsResponseData : [];
+
+      setInventoryData(safeInventoryData);
+      setProducts(safeProductsData);
+      setTransactions(safeTransactionsData);
       
       // Calculate stats
-      if (overviewResponse.data.data) {
-        const totalValue = overviewResponse.data.data.reduce((sum, item) => 
-          sum + (item.current_stock * item.cost_price), 0
-        );
-        const lowStockItems = overviewResponse.data.data.filter(item => 
-          item.current_stock <= item.min_stock_level
-        ).length;
+      if (safeInventoryData.length > 0) {
+        const totalValue = safeInventoryData.reduce((sum, item) => {
+          const stock = item.current_stock || item.stock || item.quantity || 0;
+          const cost = item.cost_price || item.price || item.unit_cost || 0;
+          return sum + (stock * cost);
+        }, 0);
+        
+        const lowStockItems = safeInventoryData.filter(item => {
+          const stock = item.current_stock || item.stock || item.quantity || 0;
+          const minStock = item.min_stock_level || item.min_stock || item.min_quantity || 0;
+          return stock <= minStock && stock > 0;
+        }).length;
+        
+        const outOfStock = safeInventoryData.filter(item => {
+          const stock = item.current_stock || item.stock || item.quantity || 0;
+          return stock === 0;
+        }).length;
         
         setStats({
           totalValue,
-          totalItems: overviewResponse.data.data.length,
+          totalItems: safeInventoryData.length,
           lowStockItems,
-          outOfStock: overviewResponse.data.data.filter(item => item.current_stock === 0).length
+          outOfStock
+        });
+      } else {
+        // Set default stats if no data
+        setStats({
+          totalValue: 0,
+          totalItems: 0,
+          lowStockItems: 0,
+          outOfStock: 0
         });
       }
     } catch (error) {
-      toast.error('Failed to fetch inventory data');
-      console.error(error);
+      console.error('Error fetching inventory data:', error);
+      const errorMessage = error.response?.data?.error || error.message || 'Failed to fetch inventory data';
+      setError(errorMessage);
+      toast.error(errorMessage);
+      
+      // Set empty arrays on error
+      setInventoryData([]);
+      setProducts([]);
+      setTransactions([]);
+      setStats({
+        totalValue: 0,
+        totalItems: 0,
+        lowStockItems: 0,
+        outOfStock: 0
+      });
     } finally {
       setLoading(false);
     }
@@ -128,6 +186,7 @@ const InventoryPage = () => {
         await inventoryAPI.createTransaction(values);
         toast.success('Transaction recorded successfully');
         formik.resetForm();
+        setTransactionDialogOpen(false);
         fetchInventoryData();
       } catch (error) {
         toast.error(error.response?.data?.error || 'Transaction failed');
@@ -135,15 +194,45 @@ const InventoryPage = () => {
     }
   });
 
-  const getStockStatus = (current, min) => {
+  const getStockStatus = (item) => {
+    const current = item.current_stock || item.stock || item.quantity || 0;
+    const min = item.min_stock_level || item.min_stock || item.min_quantity || 0;
+    
     if (current === 0) return { label: 'Out of Stock', color: 'error', icon: <Warning /> };
     if (current <= min) return { label: 'Low Stock', color: 'warning', icon: <Warning /> };
     return { label: 'In Stock', color: 'success', icon: <CheckCircle /> };
   };
 
   const formatCurrency = (amount) => {
+    if (!amount || isNaN(amount)) amount = 0;
     return `₹${amount.toLocaleString('en-IN')}`;
   };
+
+  const getStockValue = (item) => {
+    const stock = item.current_stock || item.stock || item.quantity || 0;
+    const cost = item.cost_price || item.price || item.unit_cost || 0;
+    return stock * cost;
+  };
+
+  // Safe filtering of inventory data
+  const filteredInventory = (Array.isArray(inventoryData) ? inventoryData : []).filter(item => {
+    if (!item) return false;
+    
+    const productName = item.product_name || item.name || item.productName || '';
+    const sku = item.sku || item.product_code || item.code || '';
+    
+    const matchesSearch = productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         sku.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const currentStock = item.current_stock || item.stock || item.quantity || 0;
+    const minStock = item.min_stock_level || item.min_stock || item.min_quantity || 0;
+    
+    const matchesStatus = filterStatus === 'all' || 
+                         (filterStatus === 'low' && currentStock <= minStock && currentStock > 0) ||
+                         (filterStatus === 'out' && currentStock === 0);
+    
+    return matchesSearch && matchesStatus;
+  });
 
   if (loading) {
     return (
@@ -153,14 +242,25 @@ const InventoryPage = () => {
     );
   }
 
-  const filteredInventory = inventoryData.filter(item => {
-    const matchesSearch = item.product_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         item.sku?.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = filterStatus === 'all' || 
-                         (filterStatus === 'low' && item.current_stock <= item.min_stock_level) ||
-                         (filterStatus === 'out' && item.current_stock === 0);
-    return matchesSearch && matchesStatus;
-  });
+  if (error && inventoryData.length === 0) {
+    return (
+      <Box>
+        <Typography variant="h4" gutterBottom>
+          Inventory Management
+        </Typography>
+        <Alert severity="error" sx={{ mt: 2, mb: 2 }}>
+          {error}
+        </Alert>
+        <Button 
+          variant="contained" 
+          onClick={fetchInventoryData}
+          startIcon={<Refresh />}
+        >
+          Retry Loading Data
+        </Button>
+      </Box>
+    );
+  }
 
   return (
     <Box>
@@ -192,7 +292,7 @@ const InventoryPage = () => {
           <Button
             variant="contained"
             startIcon={<Add />}
-            onClick={() => formik.handleSubmit()}
+            onClick={() => setTransactionDialogOpen(true)}
           >
             New Transaction
           </Button>
@@ -362,29 +462,38 @@ const InventoryPage = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {filteredInventory.map((item) => {
-                const stockStatus = getStockStatus(item.current_stock, item.min_stock_level);
-                const totalValue = item.current_stock * (item.cost_price || 0);
+              {filteredInventory.map((item, index) => {
+                const stockStatus = getStockStatus(item);
+                const totalValue = getStockValue(item);
+                const productName = item.product_name || item.name || item.productName || 'Unknown Product';
+                const sku = item.sku || item.product_code || item.code || 'N/A';
+                const currentStock = item.current_stock || item.stock || item.quantity || 0;
+                const minStock = item.min_stock_level || item.min_stock || item.min_quantity || 0;
+                const unitCost = item.cost_price || item.price || item.unit_cost || 0;
+                const category = item.category || item.product_category || '';
+                const unit = item.unit_of_measure || item.unit || 'units';
                 
                 return (
-                  <TableRow key={item.id}>
+                  <TableRow key={item.id || item._id || index}>
                     <TableCell>
-                      <Typography fontWeight="bold">{item.product_name}</Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {item.category}
-                      </Typography>
+                      <Typography fontWeight="bold">{productName}</Typography>
+                      {category && (
+                        <Typography variant="body2" color="text.secondary">
+                          {category}
+                        </Typography>
+                      )}
                     </TableCell>
                     <TableCell>
-                      <Chip label={item.sku} size="small" variant="outlined" />
+                      <Chip label={sku} size="small" variant="outlined" />
                     </TableCell>
                     <TableCell align="right">
                       <Box display="flex" alignItems="center" justifyContent="flex-end">
                         <InventoryIcon sx={{ mr: 1, fontSize: 16 }} />
-                        {item.current_stock} {item.unit_of_measure || 'units'}
+                        {currentStock} {unit}
                       </Box>
                     </TableCell>
-                    <TableCell align="right">{item.min_stock_level}</TableCell>
-                    <TableCell align="right">{formatCurrency(item.cost_price)}</TableCell>
+                    <TableCell align="right">{minStock}</TableCell>
+                    <TableCell align="right">{formatCurrency(unitCost)}</TableCell>
                     <TableCell align="right">
                       <Typography fontWeight="bold">
                         {formatCurrency(totalValue)}
@@ -422,8 +531,19 @@ const InventoryPage = () => {
                 <TableRow>
                   <TableCell colSpan={8} align="center">
                     <Alert severity="info" sx={{ my: 2 }}>
-                      No inventory items found
+                      {searchTerm || filterStatus !== 'all' 
+                        ? 'No inventory items match your search criteria' 
+                        : 'No inventory items found'}
                     </Alert>
+                    <Button 
+                      variant="outlined" 
+                      onClick={() => {
+                        setSearchTerm('');
+                        setFilterStatus('all');
+                      }}
+                    >
+                      Clear Filters
+                    </Button>
                   </TableCell>
                 </TableRow>
               )}
@@ -433,7 +553,7 @@ const InventoryPage = () => {
       )}
 
       {/* Transaction Form Dialog */}
-      <Dialog open={false} onClose={() => {}} maxWidth="sm" fullWidth>
+      <Dialog open={transactionDialogOpen} onClose={() => setTransactionDialogOpen(false)} maxWidth="sm" fullWidth>
         <DialogTitle>Record Inventory Transaction</DialogTitle>
         <DialogContent>
           <Box component="form" onSubmit={formik.handleSubmit} sx={{ mt: 2 }}>
@@ -449,11 +569,15 @@ const InventoryPage = () => {
                     error={formik.touched.product_id && Boolean(formik.errors.product_id)}
                   >
                     <MenuItem value="">Select Product</MenuItem>
-                    {products.map(product => (
-                      <MenuItem key={product.id} value={product.id}>
-                        {product.product_name} (Stock: {product.current_stock})
-                      </MenuItem>
-                    ))}
+                    {products.map(product => {
+                      const productName = product.product_name || product.name || 'Unknown Product';
+                      const currentStock = product.current_stock || product.stock || product.quantity || 0;
+                      return (
+                        <MenuItem key={product.id || product._id} value={product.id || product._id}>
+                          {productName} (Stock: {currentStock})
+                        </MenuItem>
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Grid>
@@ -512,7 +636,7 @@ const InventoryPage = () => {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => {}}>Cancel</Button>
+          <Button onClick={() => setTransactionDialogOpen(false)}>Cancel</Button>
           <Button 
             onClick={() => formik.handleSubmit()} 
             variant="contained"

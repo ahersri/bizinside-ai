@@ -564,23 +564,23 @@ User.hasMany(AIInsight, { foreignKey: 'user_id' });
 AIInsight.belongsTo(User, { foreignKey: 'user_id' });
 
 // Sync database (creates tables if they don't exist)
-sequelize.sync({ alter: true })
-  .then(() => {
-    console.log('✅ All database tables synced successfully');
-    console.log('📊 Tables created:');
-    console.log('   - Businesses');
-    console.log('   - Users');
-    console.log('   - Products');
-    console.log('   - Productions');
-    console.log('   - Sales');
-    console.log('   - InventoryTransactions');
-    console.log('   - AIInsights');
-    console.log('   - FileUploads');
-  })
-  .catch(err => {
-    console.error('❌ Database sync error:', err);
-    process.exit(1);
-  });
+// sequelize.sync({ alter: true })
+ // .then(() => {
+  //  console.log('✅ All database tables synced successfully');
+  //  console.log('📊 Tables created:');
+  //  console.log('   - Businesses');
+  //  console.log('   - Users');
+  //  console.log('   - Products');
+  //  console.log('   - Productions');
+  //  console.log('   - Sales');
+   // console.log('   - InventoryTransactions');
+   // console.log('   - AIInsights');
+   // console.log('   - FileUploads');
+ // })
+ // .catch(err => {
+  //  console.error('❌ Database sync error:', err);
+    //process.exit(1);
+ // });
 
 module.exports = {
   sequelize,
