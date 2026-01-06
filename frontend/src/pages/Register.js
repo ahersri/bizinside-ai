@@ -33,7 +33,9 @@ import {
   Lock,
   ArrowBack,
   ArrowForward,
-  CheckCircle
+  CheckCircle,
+  Visibility,
+  VisibilityOff
 } from '@mui/icons-material';
 import { useAuth } from '../context/AuthContext';
 import { useFormik } from 'formik';
@@ -75,6 +77,9 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
   const navigate = useNavigate();
   const { register } = useAuth();
 
@@ -128,7 +133,7 @@ const Register = () => {
   const handleSubmit = async () => {
     setLoading(true);
     setError('');
-    
+
     // Ensure mobile is sent (use phone if mobile is empty)
     const businessData = {
       ...businessFormik.values,
@@ -184,7 +189,6 @@ const Register = () => {
             <Typography variant="h6" gutterBottom sx={{ mb: 3 }}>
               Tell us about your business
             </Typography>
-            
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
                 <TextField
@@ -205,6 +209,7 @@ const Register = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <FormControl fullWidth>
                   <InputLabel>Business Type</InputLabel>
@@ -222,6 +227,7 @@ const Register = () => {
                   </Select>
                 </FormControl>
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <FormControl fullWidth>
                   <InputLabel>Industry</InputLabel>
@@ -239,6 +245,7 @@ const Register = () => {
                   </Select>
                 </FormControl>
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -259,6 +266,7 @@ const Register = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -278,6 +286,7 @@ const Register = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -295,6 +304,7 @@ const Register = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -306,6 +316,7 @@ const Register = () => {
                   disabled
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   fullWidth
@@ -325,6 +336,7 @@ const Register = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={4}>
                 <TextField
                   fullWidth
@@ -337,6 +349,7 @@ const Register = () => {
                   helperText={businessFormik.touched.city && businessFormik.errors.city}
                 />
               </Grid>
+
               <Grid item xs={12} md={4}>
                 <TextField
                   fullWidth
@@ -349,6 +362,7 @@ const Register = () => {
                   helperText={businessFormik.touched.state && businessFormik.errors.state}
                 />
               </Grid>
+
               <Grid item xs={12} md={4}>
                 <TextField
                   fullWidth
@@ -365,15 +379,12 @@ const Register = () => {
           </Box>
         );
 
-      // ... rest of the code remains the same as previous version
-
       case 1:
         return (
           <Box component="form" onSubmit={ownerFormik.handleSubmit}>
             <Typography variant="h6" gutterBottom sx={{ mb: 3 }}>
               Owner Information
             </Typography>
-            
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
                 <TextField
@@ -394,6 +405,7 @@ const Register = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -406,6 +418,7 @@ const Register = () => {
                   helperText={ownerFormik.touched.position && ownerFormik.errors.position}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -426,6 +439,7 @@ const Register = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -455,14 +469,13 @@ const Register = () => {
             <Typography variant="h6" gutterBottom sx={{ mb: 3 }}>
               Create Your Account
             </Typography>
-            
             <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
                   name="password"
                   label="Password"
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   value={accountFormik.values.password}
                   onChange={accountFormik.handleChange}
                   onBlur={accountFormik.handleBlur}
@@ -474,15 +487,26 @@ const Register = () => {
                         <Lock />
                       </InputAdornment>
                     ),
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowPassword(!showPassword)}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
                   }}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
                   name="confirm_password"
                   label="Confirm Password"
-                  type="password"
+                  type={showConfirmPassword ? 'text' : 'password'}
                   value={accountFormik.values.confirm_password}
                   onChange={accountFormik.handleChange}
                   onBlur={accountFormik.handleBlur}
@@ -494,9 +518,20 @@ const Register = () => {
                         <Lock />
                       </InputAdornment>
                     ),
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          edge="end"
+                        >
+                          {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
                   }}
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
@@ -551,6 +586,7 @@ const Register = () => {
                       {businessFormik.values.business_name}
                     </Typography>
                   </Grid>
+
                   <Grid item xs={12} md={6}>
                     <Typography variant="body2" color="text.secondary">
                       Business Email
@@ -559,6 +595,7 @@ const Register = () => {
                       {businessFormik.values.business_email}
                     </Typography>
                   </Grid>
+
                   <Grid item xs={12} md={6}>
                     <Typography variant="body2" color="text.secondary">
                       Industry
@@ -567,6 +604,7 @@ const Register = () => {
                       {businessFormik.values.industry}
                     </Typography>
                   </Grid>
+
                   <Grid item xs={12} md={6}>
                     <Typography variant="body2" color="text.secondary">
                       Contact Email
@@ -575,6 +613,7 @@ const Register = () => {
                       {ownerFormik.values.email}
                     </Typography>
                   </Grid>
+
                   <Grid item xs={12} md={6}>
                     <Typography variant="body2" color="text.secondary">
                       Business Type
@@ -583,6 +622,7 @@ const Register = () => {
                       {businessFormik.values.business_type}
                     </Typography>
                   </Grid>
+
                   <Grid item xs={12} md={6}>
                     <Typography variant="body2" color="text.secondary">
                       Account Type
@@ -643,11 +683,10 @@ const Register = () => {
               bizinside.ai
             </Typography>
           </Box>
-          
+
           <Typography component="h2" variant="h5" align="center" gutterBottom>
             Create Your Business Account
           </Typography>
-          
           <Typography color="text.secondary" align="center" paragraph>
             Join thousands of manufacturers who trust bizinside.ai
           </Typography>
@@ -680,7 +719,7 @@ const Register = () => {
             >
               Back
             </Button>
-            
+
             {activeStep === steps.length - 1 ? (
               <Button
                 variant="contained"

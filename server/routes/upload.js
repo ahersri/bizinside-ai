@@ -4,8 +4,12 @@ const multer = require('multer');
 const { protect, authorize } = require('../middleware/auth');
 const path = require('path');
 const fs = require('fs');
+const { FileUpload } = require('../models/Upload');
+const { AppError } = require('../middleware/errorMiddleware');
 
-// Configure multer storage
+// ==============================
+// MULTER CONFIG
+// ==============================
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadDir = 'uploads/';
@@ -15,12 +19,14 @@ const storage = multer.diskStorage({
     cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, `${req.user.business_id}-${uniqueSuffix}${path.extname(file.originalname)}`);
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    cb(
+      null,
+      `${req.user.business_id}-${uniqueSuffix}${path.extname(file.originalname)}`
+    );
   }
 });
 
-// File filter
 const fileFilter = (req, file, cb) => {
   const allowedTypes = [
     'application/vnd.ms-excel',
@@ -28,81 +34,72 @@ const fileFilter = (req, file, cb) => {
     'text/csv',
     'application/json'
   ];
-  
-  if (allowedTypes.includes(file.mimetype)) {
-    cb(null, true);
-  } else {
-    cb(new Error('Invalid file type. Only Excel, CSV, and JSON files are allowed.'));
+
+  if (!allowedTypes.includes(file.mimetype)) {
+    return cb(new AppError('Invalid file type', 400));
   }
+  cb(null, true);
 };
 
 const upload = multer({
-  storage: storage,
-  fileFilter: fileFilter,
-  limits: {
-    fileSize: 10 * 1024 * 1024 // 10MB
-  }
+  storage,
+  fileFilter,
+  limits: { fileSize: 10 * 1024 * 1024 }
 });
 
-// @desc    Upload file
-// @route   POST /api/upload/:module
-// @access  Private (Owner, Admin, Manager)
-router.post('/:module', protect, authorize('Owner', 'Admin', 'Manager'), upload.single('file'), async (req, res, next) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({
-        success: false,
-        error: 'No file uploaded'
-      });
-    }
-
-    const { module } = req.params;
-    const allowedModules = ['products', 'production', 'sales', 'inventory'];
-
-    if (!allowedModules.includes(module)) {
-      return res.status(400).json({
-        success: false,
-        error: 'Invalid module. Allowed: products, production, sales, inventory'
-      });
-    }
-
-    res.json({
-      success: true,
-      message: 'File uploaded successfully',
-      data: {
-        filename: req.file.filename,
-        originalname: req.file.originalname,
-        path: req.file.path,
-        size: req.file.size,
-        module: module
+// ==============================
+// POST: UPLOAD FILE
+// ==============================
+router.post(
+  '/:module',
+  protect,
+  authorize('Owner', 'Admin', 'Manager'),
+  upload.single('file'),
+  async (req, res, next) => {
+    try {
+      if (!req.file) {
+        return next(new AppError('No file uploaded', 400));
       }
-    });
-  } catch (error) {
-    next(error);
-  }
-});
 
-// @desc    Get upload history
-// @route   GET /api/upload/history
-// @access  Private
+      const { module } = req.params;
+      const allowedModules = ['products', 'production', 'sales', 'inventory'];
+
+      if (!allowedModules.includes(module)) {
+        return next(new AppError('Invalid module', 400));
+      }
+
+      await FileUpload.create({
+        business_id: req.user.business_id,
+        user_id: req.user.id,
+        filename: req.file.filename,
+        file_type: req.file.mimetype,
+        module,
+        status: 'Completed'
+      });
+
+      res.status(201).json({
+        success: true,
+        message: 'File uploaded & saved successfully'
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+// ==============================
+// GET: UPLOAD HISTORY
+// ==============================
 router.get('/history', protect, async (req, res, next) => {
   try {
-    const uploadDir = 'uploads/';
-    let files = [];
-    
-    if (fs.existsSync(uploadDir)) {
-      files = fs.readdirSync(uploadDir)
-        .filter(file => file.startsWith(`${req.user.business_id}-`))
-        .map(file => ({
-          filename: file,
-          path: path.join(uploadDir, file),
-          uploaded: fs.statSync(path.join(uploadDir, file)).mtime
-        }));
-    }
+    const uploads = await FileUpload.findAll({
+      where: { business_id: req.user.business_id },
+      order: [['uploaded_at', 'DESC']]
+    });
 
     res.json({
       success: true,
-      data: files
+      data: uploads
     });
   } catch (error) {
     next(error);

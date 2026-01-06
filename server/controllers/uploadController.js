@@ -1,7 +1,7 @@
 const multer = require('multer');
 const xlsx = require('xlsx');
 const { query } = require('../config/database');
-const { AppError } = require('../middleware/errorHandler');
+const { AppError } = require('../middleware/errorMiddleware');
 
 // Configure multer for file upload
 const storage = multer.diskStorage({

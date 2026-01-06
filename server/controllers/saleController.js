@@ -1,5 +1,5 @@
 const { Sale, Product, Business } = require('../models');
-const { AppError } = require('../middleware/errorHandler');
+const { AppError } = require('../middleware/errorMiddleware');
 const Sequelize = require('sequelize');
 
 // @desc    Create new sale

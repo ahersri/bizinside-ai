@@ -1,79 +1,51 @@
-// server/models/Sale.js
-'use strict';
-const { Model } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
-  class Sale extends Model {
-    static associate(models) {
-      Sale.belongsTo(models.Business, { foreignKey: 'business_id' });
-      Sale.hasMany(models.SaleItem, { foreignKey: 'sale_id' });
-    }
-  }
-  
-  Sale.init({
+module.exports = (sequelize) => {
+  const Sale = sequelize.define('Sale', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     business_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    invoice_number: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      unique: true
+    product_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-    customer_name: {
-      type: DataTypes.STRING(255),
-      allowNull: true
+    customer_name: DataTypes.STRING(255),
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-    customer_email: {
-      type: DataTypes.STRING(100),
-      allowNull: true
+    unit_price: {
+      type: DataTypes.DECIMAL(15, 2),
+      allowNull: false
     },
-    customer_phone: {
-      type: DataTypes.STRING(20),
-      allowNull: true
+    total_amount: DataTypes.DECIMAL(15, 2),
+    sale_date: DataTypes.DATE,
+    payment_status: {
+      type: DataTypes.ENUM('Pending', 'Paid', 'Partial'),
+      defaultValue: 'Pending'
     },
-    sale_date: {
+    created_at: {
       type: DataTypes.DATE,
-      allowNull: false,
       defaultValue: DataTypes.NOW
     },
-    total_amount: {
-      type: DataTypes.DECIMAL(12, 2),
-      allowNull: false,
-      defaultValue: 0
-    },
-    tax_amount: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
-      defaultValue: 0
-    },
-    discount_amount: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
-      defaultValue: 0
-    },
-    payment_method: {
-      type: DataTypes.ENUM('cash', 'card', 'upi', 'bank_transfer', 'credit'),
-      defaultValue: 'cash'
-    },
-    payment_status: {
-      type: DataTypes.ENUM('pending', 'paid', 'partial', 'refunded'),
-      defaultValue: 'pending'
-    },
-    status: {
-      type: DataTypes.ENUM('draft', 'confirmed', 'cancelled', 'completed'),
-      defaultValue: 'draft'
-    },
-    notes: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    updated_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     }
   }, {
-    sequelize,
-    modelName: 'Sale',
-    tableName: 'Sales',
-    timestamps: true
+    tableName: 'sales',
+    timestamps: false
   });
-  
+
+  Sale.associate = function(models) {
+    // Will be set up after all models are loaded
+  };
+
   return Sale;
 };

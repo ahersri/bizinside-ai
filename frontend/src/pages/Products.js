@@ -1,442 +1,406 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  Grid,
+  Box,
   Paper,
   Typography,
-  Box,
   Button,
-  TextField,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
-  IconButton,
+  Checkbox,
   Chip,
+  IconButton,
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
+  TextField,
+  Pagination,
   Tooltip,
-  LinearProgress,
   Alert,
-  InputAdornment
+  MenuItem,
 } from '@mui/material';
 import {
   Add,
   Edit,
   Delete,
-  Search,
-  Inventory,
-  Warning,
-  CheckCircle,
-  FilterList,
+  Upload,
   Download,
-  Upload
+  Undo,
+  History,
+  Tune,
 } from '@mui/icons-material';
 import { productAPI } from '../services/api';
 import { toast } from 'react-hot-toast';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
 
-const validationSchema = yup.object({
-  product_name: yup.string().required('Product name is required'),
-  sku: yup.string().required('SKU is required'),
-  category: yup.string().required('Category is required'),
-  unit_price: yup.number().min(0, 'Price must be positive').required('Price is required'),
-  cost_price: yup.number().min(0, 'Cost must be positive').required('Cost is required'),
-  current_stock: yup.number().min(0, 'Stock cannot be negative').required('Stock is required'),
-  min_stock_level: yup.number().min(0, 'Minimum stock level required'),
-  description: yup.string()
-});
+import ProductDetailDrawer from '../components/ProductDetailDrawer';
+import StockLogsDialog from '../components/StockAuditDrawer';
 
+/* =========================
+   Role Helpers
+========================= */
+const getUserRole = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  return user?.role || 'Viewer';
+};
+
+const can = (roles) => roles.includes(getUserRole());
+
+/* =========================
+   Component
+========================= */
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [openDialog, setOpenDialog] = useState(false);
-  const [editingProduct, setEditingProduct] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filterCategory, setFilterCategory] = useState('all');
+  const [selected, setSelected] = useState([]);
+  const [page, setPage] = useState(1);
+
+  // dialogs
+  const [openForm, setOpenForm] = useState(false);
+  const [openStock, setOpenStock] = useState(false);
+  const [openBulk, setOpenBulk] = useState(false);
+  const [openImportPreview, setOpenImportPreview] = useState(false);
+  const [openLogs, setOpenLogs] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const [editing, setEditing] = useState(null);
+  const [stockTarget, setStockTarget] = useState(null);
+  const [drawerProduct, setDrawerProduct] = useState(null);
+
+  const [importPreview, setImportPreview] = useState([]);
+  const [importFile, setImportFile] = useState(null);
+  const [importErrors, setImportErrors] = useState([]);
+
+  /* =========================
+     Forms
+  ========================= */
+  const [form, setForm] = useState({
+    product_name: '',
+    product_code: '',
+    category: '',
+    unit: 'PCS',
+    selling_price: '',
+    cost_price: '',
+    current_stock: '',
+    min_stock_level: '',
+    description: '',
+  });
+
+  const [stockForm, setStockForm] = useState({
+    new_stock: '',
+    reason: '',
+  });
+
+  const [bulkForm, setBulkForm] = useState({
+    category: '',
+    min_stock_level: '',
+  });
+
+  /* =========================
+     Fetch Products
+  ========================= */
+  const fetchProducts = async () => {
+    const res = await productAPI.getProducts({ page });
+    setProducts(res.data?.data?.products || []);
+  };
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [page]);
 
-  const fetchProducts = async () => {
+  /* =========================
+     CRUD
+  ========================= */
+  const saveProduct = async () => {
     try {
-      const response = await productAPI.getProducts();
-      setProducts(response.data.data);
-    } catch (error) {
-      toast.error('Failed to fetch products');
-      console.error(error);
-    } finally {
-      setLoading(false);
+      editing
+        ? await productAPI.updateProduct(editing.id, form)
+        : await productAPI.createProduct(form);
+
+      toast.success(editing ? 'Product updated' : 'Product created');
+      setOpenForm(false);
+      setEditing(null);
+      fetchProducts();
+    } catch {
+      toast.error('Save failed');
     }
   };
 
-  const formik = useFormik({
-    initialValues: {
-      product_name: '',
-      sku: '',
-      category: '',
-      unit_price: '',
-      cost_price: '',
-      current_stock: '',
-      min_stock_level: '',
-      description: '',
-      unit_of_measure: 'units'
-    },
-    validationSchema: validationSchema,
-    onSubmit: async (values) => {
-      try {
-        if (editingProduct) {
-          await productAPI.updateProduct(editingProduct.id, values);
-          toast.success('Product updated successfully');
-        } else {
-          await productAPI.createProduct(values);
-          toast.success('Product created successfully');
-        }
-        formik.resetForm();
-        setOpenDialog(false);
-        setEditingProduct(null);
-        fetchProducts();
-      } catch (error) {
-        toast.error(error.response?.data?.error || 'Operation failed');
-      }
+  const deleteProduct = async (id) => {
+    if (!window.confirm('Delete this product?')) return;
+    await productAPI.deleteProduct(id);
+    toast.success('Product deleted');
+    fetchProducts();
+  };
+
+  /* =========================
+     Bulk Update
+  ========================= */
+  const applyBulkUpdate = async () => {
+    await productAPI.bulkUpdate(selected, bulkForm);
+    toast.success('Bulk update applied');
+    setSelected([]);
+    setOpenBulk(false);
+    fetchProducts();
+  };
+
+  /* =========================
+     Stock Adjust
+  ========================= */
+  const adjustStock = async () => {
+    await productAPI.adjustStock({
+      product_id: stockTarget.id,
+      new_stock: Number(stockForm.new_stock),
+      reason: stockForm.reason,
+    });
+    toast.success('Stock adjusted');
+    setOpenStock(false);
+    fetchProducts();
+  };
+
+  /* =========================
+     Import Preview
+  ========================= */
+  const previewImport = async (file) => {
+    const text = await file.text();
+    const rows = text.split('\n').slice(0, 6);
+    setImportPreview(rows.map((r) => r.split(',')));
+    setImportFile(file);
+    setOpenImportPreview(true);
+  };
+
+  const confirmImport = async () => {
+    try {
+      const res = await productAPI.importProducts(importFile);
+      setImportErrors(res.data?.failedRows || []);
+      toast.success('Import completed');
+      fetchProducts();
+    } catch {
+      toast.error('Import failed');
     }
-  });
-
-  const handleEdit = (product) => {
-    setEditingProduct(product);
-    formik.setValues(product);
-    setOpenDialog(true);
   };
 
-  const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this product?')) {
-      try {
-        await productAPI.deleteProduct(id);
-        toast.success('Product deleted successfully');
-        fetchProducts();
-      } catch (error) {
-        toast.error('Failed to delete product');
-      }
-    }
-  };
-
-  const getStockStatus = (current, min) => {
-    if (current === 0) return { label: 'Out of Stock', color: 'error' };
-    if (current <= min) return { label: 'Low Stock', color: 'warning' };
-    return { label: 'In Stock', color: 'success' };
-  };
-
-  const categories = ['Raw Material', 'Finished Goods', 'Component', 'Packaging', 'MRO'];
-
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.product_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.sku.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = filterCategory === 'all' || product.category === filterCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  if (loading) {
-    return (
-      <Box display="flex" justifyContent="center" alignItems="center" minHeight="60vh">
-        <LinearProgress sx={{ width: '50%' }} />
-      </Box>
-    );
-  }
-
+  /* =========================
+     Render
+  ========================= */
   return (
     <Box>
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
-        <Typography variant="h4">
-          Product Management
-        </Typography>
-        <Box display="flex" gap={2}>
-          <Button
-            variant="outlined"
-            startIcon={<Upload />}
-          >
-            Import
+      {/* HEADER */}
+      <Box display="flex" justifyContent="space-between" mb={2}>
+        <Typography variant="h5">Products</Typography>
+
+        <Box display="flex" gap={1}>
+          {can(['Owner', 'Admin']) && selected.length > 0 && (
+            <Button startIcon={<Tune />} onClick={() => setOpenBulk(true)}>
+              Bulk Update
+            </Button>
+          )}
+
+          {can(['Owner', 'Admin']) && (
+            <Button component="label" startIcon={<Upload />}>
+              Import
+              <input hidden type="file" onChange={(e) => previewImport(e.target.files[0])} />
+            </Button>
+          )}
+
+          <Button startIcon={<Download />} onClick={() => productAPI.exportProducts()}>
+            Export
           </Button>
-          <Button
-            variant="contained"
-            startIcon={<Add />}
-            onClick={() => {
-              setEditingProduct(null);
-              formik.resetForm();
-              setOpenDialog(true);
-            }}
-          >
-            Add Product
-          </Button>
+
+          {can(['Owner', 'Admin', 'Manager']) && (
+            <Button startIcon={<Add />} variant="contained" onClick={() => setOpenForm(true)}>
+              Add Product
+            </Button>
+          )}
         </Box>
       </Box>
 
-      {/* Filters and Search */}
-      <Paper sx={{ p: 2, mb: 3 }}>
-        <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <TextField
-              fullWidth
-              placeholder="Search products by name or SKU..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Search />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <FormControl fullWidth>
-              <InputLabel>Category</InputLabel>
-              <Select
-                value={filterCategory}
-                label="Category"
-                onChange={(e) => setFilterCategory(e.target.value)}
-                startAdornment={<FilterList />}
-              >
-                <MenuItem value="all">All Categories</MenuItem>
-                {categories.map(cat => (
-                  <MenuItem key={cat} value={cat}>{cat}</MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Button fullWidth variant="outlined" startIcon={<Download />}>
-              Export Products
-            </Button>
-          </Grid>
-        </Grid>
-      </Paper>
-
-      {/* Products Table */}
+      {/* TABLE */}
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Product</TableCell>
-              <TableCell>SKU</TableCell>
-              <TableCell>Category</TableCell>
-              <TableCell align="right">Price</TableCell>
-              <TableCell align="right">Cost</TableCell>
-              <TableCell align="right">Stock</TableCell>
+              <TableCell padding="checkbox" />
+              <TableCell>Name</TableCell>
+              <TableCell>Stock</TableCell>
               <TableCell>Status</TableCell>
-              <TableCell align="center">Actions</TableCell>
+              <TableCell align="right">Actions</TableCell>
             </TableRow>
           </TableHead>
+
           <TableBody>
-            {filteredProducts.map((product) => {
-              const stockStatus = getStockStatus(product.current_stock, product.min_stock_level);
-              return (
-                <TableRow key={product.id}>
-                  <TableCell>
-                    <Box>
-                      <Typography fontWeight="bold">{product.product_name}</Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {product.description?.substring(0, 50)}...
-                      </Typography>
-                    </Box>
-                  </TableCell>
-                  <TableCell>
-                    <Chip label={product.sku} size="small" variant="outlined" />
-                  </TableCell>
-                  <TableCell>{product.category}</TableCell>
-                  <TableCell align="right">
-                    <Typography fontWeight="bold">
-                      ₹{product.unit_price.toFixed(2)}
-                    </Typography>
-                  </TableCell>
-                  <TableCell align="right">
-                    ₹{product.cost_price.toFixed(2)}
-                  </TableCell>
-                  <TableCell align="right">
-                    <Box display="flex" alignItems="center" justifyContent="flex-end">
-                      <Inventory sx={{ mr: 1, fontSize: 16 }} />
-                      {product.current_stock} {product.unit_of_measure}
-                    </Box>
-                  </TableCell>
-                  <TableCell>
-                    <Chip
-                      icon={stockStatus.color === 'error' ? <Warning /> : <CheckCircle />}
-                      label={stockStatus.label}
-                      color={stockStatus.color}
-                      size="small"
-                    />
-                  </TableCell>
-                  <TableCell align="center">
+            {products.map((p) => (
+              <TableRow key={p.id} hover>
+                <TableCell padding="checkbox">
+                  <Checkbox
+                    checked={selected.includes(p.id)}
+                    onChange={(e) =>
+                      setSelected(
+                        e.target.checked
+                          ? [...selected, p.id]
+                          : selected.filter((x) => x !== p.id)
+                      )
+                    }
+                  />
+                </TableCell>
+
+                <TableCell
+                  sx={{ cursor: 'pointer', fontWeight: 500 }}
+                  onClick={() => {
+                    setDrawerProduct(p);
+                    setOpenDrawer(true);
+                  }}
+                >
+                  {p.product_name}
+                </TableCell>
+
+                <TableCell>{p.current_stock}</TableCell>
+
+                <TableCell>
+                  <Chip
+                    size="small"
+                    label={p.current_stock <= p.min_stock_level ? 'Low' : 'OK'}
+                    color={p.current_stock <= p.min_stock_level ? 'warning' : 'success'}
+                  />
+                </TableCell>
+
+                <TableCell align="right">
+                  <Tooltip title="Adjust Stock">
+                    <IconButton onClick={() => { setStockTarget(p); setOpenStock(true); }}>
+                      <Undo />
+                    </IconButton>
+                  </Tooltip>
+
+                  <Tooltip title="Stock Logs">
+                    <IconButton onClick={() => setOpenLogs(true)}>
+                      <History />
+                    </IconButton>
+                  </Tooltip>
+
+                  {can(['Owner', 'Admin', 'Manager']) && (
                     <Tooltip title="Edit">
-                      <IconButton onClick={() => handleEdit(product)}>
+                      <IconButton onClick={() => { setEditing(p); setForm(p); setOpenForm(true); }}>
                         <Edit />
                       </IconButton>
                     </Tooltip>
+                  )}
+
+                  {can(['Owner', 'Admin']) && (
                     <Tooltip title="Delete">
-                      <IconButton onClick={() => handleDelete(product.id)}>
+                      <IconButton onClick={() => deleteProduct(p.id)}>
                         <Delete />
                       </IconButton>
                     </Tooltip>
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-            {filteredProducts.length === 0 && (
-              <TableRow>
-                <TableCell colSpan={8} align="center">
-                  <Alert severity="info" sx={{ my: 2 }}>
-                    No products found. Add your first product!
-                  </Alert>
+                  )}
                 </TableCell>
               </TableRow>
-            )}
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
 
-      {/* Add/Edit Dialog */}
-      <Dialog open={openDialog} onClose={() => setOpenDialog(false)} maxWidth="md" fullWidth>
-        <DialogTitle>
-          {editingProduct ? 'Edit Product' : 'Add New Product'}
-        </DialogTitle>
+      {/* PAGINATION */}
+      <Box display="flex" justifyContent="center" mt={3}>
+        <Pagination page={page} count={1} onChange={(_, v) => setPage(v)} />
+      </Box>
+
+      {/* ADD / EDIT PRODUCT */}
+      <Dialog open={openForm} onClose={() => setOpenForm(false)} fullWidth maxWidth="md">
+        <DialogTitle>{editing ? 'Edit Product' : 'Add Product'}</DialogTitle>
         <DialogContent>
-          <Box component="form" onSubmit={formik.handleSubmit} sx={{ mt: 2 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="product_name"
-                  label="Product Name"
-                  value={formik.values.product_name}
-                  onChange={formik.handleChange}
-                  error={formik.touched.product_name && Boolean(formik.errors.product_name)}
-                  helperText={formik.touched.product_name && formik.errors.product_name}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="sku"
-                  label="SKU"
-                  value={formik.values.sku}
-                  onChange={formik.handleChange}
-                  error={formik.touched.sku && Boolean(formik.errors.sku)}
-                  helperText={formik.touched.sku && formik.errors.sku}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <FormControl fullWidth>
-                  <InputLabel>Category</InputLabel>
-                  <Select
-                    name="category"
-                    value={formik.values.category}
-                    label="Category"
-                    onChange={formik.handleChange}
-                    error={formik.touched.category && Boolean(formik.errors.category)}
-                  >
-                    {categories.map(cat => (
-                      <MenuItem key={cat} value={cat}>{cat}</MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="unit_of_measure"
-                  label="Unit of Measure"
-                  value={formik.values.unit_of_measure}
-                  onChange={formik.handleChange}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="unit_price"
-                  label="Selling Price"
-                  type="number"
-                  value={formik.values.unit_price}
-                  onChange={formik.handleChange}
-                  error={formik.touched.unit_price && Boolean(formik.errors.unit_price)}
-                  helperText={formik.touched.unit_price && formik.errors.unit_price}
-                  InputProps={{
-                    startAdornment: <InputAdornment position="start">₹</InputAdornment>,
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="cost_price"
-                  label="Cost Price"
-                  type="number"
-                  value={formik.values.cost_price}
-                  onChange={formik.handleChange}
-                  error={formik.touched.cost_price && Boolean(formik.errors.cost_price)}
-                  helperText={formik.touched.cost_price && formik.errors.cost_price}
-                  InputProps={{
-                    startAdornment: <InputAdornment position="start">₹</InputAdornment>,
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="current_stock"
-                  label="Current Stock"
-                  type="number"
-                  value={formik.values.current_stock}
-                  onChange={formik.handleChange}
-                  error={formik.touched.current_stock && Boolean(formik.errors.current_stock)}
-                  helperText={formik.touched.current_stock && formik.errors.current_stock}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="min_stock_level"
-                  label="Minimum Stock Level"
-                  type="number"
-                  value={formik.values.min_stock_level}
-                  onChange={formik.handleChange}
-                  error={formik.touched.min_stock_level && Boolean(formik.errors.min_stock_level)}
-                  helperText={formik.touched.min_stock_level && formik.errors.min_stock_level}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  name="description"
-                  label="Description"
-                  multiline
-                  rows={3}
-                  value={formik.values.description}
-                  onChange={formik.handleChange}
-                />
-              </Grid>
-            </Grid>
-          </Box>
+          {[
+            ['Product Name', 'product_name'],
+            ['SKU / Code', 'product_code'],
+            ['Category', 'category'],
+            ['Unit', 'unit'],
+            ['Selling Price', 'selling_price'],
+            ['Cost Price', 'cost_price'],
+            ['Current Stock', 'current_stock'],
+            ['Min Stock Level', 'min_stock_level'],
+          ].map(([label, key]) => (
+            <TextField
+              key={key}
+              fullWidth
+              margin="dense"
+              label={label}
+              value={form[key]}
+              onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+            />
+          ))}
+          <TextField
+            fullWidth
+            margin="dense"
+            label="Description"
+            multiline
+            rows={3}
+            value={form.description}
+            onChange={(e) => setForm({ ...form, description: e.target.value })}
+          />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpenDialog(false)}>Cancel</Button>
-          <Button 
-            onClick={() => formik.handleSubmit()} 
-            variant="contained"
-            disabled={!formik.isValid || formik.isSubmitting}
-          >
-            {editingProduct ? 'Update Product' : 'Create Product'}
+          <Button onClick={() => setOpenForm(false)}>Cancel</Button>
+          <Button variant="contained" onClick={saveProduct}>
+            {editing ? 'Update' : 'Create'}
           </Button>
         </DialogActions>
       </Dialog>
+
+      {/* STOCK ADJUST */}
+      <Dialog open={openStock} onClose={() => setOpenStock(false)}>
+        <DialogTitle>Adjust Stock</DialogTitle>
+        <DialogContent>
+          <TextField fullWidth label="New Stock" type="number"
+            onChange={(e) => setStockForm({ ...stockForm, new_stock: e.target.value })}
+          />
+          <TextField fullWidth label="Reason" margin="dense"
+            onChange={(e) => setStockForm({ ...stockForm, reason: e.target.value })}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenStock(false)}>Cancel</Button>
+          <Button variant="contained" onClick={adjustStock}>Apply</Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* BULK UPDATE */}
+      <Dialog open={openBulk} onClose={() => setOpenBulk(false)}>
+        <DialogTitle>Bulk Update</DialogTitle>
+        <DialogContent>
+          <TextField label="Category" fullWidth
+            onChange={(e) => setBulkForm({ ...bulkForm, category: e.target.value })}
+          />
+          <TextField label="Min Stock Level" fullWidth type="number" margin="dense"
+            onChange={(e) => setBulkForm({ ...bulkForm, min_stock_level: e.target.value })}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenBulk(false)}>Cancel</Button>
+          <Button variant="contained" onClick={applyBulkUpdate}>Apply</Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* IMPORT PREVIEW */}
+      <Dialog open={openImportPreview} onClose={() => setOpenImportPreview(false)} maxWidth="md" fullWidth>
+        <DialogTitle>Import Preview</DialogTitle>
+        <DialogContent>
+          {importPreview.map((row, i) => (
+            <Typography key={i} variant="body2">{row.join(' | ')}</Typography>
+          ))}
+          {importErrors.length > 0 && (
+            <Alert severity="error">Failed rows: {importErrors.length}</Alert>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenImportPreview(false)}>Cancel</Button>
+          <Button variant="contained" onClick={confirmImport}>Confirm Import</Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* DRAWER + LOGS */}
+      <ProductDetailDrawer open={openDrawer} product={drawerProduct} onClose={() => setOpenDrawer(false)} />
+      <StockLogsDialog open={openLogs} onClose={() => setOpenLogs(false)} />
     </Box>
   );
 };

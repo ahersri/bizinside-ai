@@ -1,5 +1,3 @@
-// Add these imports at the top:
-import { Factory, Inventory } from '@mui/icons-material';
 import React, { useState, useEffect } from 'react';
 import {
   Grid,
@@ -49,11 +47,40 @@ import {
   Pause,
   Assessment,
   Analytics,
-  Psychology
+  Psychology,
+  Factory,
+  Inventory
 } from '@mui/icons-material';
 import { aiAPI, dashboardAPI } from '../services/api';
 import { toast } from 'react-hot-toast';
 import { Line, Bar, Radar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  RadialLinearScale,
+  Filler,
+  Title,
+  Tooltip as ChartTooltip,
+  Legend
+} from 'chart.js';
+
+// Register ChartJS components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  RadialLinearScale,
+  Filler,
+  Title,
+  ChartTooltip,
+  Legend
+);
 
 const AIPage = () => {
   const [loading, setLoading] = useState(true);
@@ -78,7 +105,7 @@ const AIPage = () => {
         aiAPI.detectAnomalies(),
         dashboardAPI.getHealthScore()
       ]);
-      
+
       setPredictions(predictionsResponse.data.data);
       setAnomalies(anomaliesResponse.data.data);
       
@@ -86,7 +113,7 @@ const AIPage = () => {
       if (healthResponse.data.data) {
         generateInsights(healthResponse.data.data);
       }
-      
+
       // Simulate business analysis data
       setAnalysis({
         revenue_trend: 'positive',
@@ -99,7 +126,6 @@ const AIPage = () => {
           'Expand sales team for Q4 seasonal demand'
         ]
       });
-      
     } catch (error) {
       toast.error('Failed to fetch AI insights');
       console.error(error);
@@ -110,7 +136,7 @@ const AIPage = () => {
 
   const generateInsights = (healthData) => {
     const generatedInsights = [];
-    
+
     if (healthData.overall_score < 70) {
       generatedInsights.push({
         title: 'Business Health Needs Improvement',
@@ -120,7 +146,7 @@ const AIPage = () => {
         color: 'error'
       });
     }
-    
+
     if (healthData.factors?.some(f => f.name === 'Inventory Turnover' && f.score < 60)) {
       generatedInsights.push({
         title: 'Low Inventory Turnover',
@@ -130,7 +156,7 @@ const AIPage = () => {
         color: 'warning'
       });
     }
-    
+
     if (healthData.factors?.some(f => f.name === 'Profit Margin' && f.score > 85)) {
       generatedInsights.push({
         title: 'Excellent Profit Margins',
@@ -140,7 +166,7 @@ const AIPage = () => {
         color: 'success'
       });
     }
-    
+
     // Add more insights based on actual data
     generatedInsights.push({
       title: 'Seasonal Demand Pattern Detected',
@@ -149,7 +175,7 @@ const AIPage = () => {
       icon: <Timeline />,
       color: 'info'
     });
-    
+
     generatedInsights.push({
       title: 'Production Efficiency Opportunity',
       description: 'Machine 3 shows 15% lower efficiency than others. Schedule maintenance.',
@@ -157,7 +183,7 @@ const AIPage = () => {
       icon: <Factory />,
       color: 'warning'
     });
-    
+
     setInsights(generatedInsights);
   };
 
@@ -166,6 +192,7 @@ const AIPage = () => {
       const response = await aiAPI.analyzeBusiness({ query: analysisInput });
       toast.success('Analysis completed');
       // Handle analysis results
+      setShowAnalysisDialog(true);
     } catch (error) {
       toast.error('Analysis failed');
     }
@@ -305,7 +332,6 @@ const AIPage = () => {
                 </Typography>
                 <Chip label={`${insights.length} found`} size="small" />
               </Box>
-              
               <List dense>
                 {insights.slice(0, 3).map((insight, index) => (
                   <React.Fragment key={index}>
@@ -329,7 +355,6 @@ const AIPage = () => {
                   </React.Fragment>
                 ))}
               </List>
-              
               {insights.length > 3 && (
                 <Button fullWidth sx={{ mt: 2 }}>
                   View All {insights.length} Insights
@@ -358,7 +383,6 @@ const AIPage = () => {
                   </Select>
                 </FormControl>
               </Box>
-              
               {predictions && (
                 <>
                   <Typography variant="h3" align="center" gutterBottom>
@@ -367,7 +391,6 @@ const AIPage = () => {
                   <Typography variant="body2" color="text.secondary" align="center" paragraph>
                     Average predicted daily sales (next {predictionPeriod} days)
                   </Typography>
-                  
                   <Box display="flex" justifyContent="space-around" sx={{ mt: 2 }}>
                     <Box textAlign="center">
                       <Typography variant="body2" color="text.secondary">
@@ -386,7 +409,6 @@ const AIPage = () => {
                       </Typography>
                     </Box>
                   </Box>
-                  
                   <Button fullWidth sx={{ mt: 3 }} startIcon={<Download />}>
                     Download Forecast Report
                   </Button>
@@ -404,19 +426,17 @@ const AIPage = () => {
                   <Warning sx={{ verticalAlign: 'middle', mr: 1 }} />
                   Anomaly Detection
                 </Typography>
-                <Chip 
-                  label={`${anomalies.length} detected`} 
-                  size="small" 
+                <Chip
+                  label={`${anomalies.length} detected`}
+                  size="small"
                   color={anomalies.length > 0 ? 'warning' : 'success'}
                 />
               </Box>
-              
               {anomalies.length > 0 ? (
                 <>
                   <Alert severity="warning" sx={{ mb: 2 }}>
                     {anomalies.length} potential anomalies detected in your data
                   </Alert>
-                  
                   <List dense>
                     {anomalies.slice(0, 2).map((anomaly, index) => (
                       <ListItem key={index}>
@@ -430,7 +450,6 @@ const AIPage = () => {
                       </ListItem>
                     ))}
                   </List>
-                  
                   <Button fullWidth sx={{ mt: 2 }} color="warning">
                     Investigate Anomalies
                   </Button>
@@ -469,7 +488,6 @@ const AIPage = () => {
                 <ToggleButton value="inventory">Inventory</ToggleButton>
               </ToggleButtonGroup>
             </Box>
-            
             <Box sx={{ height: 300 }}>
               <Line
                 data={salesPredictionChartData}
@@ -546,7 +564,6 @@ const AIPage = () => {
               color="primary"
             />
           </Box>
-
           <Grid container spacing={3}>
             {analysis.recommendations.map((recommendation, index) => (
               <Grid item xs={12} md={6} key={index}>
@@ -587,7 +604,6 @@ const AIPage = () => {
               </Grid>
             ))}
           </Grid>
-
           <Box sx={{ mt: 3, p: 2, bgcolor: 'grey.50', borderRadius: 1 }}>
             <Typography variant="body2" color="text.secondary">
               <Info sx={{ verticalAlign: 'middle', mr: 1 }} />
@@ -602,7 +618,6 @@ const AIPage = () => {
         <Typography variant="h5" gutterBottom mb={3}>
           AI Business Analysis Tool
         </Typography>
-        
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <TextField
@@ -616,8 +631,8 @@ const AIPage = () => {
               InputProps={{
                 endAdornment: (
                   <Tooltip title="Get AI Analysis">
-                    <IconButton 
-                      color="primary" 
+                    <IconButton
+                      color="primary"
                       onClick={runBusinessAnalysis}
                       disabled={!analysisInput.trim()}
                     >
@@ -657,8 +672,8 @@ const AIPage = () => {
       </Paper>
 
       {/* Analysis Results Dialog */}
-      <Dialog 
-        open={showAnalysisDialog} 
+      <Dialog
+        open={showAnalysisDialog}
         onClose={() => setShowAnalysisDialog(false)}
         maxWidth="md"
         fullWidth
@@ -667,10 +682,13 @@ const AIPage = () => {
           AI Business Analysis Results
         </DialogTitle>
         <DialogContent>
-          {/* Analysis results would go here */}
           <Typography paragraph>
-            Based on your business data, here are the key findings...
+            Based on your business data analysis, here are the key findings:
           </Typography>
+          <Alert severity="info" sx={{ mb: 2 }}>
+            This is a sample analysis. In production, real AI analysis would be shown here.
+          </Alert>
+          {/* Analysis results would go here */}
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setShowAnalysisDialog(false)}>Close</Button>

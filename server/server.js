@@ -10,8 +10,8 @@ const sequelize = require('./config/database');
 require('./models'); // Load models
 
 // ======================= ROUTES =======================
-const authRoutes = require('./routes/auth');
-const productRoutes = require('./routes/products');
+const authRoutes = require('./routes/authRoutes');
+const productRoutes = require('./routes/productRoutes');
 const dashboardRoutes = require('./routes/dashboard');
 const businessRoutes = require('./routes/business');
 const uploadRoutes = require('./routes/upload');
@@ -22,7 +22,7 @@ const financeRoutes = require('./routes/finance');
 const aiRoutes = require('./routes/ai');
 
 // ======================= ERROR HANDLER =======================
-const { errorHandler } = require('./middleware/errorHandler');
+const { errorHandler } = require('./middleware/errorMiddleware');
 
 const app = express(); // ✅ MUST BE FIRST
 

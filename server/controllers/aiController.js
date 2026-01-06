@@ -1,5 +1,5 @@
 const { Product, Sale, Production, InventoryTransaction } = require('../models');
-const { AppError } = require('../middleware/errorHandler');
+const { AppError } = require('../middleware/errorMiddleware');
 const Sequelize = require('sequelize');
 
 // @desc    Analyze business data and provide insights

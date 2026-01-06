@@ -1,69 +1,74 @@
-'use strict';
-const { Model } = require('sequelize');
+const { DataTypes } = require('sequelize');
+const bcrypt = require('bcryptjs');
 
-module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    static associate(models) {
-      User.belongsTo(models.Business, { foreignKey: 'business_id' });
-    }
-  }
-  
-  User.init({
+module.exports = (sequelize) => {
+  const User = sequelize.define('User', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     business_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Businesses',
-        key: 'id'
-      }
-    },
-    full_name: {
-      type: DataTypes.STRING(100),
       allowNull: false
     },
-    email: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
-    },
-    password: {
+    full_name: {
       type: DataTypes.STRING(255),
       allowNull: false
     },
-    phone: {
-      type: DataTypes.STRING(20),
-      allowNull: true
-    },
-    position: {
-      type: DataTypes.STRING(100),
+    email: {
+      type: DataTypes.STRING(255),
       allowNull: false,
-      defaultValue: 'Owner'
+      unique: true
     },
+    password_hash: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    mobile: DataTypes.STRING(20),
     role: {
-      type: DataTypes.ENUM('owner', 'admin', 'manager', 'staff', 'viewer'),
-      defaultValue: 'owner'
+      type: DataTypes.STRING(50),
+      defaultValue: 'Viewer'
     },
-    avatar_url: {
-      type: DataTypes.STRING(500),
-      allowNull: true
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
     },
-    last_login: {
+    last_login: DataTypes.DATE,
+    created_at: {
       type: DataTypes.DATE,
-      allowNull: true
+      defaultValue: DataTypes.NOW
     },
-    status: {
-      type: DataTypes.ENUM('active', 'inactive', 'suspended'),
-      defaultValue: 'active'
+    updated_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     }
   }, {
-    sequelize,
-    modelName: 'User',
-    tableName: 'Users',
-    timestamps: true
+    tableName: 'users',
+    timestamps: false,
+    hooks: {
+      beforeCreate: async (user) => {
+        if (user.password_hash) {
+          const salt = await bcrypt.genSalt(10);
+          user.password_hash = await bcrypt.hash(user.password_hash, salt);
+        }
+      }
+    }
   });
-  
+
+  User.prototype.verifyPassword = async function(password) {
+    return await bcrypt.compare(password, this.password_hash);
+  };
+
+  User.prototype.toJSON = function() {
+    const values = Object.assign({}, this.get());
+    delete values.password_hash;
+    return values;
+  };
+
+  User.associate = function(models) {
+    // Will be set up after all models are loaded
+  };
+
   return User;
 };

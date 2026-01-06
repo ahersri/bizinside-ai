@@ -1,278 +1,282 @@
-const { Product, Production, Sale } = require('../models');
-const { AppError } = require('../middleware/errorHandler');
-const Sequelize = require('sequelize');
+const fs = require('fs');
+const csv = require('csv-parser');
+const XLSX = require('xlsx');
+const { Op, sequelize } = require('sequelize');
+const { Product, StockAuditLog } = require('../models');
+const { Parser } = require('json2csv');
+const { logger } = require('../utils/logger');
 
-// @desc    Create new product
-// @route   POST /api/products
-// @access  Private (Owner, Admin, Manager)
-exports.createProduct = async (req, res, next) => {
-  try {
-    const {
-      product_code,
-      product_name,
-      category,
-      description,
-      unit,
-      raw_material_cost,
-      labor_cost,
-      overhead_cost,
-      selling_price,
-      min_stock_level
-    } = req.body;
+/**
+ * =====================
+ * CREATE PRODUCT
+ * =====================
+ */
+exports.createProduct = async (req, res) => {
+  const { business_id } = req.user;
 
-    // Check if product code already exists for this business
-    const existingProduct = await Product.findOne({
-      where: {
-        business_id: req.user.business_id,
-        product_code
-      }
-    });
+  const existing = await Product.findOne({
+    where: { business_id, product_code: req.body.product_code },
+  });
 
-    if (existingProduct) {
-      throw new AppError('Product code already exists', 400);
-    }
-
-    const product = await Product.create({
-      business_id: req.user.business_id,
-      product_code,
-      product_name,
-      category,
-      description,
-      unit: unit || 'PCS',
-      raw_material_cost: raw_material_cost || 0,
-      labor_cost: labor_cost || 0,
-      overhead_cost: overhead_cost || 0,
-      selling_price: selling_price || 0,
-      min_stock_level: min_stock_level || 10
-    });
-
-    res.status(201).json({
-      success: true,
-      data: product
-    });
-
-  } catch (error) {
-    next(error);
+  if (existing) {
+    return res.status(400).json({ error: 'Product with this code already exists' });
   }
+
+  const product = await Product.create({ ...req.body, business_id });
+
+  res.status(201).json({
+    success: true,
+    data: { product },
+  });
 };
 
-// @desc    Get all products for business
-// @route   GET /api/products
-// @access  Private
-exports.getProducts = async (req, res, next) => {
-  try {
-    const { 
-      page = 1, 
-      limit = 20, 
-      category, 
-      search,
-      active = true 
-    } = req.query;
-    
-    const offset = (page - 1) * limit;
-    const where = { business_id: req.user.business_id };
+/**
+ * =====================
+ * GET PRODUCTS (PAGINATION)
+ * =====================
+ */
+exports.getProducts = async (req, res) => {
+  const { business_id } = req.user;
+  const {
+    page = 1,
+    limit = 10,
+    category,
+    search,
+    min_price,
+    max_price,
+    sort_by = 'created_at',
+    sort_order = 'DESC',
+  } = req.query;
 
-    if (active !== 'all') {
-      where.is_active = active === 'true';
-    }
+  const where = { business_id };
 
-    if (category) {
-      where.category = category;
-    }
+  if (category) where.category = category;
 
-    if (search) {
-      where[Sequelize.Op.or] = [
-        { product_code: { [Sequelize.Op.like]: `%${search}%` } },
-        { product_name: { [Sequelize.Op.like]: `%${search}%` } }
-      ];
-    }
+  if (search) {
+    where[Op.or] = [
+      { product_name: { [Op.iLike]: `%${search}%` } },
+      { product_code: { [Op.iLike]: `%${search}%` } },
+    ];
+  }
 
-    const { count, rows } = await Product.findAndCountAll({
-      where,
-      limit: parseInt(limit),
-      offset: parseInt(offset),
-      order: [['created_at', 'DESC']]
-    });
+  if (min_price || max_price) {
+    where.selling_price = {};
+    if (min_price) where.selling_price[Op.gte] = min_price;
+    if (max_price) where.selling_price[Op.lte] = max_price;
+  }
 
-    res.status(200).json({
-      success: true,
-      data: rows,
+  const { count, rows } = await Product.findAndCountAll({
+    where,
+    limit: Number(limit),
+    offset: (page - 1) * limit,
+    order: [[sort_by, sort_order]],
+  });
+
+  res.json({
+    success: true,
+    data: {
+      products: rows,
       pagination: {
-        page: parseInt(page),
-        limit: parseInt(limit),
         total: count,
-        pages: Math.ceil(count / limit)
-      }
-    });
-
-  } catch (error) {
-    next(error);
-  }
+        page: Number(page),
+        pages: Math.ceil(count / limit),
+        limit: Number(limit),
+      },
+    },
+  });
 };
 
-// @desc    Get single product
-// @route   GET /api/products/:id
-// @access  Private
-exports.getProduct = async (req, res, next) => {
-  try {
-    const product = await Product.findOne({
-      where: {
-        id: req.params.id,
-        business_id: req.user.business_id
-      }
-    });
+/**
+ * =====================
+ * GET SINGLE PRODUCT
+ * =====================
+ */
+exports.getProduct = async (req, res) => {
+  const product = await Product.findOne({
+    where: { id: req.params.id, business_id: req.user.business_id },
+  });
 
-    if (!product) {
-      throw new AppError('Product not found', 404);
-    }
-
-    res.status(200).json({
-      success: true,
-      data: product
-    });
-
-  } catch (error) {
-    next(error);
+  if (!product) {
+    return res.status(404).json({ error: 'Product not found' });
   }
+
+  res.json({ success: true, data: { product } });
 };
 
-// @desc    Update product
-// @route   PUT /api/products/:id
-// @access  Private (Owner, Admin, Manager)
-exports.updateProduct = async (req, res, next) => {
-  try {
-    const product = await Product.findOne({
-      where: {
-        id: req.params.id,
-        business_id: req.user.business_id
-      }
-    });
+/**
+ * =====================
+ * UPDATE PRODUCT
+ * =====================
+ */
+exports.updateProduct = async (req, res) => {
+  const product = await Product.findOne({
+    where: { id: req.params.id, business_id: req.user.business_id },
+  });
 
-    if (!product) {
-      throw new AppError('Product not found', 404);
-    }
-
-    // Update product
-    await product.update(req.body);
-
-    res.status(200).json({
-      success: true,
-      data: product
-    });
-
-  } catch (error) {
-    next(error);
+  if (!product) {
+    return res.status(404).json({ error: 'Product not found' });
   }
+
+  await product.update(req.body);
+
+  res.json({ success: true, data: { product } });
 };
 
-// @desc    Delete product (soft delete)
-// @route   DELETE /api/products/:id
-// @access  Private (Owner, Admin)
-exports.deleteProduct = async (req, res, next) => {
-  try {
-    const product = await Product.findOne({
-      where: {
-        id: req.params.id,
-        business_id: req.user.business_id
-      }
-    });
+/**
+ * =====================
+ * DELETE PRODUCT
+ * =====================
+ */
+exports.deleteProduct = async (req, res) => {
+  const product = await Product.findOne({
+    where: { id: req.params.id, business_id: req.user.business_id },
+  });
 
-    if (!product) {
-      throw new AppError('Product not found', 404);
-    }
-
-    // Soft delete (mark as inactive)
-    await product.update({ is_active: false });
-
-    res.status(200).json({
-      success: true,
-      message: 'Product deleted successfully'
-    });
-
-  } catch (error) {
-    next(error);
+  if (!product) {
+    return res.status(404).json({ error: 'Product not found' });
   }
+
+  await product.destroy();
+
+  res.json({ success: true });
 };
 
-// @desc    Get product statistics
-// @route   GET /api/products/stats/overview
-// @access  Private
-exports.getProductStats = async (req, res, next) => {
-  try {
-    const totalProducts = await Product.count({
-      where: { 
-        business_id: req.user.business_id,
-        is_active: true 
-      }
-    });
-
-    const lowStockProducts = await Product.count({
-      where: {
-        business_id: req.user.business_id,
-        is_active: true,
-        current_stock: { [Sequelize.Op.lte]: Sequelize.col('min_stock_level') }
-      }
-    });
-
-    // Top selling products (last 30 days)
-    const topSelling = await Sale.findAll({
-      attributes: [
-        'product_id',
-        [Sequelize.fn('SUM', Sequelize.col('quantity')), 'total_sold'],
-        [Sequelize.fn('SUM', Sequelize.literal('quantity * unit_price')), 'total_revenue']
+/**
+ * =====================
+ * PRODUCT STATS
+ * =====================
+ */
+exports.getProductStats = async (req, res) => {
+  const stats = await Product.findAll({
+    where: { business_id: req.user.business_id },
+    attributes: [
+      [sequelize.fn('COUNT', sequelize.col('id')), 'total_products'],
+      [sequelize.fn('SUM', sequelize.col('current_stock')), 'total_stock'],
+      [
+        sequelize.fn(
+          'SUM',
+          sequelize.literal('CASE WHEN current_stock <= min_stock_level THEN 1 ELSE 0 END')
+        ),
+        'low_stock_count',
       ],
-      include: [{
-        model: Product,
-        attributes: ['product_name', 'product_code'],
-        where: { business_id: req.user.business_id }
-      }],
-      where: {
-        sale_date: {
-          [Sequelize.Op.gte]: new Date(new Date() - 30 * 24 * 60 * 60 * 1000)
-        }
-      },
-      group: ['product_id'],
-      order: [[Sequelize.fn('SUM', Sequelize.col('quantity')), 'DESC']],
-      limit: 5
-    });
+    ],
+    raw: true,
+  });
 
-    // Low margin products
-    const lowMarginProducts = await Product.findAll({
-      where: {
-        business_id: req.user.business_id,
-        is_active: true,
-        selling_price: { [Sequelize.Op.gt]: 0 }
-      },
-      attributes: ['id', 'product_code', 'product_name', 'selling_price', 'raw_material_cost', 'labor_cost', 'overhead_cost'],
-      limit: 5
-    });
+  res.json({ success: true, data: stats[0] });
+};
 
-    // Add margin calculation
-    const lowMarginWithCalc = lowMarginProducts.map(product => {
-      const totalCost = parseFloat(product.raw_material_cost) + 
-                       parseFloat(product.labor_cost) + 
-                       parseFloat(product.overhead_cost);
-      const margin = product.selling_price > 0 ? 
-        ((product.selling_price - totalCost) / product.selling_price * 100).toFixed(2) : 0;
-      
-      return {
-        ...product.toJSON(),
-        total_cost: totalCost,
-        margin: margin
-      };
-    });
+/**
+ * =====================
+ * IMPORT CSV + XLSX
+ * =====================
+ */
+exports.importProducts = async (req, res) => {
+  const { business_id } = req.user;
+  const ext = req.file.originalname.split('.').pop().toLowerCase();
+  let products = [];
 
-    res.status(200).json({
-      success: true,
-      data: {
-        total_products: totalProducts,
-        low_stock_products: lowStockProducts,
-        top_selling: topSelling,
-        low_margin_products: lowMarginWithCalc
-      }
+  if (ext === 'csv') {
+    await new Promise((resolve) => {
+      fs.createReadStream(req.file.path)
+        .pipe(csv())
+        .on('data', (row) => products.push({ ...row, business_id }))
+        .on('end', resolve);
     });
-
-  } catch (error) {
-    next(error);
+  } else {
+    const workbook = XLSX.readFile(req.file.path);
+    products = XLSX.utils
+      .sheet_to_json(workbook.Sheets[workbook.SheetNames[0]])
+      .map((row) => ({ ...row, business_id }));
   }
+
+  await Product.bulkCreate(products, { ignoreDuplicates: true });
+
+  res.json({ success: true, count: products.length });
+};
+
+/**
+ * =====================
+ * EXPORT CSV
+ * =====================
+ */
+exports.exportProducts = async (req, res) => {
+  const products = await Product.findAll({
+    where: { business_id: req.user.business_id },
+    raw: true,
+  });
+
+  const parser = new Parser();
+  res.header('Content-Type', 'text/csv');
+  res.attachment('products.csv');
+  res.send(parser.parse(products));
+};
+
+/**
+ * =====================
+ * BULK UPDATE
+ * =====================
+ */
+exports.bulkUpdateProducts = async (req, res) => {
+  const { ids, updates } = req.body;
+
+  await Product.update(updates, {
+    where: { id: ids, business_id: req.user.business_id },
+  });
+
+  res.json({ success: true });
+};
+
+/**
+ * =====================
+ * BULK DELETE
+ * =====================
+ */
+exports.bulkDeleteProducts = async (req, res) => {
+  await Product.destroy({
+    where: { id: req.body.ids, business_id: req.user.business_id },
+  });
+
+  res.json({ success: true });
+};
+
+/**
+ * =====================
+ * STOCK ADJUSTMENT
+ * =====================
+ */
+exports.adjustStock = async (req, res) => {
+  const { product_id, new_stock, reason } = req.body;
+
+  const product = await Product.findOne({
+    where: { id: product_id, business_id: req.user.business_id },
+  });
+
+  await StockAuditLog.create({
+    business_id: req.user.business_id,
+    product_id,
+    user_id: req.user.id,
+    change_type: 'ADJUST',
+    quantity_before: product.current_stock,
+    quantity_after: new_stock,
+    reason,
+  });
+
+  await product.update({ current_stock: new_stock });
+
+  res.json({ success: true });
+};
+
+/**
+ * =====================
+ * STOCK LOGS
+ * =====================
+ */
+exports.getStockLogs = async (req, res) => {
+  const logs = await StockAuditLog.findAll({
+    where: { business_id: req.user.business_id },
+    order: [['created_at', 'DESC']],
+  });
+
+  res.json({ success: true, data: logs });
 };

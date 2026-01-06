@@ -1,5 +1,5 @@
 const { Production, Product, User } = require('../models');
-const { AppError } = require('../middleware/errorHandler');
+const { AppError } = require('../middleware/errorMiddleware');
 const Sequelize = require('sequelize');
 
 // @desc    Create production record

@@ -1,267 +1,236 @@
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { Business, User } = require('../models');
-const { AppError } = require('../middleware/errorHandler');
-// const sendEmail = require('../utils/email'); // Uncomment when email is set up
+const { User, Business } = require('../models');
+const { logger } = require('../utils/logger');
+const { sendEmail } = require('../services/emailService');
 
-// Generate JWT Token
-const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE || '7d'
-  });
+const generateToken = (userId, role, businessId) => {
+  return jwt.sign(
+    { userId, role, businessId },
+    process.env.JWT_SECRET,
+    { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
+  );
 };
 
-// @desc    Register business & owner
-// @route   POST /api/auth/register
-// @access  Public
-exports.registerBusiness = async (req, res, next) => {
+exports.register = async (req, res) => {
   try {
-    const { business, owner } = req.body;
+    const { business: businessData, owner: ownerData } = req.body;
 
-    // Validate required fields
-    if (!business || !owner) {
-      throw new AppError('Business and owner details are required', 400);
-    }
-
-    // Check if business email exists
-    const existingBusiness = await Business.findOne({ 
-      where: { business_email: business.business_email } 
+    // Check if business email already exists
+    const existingBusiness = await Business.findOne({
+      where: { business_email: businessData.business_email }
     });
-    
+
     if (existingBusiness) {
-      throw new AppError('Business email already registered', 400);
-    }
-
-    // Check if owner email exists
-    const existingUser = await User.findOne({ 
-      where: { email: owner.email } 
-    });
-    
-    if (existingUser) {
-      throw new AppError('Owner email already registered', 400);
+      return res.status(400).json({
+        error: 'Business with this email already exists'
+      });
     }
 
     // Create business
-    const newBusiness = await Business.create({
-      business_name: business.business_name,
-      business_email: business.business_email,
-      phone: business.phone || null,
-      mobile: business.mobile,
-      gst_number: business.gst_number || null,
-      pan_number: business.pan_number || null,
-      business_type: business.business_type || 'Small Business',
-      industry: business.industry || 'Manufacturing',
-      establishment_year: business.establishment_year || new Date().getFullYear(),
-      employee_count: business.employee_count || '1-5',
-      country: business.country || 'India',
-      state: business.state || null,
-      city: business.city || null,
-      pincode: business.pincode || null,
-      address: business.address || null,
-      is_multi_location: business.is_multi_location || false
-    });
-
-    // Hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(owner.password, salt);
+    const business = await Business.create(businessData);
 
     // Create owner user
-    const newUser = await User.create({
-      business_id: newBusiness.id,
-      full_name: owner.full_name,
-      email: owner.email,
-      password_hash: hashedPassword,
-      mobile: owner.mobile || null,
-      designation: owner.designation || 'Owner',
-      role: 'Owner'
+    const user = await User.create({
+      ...ownerData,
+      business_id: business.id,
+      role: 'Owner',
+      email_verified: true
     });
 
     // Generate token
-    const token = generateToken(newUser.id);
-
-    // Update last login
-    await newUser.update({ last_login: new Date() });
-
-    // Send welcome email (optional)
-    // try {
-    //   await sendEmail({
-    //     email: owner.email,
-    //     subject: 'Welcome to bizinside.ai',
-    //     html: `<h1>Welcome ${owner.full_name}!</h1>`
-    //   });
-    // } catch (emailError) {
-    //   console.log('Email sending failed:', emailError);
-    // }
+    const token = generateToken(user.id, user.role, business.id);
 
     res.status(201).json({
       success: true,
-      token,
       data: {
-        business: {
-          id: newBusiness.id,
-          business_name: newBusiness.business_name,
-          business_email: newBusiness.business_email,
-          industry: newBusiness.industry
-        },
-        user: {
-          id: newUser.id,
-          full_name: newUser.full_name,
-          email: newUser.email,
-          role: newUser.role
-        }
-      }
-    });
-
-  } catch (error) {
-    next(error);
-  }
-};
-
-// @desc    Login user
-// @route   POST /api/auth/login
-// @access  Public
-exports.loginUser = async (req, res, next) => {
-  try {
-    const { email, password, role } = req.body;
-
-    // Validate email & password
-    if (!email || !password) {
-      throw new AppError('Please provide email and password', 400);
-    }
-
-    // Get user with business
-    const user = await User.findOne({
-      where: { email },
-      include: [{ model: Business }]
-    });
-
-    if (!user || !user.is_active) {
-      throw new AppError('Invalid credentials', 401);
-    }
-
-    // Check if role matches (if specified)
-    if (role && user.role !== role) {
-      throw new AppError(`You are not registered as ${role}`, 401);
-    }
-
-    // Check password
-    const isPasswordMatch = await bcrypt.compare(password, user.password_hash);
-    if (!isPasswordMatch) {
-      throw new AppError('Invalid credentials', 401);
-    }
-
-    // Update last login
-    await user.update({ last_login: new Date() });
-
-    // Generate token
-    const token = generateToken(user.id);
-
-    res.status(200).json({
-      success: true,
-      token,
-      data: {
+        token,
         user: {
           id: user.id,
           full_name: user.full_name,
           email: user.email,
           role: user.role,
-          business_id: user.business_id,
-          business_name: user.Business.business_name,
-          industry: user.Business.industry
+          business_name: business.business_name
+        },
+        business: {
+          id: business.id,
+          business_name: business.business_name,
+          business_type: business.business_type
         }
+      },
+      message: 'Registration successful'
+    });
+
+    // Send welcome email
+    await sendEmail({
+      to: user.email,
+      subject: 'Welcome to BizInside.ai',
+      template: 'welcome',
+      data: {
+        name: user.full_name,
+        business_name: business.business_name
       }
     });
 
   } catch (error) {
-    next(error);
+    logger.error(`Registration error: ${error.message}`);
+    res.status(500).json({
+      error: 'Registration failed',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   }
 };
 
-// @desc    Get current logged in user
-// @route   GET /api/auth/me
-// @access  Private
-exports.getMe = async (req, res, next) => {
+exports.login = async (req, res) => {
   try {
-    const user = await User.findByPk(req.user.id, {
-      include: [{ model: Business }],
-      attributes: { exclude: ['password_hash'] }
+    const { email, password } = req.body;
+
+    // Find user
+    const user = await User.findOne({
+      where: { email },
+      include: [{
+        model: Business,
+        attributes: ['id', 'business_name', 'business_type', 'status']
+      }]
     });
 
-    res.status(200).json({
+    if (!user || !user.is_active) {
+      return res.status(401).json({
+        error: 'Invalid credentials or account inactive'
+      });
+    }
+
+    // Verify password
+    const isValidPassword = await user.verifyPassword(password);
+    if (!isValidPassword) {
+      return res.status(401).json({
+        error: 'Invalid credentials'
+      });
+    }
+
+    // Update last login
+    user.last_login = new Date();
+    await user.save();
+
+    // Generate token
+    const token = generateToken(user.id, user.role, user.business_id);
+
+    res.json({
+      success: true,
+      data: {
+        token,
+        user: {
+          id: user.id,
+          full_name: user.full_name,
+          email: user.email,
+          role: user.role,
+          business_name: user.Business.business_name
+        }
+      },
+      message: 'Login successful'
+    });
+
+  } catch (error) {
+    logger.error(`Login error: ${error.message}`);
+    res.status(500).json({
+      error: 'Login failed',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+exports.getProfile = async (req, res) => {
+  try {
+    const user = await User.findByPk(req.user.userId, {
+      include: [{
+        model: Business,
+        attributes: ['id', 'business_name', 'business_type', 'industry']
+      }]
+    });
+
+    if (!user) {
+      return res.status(404).json({
+        error: 'User not found'
+      });
+    }
+
+    res.json({
       success: true,
       data: { user }
     });
 
   } catch (error) {
-    next(error);
+    logger.error(`Get profile error: ${error.message}`);
+    res.status(500).json({
+      error: 'Failed to fetch profile'
+    });
   }
 };
 
-// @desc    Update user details
-// @route   PUT /api/auth/update
-// @access  Private
-exports.updateDetails = async (req, res, next) => {
+exports.updateProfile = async (req, res) => {
   try {
-    const fieldsToUpdate = {
-      full_name: req.body.full_name,
-      mobile: req.body.mobile,
-      designation: req.body.designation
-    };
+    const { full_name, phone, designation } = req.body;
+    
+    const user = await User.findByPk(req.user.userId);
+    
+    if (!user) {
+      return res.status(404).json({
+        error: 'User not found'
+      });
+    }
 
-    // Remove undefined fields
-    Object.keys(fieldsToUpdate).forEach(key => 
-      fieldsToUpdate[key] === undefined && delete fieldsToUpdate[key]
-    );
+    await user.update({
+      full_name: full_name || user.full_name,
+      phone: phone || user.phone,
+      designation: designation || user.designation
+    });
 
-    const user = await User.findByPk(req.user.id);
-    await user.update(fieldsToUpdate);
-
-    res.status(200).json({
+    res.json({
       success: true,
-      data: {
-        user: {
-          id: user.id,
-          full_name: user.full_name,
-          email: user.email,
-          mobile: user.mobile,
-          designation: user.designation,
-          role: user.role
-        }
-      }
+      data: { user },
+      message: 'Profile updated successfully'
     });
 
   } catch (error) {
-    next(error);
+    logger.error(`Update profile error: ${error.message}`);
+    res.status(500).json({
+      error: 'Failed to update profile'
+    });
   }
 };
 
-// @desc    Update password
-// @route   PUT /api/auth/updatepassword
-// @access  Private
-exports.updatePassword = async (req, res, next) => {
+exports.updatePassword = async (req, res) => {
   try {
-    const { currentPassword, newPassword } = req.body;
-
-    // Get user with password
-    const user = await User.findByPk(req.user.id);
-
-    // Check current password
-    const isMatch = await bcrypt.compare(currentPassword, user.password_hash);
-    if (!isMatch) {
-      throw new AppError('Current password is incorrect', 401);
+    const { current_password, new_password } = req.body;
+    
+    const user = await User.findByPk(req.user.userId);
+    
+    if (!user) {
+      return res.status(404).json({
+        error: 'User not found'
+      });
     }
 
-    // Hash new password
-    const salt = await bcrypt.genSalt(10);
-    user.password_hash = await bcrypt.hash(newPassword, salt);
+    // Verify current password
+    const isValid = await user.verifyPassword(current_password);
+    if (!isValid) {
+      return res.status(400).json({
+        error: 'Current password is incorrect'
+      });
+    }
+
+    // Update password
+    user.password_hash = new_password;
     await user.save();
 
-    res.status(200).json({
+    res.json({
       success: true,
       message: 'Password updated successfully'
     });
 
   } catch (error) {
-    next(error);
+    logger.error(`Update password error: ${error.message}`);
+    res.status(500).json({
+      error: 'Failed to update password'
+    });
   }
 };

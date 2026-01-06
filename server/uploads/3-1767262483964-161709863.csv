@@ -1,0 +1,1001 @@
+product_name,sku,category,unit_price,cost_price,current_stock,min_stock_level,description
+Electric Toothbrush,HEALTH-ET001-001,Health,96.84,45.99,124,20,Sonic electric toothbrush with 3 brushing modes
+Children's Building Blocks,TOYS-CB001-002,Toys,53.96,20.82,259,40,200-piece educational building blocks set
+Fitness Tracker Band,ELEC-FT001-003,Electronics,72.19,41.57,183,22,"Heart rate monitor, sleep tracking, waterproof"
+Men's Casual Shirt,FASHION-MS001-004,Fashion,39.77,16.86,348,50,"Cotton blend casual shirt, available in multiple colors"
+Backpack Pro,BAGS-BP001-005,Bags & Luggage,73.04,36.85,225,27,Water-resistant backpack with laptop compartment
+Yoga Mat Premium,Sports-YM001-006,Sports & Fitness,34.34,17.88,276,57,Eco-friendly non-slip yoga mat 6mm thick
+Coffee Maker Deluxe,HOME-CM001-007,Home & Kitchen,154.01,85.41,58,8,Programmable 12-cup coffee maker with thermal carafe
+Men's Casual Shirt,FASHION-MS001-008,Fashion,39.14,16.99,374,43,"Cotton blend casual shirt, available in multiple colors"
+Protein Powder 2lb,HEALTH-PP001-009,Health,64.92,29.49,260,36,"Whey protein isolate, vanilla flavor, 30 servings"
+Men's Casual Shirt,FASHION-MS001-010,Fashion,39.07,17.34,433,52,"Cotton blend casual shirt, available in multiple colors"
+Wireless Bluetooth Headphones,ELEC-BT001-011,Electronics,118.47,72.87,123,21,Noise-cancelling over-ear headphones with 30hr battery
+Office Desk Lamp,OFFICE-DL001-012,Office Supplies,51.04,19.97,152,26,LED desk lamp with adjustable brightness and USB port
+Wireless Gaming Mouse,GAMING-GM001-013,Gaming,81.66,41.32,263,32,RGB wireless mouse with 16000 DPI sensor
+Yoga Mat Premium,Sports-YM001-014,Sports & Fitness,36.74,18.87,326,57,Eco-friendly non-slip yoga mat 6mm thick
+Smartphone X12 Pro,ELEC-PH001-015,Electronics,1094.27,671.66,80,13,"Latest flagship with 6.7"" OLED display and triple camera"
+Men's Casual Shirt,FASHION-MS001-016,Fashion,36.4,18.92,387,54,"Cotton blend casual shirt, available in multiple colors"
+Air Purifier,HOME-AP001-017,Home & Kitchen,192.06,109.84,48,6,HEPA filter air purifier for medium rooms
+Gaming Laptop,GAMING-GL001-018,Gaming,1610.6,1058.04,46,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Electric Toothbrush,HEALTH-ET001-019,Health,82.79,50.52,160,19,Sonic electric toothbrush with 3 brushing modes
+Women's Winter Jacket,FASHION-WJ001-020,Fashion,135.23,59.84,64,16,Waterproof winter jacket with thermal lining
+Coffee Maker Deluxe,HOME-CM001-021,Home & Kitchen,138.56,77.66,64,8,Programmable 12-cup coffee maker with thermal carafe
+Wireless Bluetooth Headphones,ELEC-BT001-022,Electronics,122.01,72.49,190,28,Noise-cancelling over-ear headphones with 30hr battery
+Yoga Mat Premium,Sports-YM001-023,Sports & Fitness,34.65,20,223,44,Eco-friendly non-slip yoga mat 6mm thick
+Children's Building Blocks,TOYS-CB001-024,Toys,53.55,22.54,309,35,200-piece educational building blocks set
+Wireless Bluetooth Headphones,ELEC-BT001-025,Electronics,128.84,76.21,163,25,Noise-cancelling over-ear headphones with 30hr battery
+Backpack Pro,BAGS-BP001-026,Bags & Luggage,87.1,34.83,131,21,Water-resistant backpack with laptop compartment
+Air Purifier,HOME-AP001-027,Home & Kitchen,218.04,124.91,60,7,HEPA filter air purifier for medium rooms
+Air Purifier,HOME-AP001-028,Home & Kitchen,187.07,123.53,50,8,HEPA filter air purifier for medium rooms
+Children's Building Blocks,TOYS-CB001-029,Toys,53.77,24.18,260,28,200-piece educational building blocks set
+Office Desk Lamp,OFFICE-DL001-030,Office Supplies,48.71,20.89,231,28,LED desk lamp with adjustable brightness and USB port
+Coffee Maker Deluxe,HOME-CM001-031,Home & Kitchen,164.69,81.36,66,9,Programmable 12-cup coffee maker with thermal carafe
+Men's Casual Shirt,FASHION-MS001-032,Fashion,43.1,18.02,286,43,"Cotton blend casual shirt, available in multiple colors"
+Children's Building Blocks,TOYS-CB001-033,Toys,47.15,21.12,355,32,200-piece educational building blocks set
+Children's Building Blocks,TOYS-CB001-034,Toys,53.74,19.95,200,39,200-piece educational building blocks set
+Running Shoes Pro,Sports-RS001-035,Sports & Fitness,89.6,49.36,175,30,Lightweight running shoes with cushioned soles
+Backpack Pro,BAGS-BP001-036,Bags & Luggage,84.38,35.08,211,20,Water-resistant backpack with laptop compartment
+Women's Winter Jacket,FASHION-WJ001-037,Fashion,130.04,60.03,79,15,Waterproof winter jacket with thermal lining
+Backpack Pro,BAGS-BP001-038,Bags & Luggage,76.42,37.53,190,22,Water-resistant backpack with laptop compartment
+Air Purifier,HOME-AP001-039,Home & Kitchen,194.24,111.39,47,7,HEPA filter air purifier for medium rooms
+Coffee Maker Deluxe,HOME-CM001-040,Home & Kitchen,153.07,85.46,52,10,Programmable 12-cup coffee maker with thermal carafe
+Portable Speaker,ELEC-PS001-041,Electronics,69.37,33.29,239,25,Bluetooth speaker with 12hr battery and waterproof design
+Running Shoes Pro,Sports-RS001-042,Sports & Fitness,89.28,41.93,208,28,Lightweight running shoes with cushioned soles
+Portable Speaker,ELEC-PS001-043,Electronics,63.73,35.69,187,32,Bluetooth speaker with 12hr battery and waterproof design
+Wireless Bluetooth Headphones,ELEC-BT001-044,Electronics,122.08,81.17,106,22,Noise-cancelling over-ear headphones with 30hr battery
+Office Desk Lamp,OFFICE-DL001-045,Office Supplies,53.63,20.02,136,23,LED desk lamp with adjustable brightness and USB port
+Backpack Pro,BAGS-BP001-046,Bags & Luggage,72.63,33.87,197,24,Water-resistant backpack with laptop compartment
+Smartphone X12 Pro,ELEC-PH001-047,Electronics,1053.92,642.06,96,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Air Purifier,HOME-AP001-048,Home & Kitchen,194.02,112.18,66,9,HEPA filter air purifier for medium rooms
+Digital Kitchen Scale,HOME-KS001-049,Home & Kitchen,26.82,10.39,389,57,Precision digital scale with LCD display
+Digital Kitchen Scale,HOME-KS001-050,Home & Kitchen,24.42,10.13,388,66,Precision digital scale with LCD display
+Men's Casual Shirt,FASHION-MS001-051,Fashion,42.44,17.77,436,43,"Cotton blend casual shirt, available in multiple colors"
+Office Desk Lamp,OFFICE-DL001-052,Office Supplies,45.91,23.51,205,20,LED desk lamp with adjustable brightness and USB port
+Air Purifier,HOME-AP001-053,Home & Kitchen,211.72,125.09,70,7,HEPA filter air purifier for medium rooms
+Men's Casual Shirt,FASHION-MS001-054,Fashion,37.25,19.13,368,47,"Cotton blend casual shirt, available in multiple colors"
+Portable Speaker,ELEC-PS001-055,Electronics,66.31,33.04,270,29,Bluetooth speaker with 12hr battery and waterproof design
+Ceramic Dinner Set,HOME-DS001-056,Home & Kitchen,78.57,39.98,101,16,"16-piece ceramic dinner set, dishwasher safe"
+Children's Building Blocks,TOYS-CB001-057,Toys,51.71,23.87,362,38,200-piece educational building blocks set
+Gaming Laptop,GAMING-GL001-058,Gaming,1479.36,1023.08,50,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Women's Winter Jacket,FASHION-WJ001-059,Fashion,122.98,66.83,81,15,Waterproof winter jacket with thermal lining
+Backpack Pro,BAGS-BP001-060,Bags & Luggage,82.57,35.38,189,26,Water-resistant backpack with laptop compartment
+Men's Casual Shirt,FASHION-MS001-061,Fashion,43.31,18.01,331,41,"Cotton blend casual shirt, available in multiple colors"
+Protein Powder 2lb,HEALTH-PP001-062,Health,59.06,26.45,302,34,"Whey protein isolate, vanilla flavor, 30 servings"
+Running Shoes Pro,Sports-RS001-063,Sports & Fitness,90.2,45.68,149,34,Lightweight running shoes with cushioned soles
+Fitness Tracker Band,ELEC-FT001-064,Electronics,85.71,46.14,147,23,"Heart rate monitor, sleep tracking, waterproof"
+Desk Organizer Set,OFFICE-DO001-065,Office Supplies,29.37,13.28,327,45,5-piece desk organizer with pen holder and tray
+Office Desk Lamp,OFFICE-DL001-066,Office Supplies,50.06,20.27,157,22,LED desk lamp with adjustable brightness and USB port
+Backpack Pro,BAGS-BP001-067,Bags & Luggage,75.72,34.18,189,26,Water-resistant backpack with laptop compartment
+Office Desk Lamp,OFFICE-DL001-068,Office Supplies,50.8,21.92,162,22,LED desk lamp with adjustable brightness and USB port
+Women's Winter Jacket,FASHION-WJ001-069,Fashion,131.17,67.56,114,13,Waterproof winter jacket with thermal lining
+Desk Organizer Set,OFFICE-DO001-070,Office Supplies,32.65,14.78,313,35,5-piece desk organizer with pen holder and tray
+Wireless Bluetooth Headphones,ELEC-BT001-071,Electronics,128.65,70.19,134,20,Noise-cancelling over-ear headphones with 30hr battery
+Smartphone X12 Pro,ELEC-PH001-072,Electronics,916.99,699.81,68,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Gaming Laptop,GAMING-GL001-073,Gaming,1702.13,1159.84,43,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Air Purifier,HOME-AP001-074,Home & Kitchen,211.41,125.14,50,7,HEPA filter air purifier for medium rooms
+Men's Casual Shirt,FASHION-MS001-075,Fashion,41.75,16.85,451,50,"Cotton blend casual shirt, available in multiple colors"
+Portable Speaker,ELEC-PS001-076,Electronics,64.16,35.76,193,31,Bluetooth speaker with 12hr battery and waterproof design
+Digital Kitchen Scale,HOME-KS001-077,Home & Kitchen,24.5,11.71,361,60,Precision digital scale with LCD display
+Wireless Gaming Mouse,GAMING-GM001-078,Gaming,82.98,41.43,196,34,RGB wireless mouse with 16000 DPI sensor
+Protein Powder 2lb,HEALTH-PP001-079,Health,61.03,28.54,206,39,"Whey protein isolate, vanilla flavor, 30 servings"
+Protein Powder 2lb,HEALTH-PP001-080,Health,64.46,28.32,287,33,"Whey protein isolate, vanilla flavor, 30 servings"
+Men's Casual Shirt,FASHION-MS001-081,Fashion,42.45,18.59,421,41,"Cotton blend casual shirt, available in multiple colors"
+Ceramic Dinner Set,HOME-DS001-082,Home & Kitchen,85.74,37.98,139,18,"16-piece ceramic dinner set, dishwasher safe"
+Desk Organizer Set,OFFICE-DO001-083,Office Supplies,30.58,13.87,266,45,5-piece desk organizer with pen holder and tray
+Gaming Laptop,GAMING-GL001-084,Gaming,1689.84,1009.17,31,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Backpack Pro,BAGS-BP001-085,Bags & Luggage,85.61,33.52,197,27,Water-resistant backpack with laptop compartment
+Air Purifier,HOME-AP001-086,Home & Kitchen,201.67,108.41,67,7,HEPA filter air purifier for medium rooms
+Protein Powder 2lb,HEALTH-PP001-087,Health,61.59,29.8,323,38,"Whey protein isolate, vanilla flavor, 30 servings"
+Gaming Laptop,GAMING-GL001-088,Gaming,1457.97,1134.68,38,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Digital Kitchen Scale,HOME-KS001-089,Home & Kitchen,27.01,11.17,292,66,Precision digital scale with LCD display
+Digital Kitchen Scale,HOME-KS001-090,Home & Kitchen,23.91,10.81,412,60,Precision digital scale with LCD display
+Wireless Bluetooth Headphones,ELEC-BT001-091,Electronics,128.97,82.05,130,22,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-092,Toys,54.84,22.06,246,36,200-piece educational building blocks set
+Backpack Pro,BAGS-BP001-093,Bags & Luggage,74.17,35.89,212,28,Water-resistant backpack with laptop compartment
+Gaming Laptop,GAMING-GL001-094,Gaming,1642.34,1065.35,48,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Wireless Gaming Mouse,GAMING-GM001-095,Gaming,87.88,46.57,244,26,RGB wireless mouse with 16000 DPI sensor
+Women's Winter Jacket,FASHION-WJ001-096,Fashion,141.53,64.56,64,12,Waterproof winter jacket with thermal lining
+Running Shoes Pro,Sports-RS001-097,Sports & Fitness,92.77,49.4,244,25,Lightweight running shoes with cushioned soles
+Office Desk Lamp,OFFICE-DL001-098,Office Supplies,49.9,23.08,153,25,LED desk lamp with adjustable brightness and USB port
+Air Purifier,HOME-AP001-099,Home & Kitchen,193.69,131.02,49,9,HEPA filter air purifier for medium rooms
+Backpack Pro,BAGS-BP001-100,Bags & Luggage,83.82,35.32,214,21,Water-resistant backpack with laptop compartment
+Electric Toothbrush,HEALTH-ET001-101,Health,95.82,50.25,113,18,Sonic electric toothbrush with 3 brushing modes
+Men's Casual Shirt,FASHION-MS001-102,Fashion,40.11,17.26,382,50,"Cotton blend casual shirt, available in multiple colors"
+Ceramic Dinner Set,HOME-DS001-103,Home & Kitchen,78.24,40.24,97,22,"16-piece ceramic dinner set, dishwasher safe"
+Wireless Bluetooth Headphones,ELEC-BT001-104,Electronics,128.02,75.95,180,21,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-105,Toys,46.45,23.16,223,35,200-piece educational building blocks set
+Backpack Pro,BAGS-BP001-106,Bags & Luggage,72.14,37.48,155,23,Water-resistant backpack with laptop compartment
+Coffee Maker Deluxe,HOME-CM001-107,Home & Kitchen,147.56,76.64,70,8,Programmable 12-cup coffee maker with thermal carafe
+Digital Kitchen Scale,HOME-KS001-108,Home & Kitchen,26.3,10.72,499,68,Precision digital scale with LCD display
+Children's Building Blocks,TOYS-CB001-109,Toys,50.16,20.2,339,40,200-piece educational building blocks set
+Women's Winter Jacket,FASHION-WJ001-110,Fashion,123.98,65.65,89,17,Waterproof winter jacket with thermal lining
+Protein Powder 2lb,HEALTH-PP001-111,Health,65.13,30.68,237,44,"Whey protein isolate, vanilla flavor, 30 servings"
+Coffee Maker Deluxe,HOME-CM001-112,Home & Kitchen,148.07,76.68,64,8,Programmable 12-cup coffee maker with thermal carafe
+Smartphone X12 Pro,ELEC-PH001-113,Electronics,910.81,644.73,60,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Coffee Maker Deluxe,HOME-CM001-114,Home & Kitchen,137.82,76.96,74,11,Programmable 12-cup coffee maker with thermal carafe
+Electric Toothbrush,HEALTH-ET001-115,Health,82.8,45.47,109,22,Sonic electric toothbrush with 3 brushing modes
+Women's Winter Jacket,FASHION-WJ001-116,Fashion,118.39,67.95,70,17,Waterproof winter jacket with thermal lining
+Wireless Gaming Mouse,GAMING-GM001-117,Gaming,84.48,42.68,181,35,RGB wireless mouse with 16000 DPI sensor
+Yoga Mat Premium,Sports-YM001-118,Sports & Fitness,36.61,20,261,45,Eco-friendly non-slip yoga mat 6mm thick
+Wireless Gaming Mouse,GAMING-GM001-119,Gaming,98.81,43.38,276,35,RGB wireless mouse with 16000 DPI sensor
+Children's Building Blocks,TOYS-CB001-120,Toys,48.02,20.18,298,39,200-piece educational building blocks set
+Women's Winter Jacket,FASHION-WJ001-121,Fashion,127.8,66.28,74,13,Waterproof winter jacket with thermal lining
+Digital Kitchen Scale,HOME-KS001-122,Home & Kitchen,25.97,11.72,409,52,Precision digital scale with LCD display
+Yoga Mat Premium,Sports-YM001-123,Sports & Fitness,35.82,18.4,320,45,Eco-friendly non-slip yoga mat 6mm thick
+Wireless Gaming Mouse,GAMING-GM001-124,Gaming,88.45,45.8,205,35,RGB wireless mouse with 16000 DPI sensor
+Smartphone X12 Pro,ELEC-PH001-125,Electronics,1079.22,618.79,92,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Desk Organizer Set,OFFICE-DO001-126,Office Supplies,31.02,14.78,274,43,5-piece desk organizer with pen holder and tray
+Smartphone X12 Pro,ELEC-PH001-127,Electronics,962.8,599.18,95,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Running Shoes Pro,Sports-RS001-128,Sports & Fitness,86.32,43.1,180,28,Lightweight running shoes with cushioned soles
+Air Purifier,HOME-AP001-129,Home & Kitchen,199.83,126.19,67,8,HEPA filter air purifier for medium rooms
+Ceramic Dinner Set,HOME-DS001-130,Home & Kitchen,85.25,42.37,151,19,"16-piece ceramic dinner set, dishwasher safe"
+Wireless Gaming Mouse,GAMING-GM001-131,Gaming,96.43,46.62,186,30,RGB wireless mouse with 16000 DPI sensor
+Air Purifier,HOME-AP001-132,Home & Kitchen,195.4,116.64,60,8,HEPA filter air purifier for medium rooms
+Desk Organizer Set,OFFICE-DO001-133,Office Supplies,32.99,14.33,227,39,5-piece desk organizer with pen holder and tray
+Running Shoes Pro,Sports-RS001-134,Sports & Fitness,81.28,46.15,195,24,Lightweight running shoes with cushioned soles
+Running Shoes Pro,Sports-RS001-135,Sports & Fitness,97.49,41.63,166,24,Lightweight running shoes with cushioned soles
+Digital Kitchen Scale,HOME-KS001-136,Home & Kitchen,27.06,10.73,343,51,Precision digital scale with LCD display
+Children's Building Blocks,TOYS-CB001-137,Toys,46.77,21.96,245,30,200-piece educational building blocks set
+Digital Kitchen Scale,HOME-KS001-138,Home & Kitchen,24.91,11.27,412,70,Precision digital scale with LCD display
+Running Shoes Pro,Sports-RS001-139,Sports & Fitness,98.92,48.17,247,28,Lightweight running shoes with cushioned soles
+Yoga Mat Premium,Sports-YM001-140,Sports & Fitness,37.63,19.8,302,53,Eco-friendly non-slip yoga mat 6mm thick
+Air Purifier,HOME-AP001-141,Home & Kitchen,217.02,122.84,59,7,HEPA filter air purifier for medium rooms
+Wireless Gaming Mouse,GAMING-GM001-142,Gaming,83.4,43.19,277,26,RGB wireless mouse with 16000 DPI sensor
+Air Purifier,HOME-AP001-143,Home & Kitchen,199.61,114.17,69,6,HEPA filter air purifier for medium rooms
+Men's Casual Shirt,FASHION-MS001-144,Fashion,36,16.78,427,48,"Cotton blend casual shirt, available in multiple colors"
+Fitness Tracker Band,ELEC-FT001-145,Electronics,76.63,38.3,217,29,"Heart rate monitor, sleep tracking, waterproof"
+Ceramic Dinner Set,HOME-DS001-146,Home & Kitchen,82.13,38.42,107,20,"16-piece ceramic dinner set, dishwasher safe"
+Backpack Pro,BAGS-BP001-147,Bags & Luggage,82.42,37.44,152,21,Water-resistant backpack with laptop compartment
+Wireless Gaming Mouse,GAMING-GM001-148,Gaming,84,42.88,178,34,RGB wireless mouse with 16000 DPI sensor
+Fitness Tracker Band,ELEC-FT001-149,Electronics,81.34,45.77,140,28,"Heart rate monitor, sleep tracking, waterproof"
+Children's Building Blocks,TOYS-CB001-150,Toys,50.68,21.7,342,34,200-piece educational building blocks set
+Women's Winter Jacket,FASHION-WJ001-151,Fashion,140.72,68.59,75,15,Waterproof winter jacket with thermal lining
+Wireless Bluetooth Headphones,ELEC-BT001-152,Electronics,137.76,81.4,110,23,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Gaming Mouse,GAMING-GM001-153,Gaming,94.88,48.61,181,32,RGB wireless mouse with 16000 DPI sensor
+Office Desk Lamp,OFFICE-DL001-154,Office Supplies,50.88,23.71,133,29,LED desk lamp with adjustable brightness and USB port
+Gaming Laptop,GAMING-GL001-155,Gaming,1647.54,1105.66,45,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Portable Speaker,ELEC-PS001-156,Electronics,65.75,32.83,271,26,Bluetooth speaker with 12hr battery and waterproof design
+Backpack Pro,BAGS-BP001-157,Bags & Luggage,72.03,33.87,151,24,Water-resistant backpack with laptop compartment
+Wireless Gaming Mouse,GAMING-GM001-158,Gaming,97.21,45.13,230,26,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-159,Electronics,122.75,73.23,111,25,Noise-cancelling over-ear headphones with 30hr battery
+Fitness Tracker Band,ELEC-FT001-160,Electronics,85.56,39.44,244,22,"Heart rate monitor, sleep tracking, waterproof"
+Ceramic Dinner Set,HOME-DS001-161,Home & Kitchen,83.79,43.08,139,16,"16-piece ceramic dinner set, dishwasher safe"
+Men's Casual Shirt,FASHION-MS001-162,Fashion,41.31,17.5,424,45,"Cotton blend casual shirt, available in multiple colors"
+Men's Casual Shirt,FASHION-MS001-163,Fashion,42.68,16.89,317,41,"Cotton blend casual shirt, available in multiple colors"
+Yoga Mat Premium,Sports-YM001-164,Sports & Fitness,33.53,19.3,317,41,Eco-friendly non-slip yoga mat 6mm thick
+Fitness Tracker Band,ELEC-FT001-165,Electronics,80.8,42.71,220,25,"Heart rate monitor, sleep tracking, waterproof"
+Wireless Gaming Mouse,GAMING-GM001-166,Gaming,90.15,46.78,183,24,RGB wireless mouse with 16000 DPI sensor
+Coffee Maker Deluxe,HOME-CM001-167,Home & Kitchen,149,77.75,61,9,Programmable 12-cup coffee maker with thermal carafe
+Office Desk Lamp,OFFICE-DL001-168,Office Supplies,48.82,20.93,225,28,LED desk lamp with adjustable brightness and USB port
+Running Shoes Pro,Sports-RS001-169,Sports & Fitness,92.62,43,238,29,Lightweight running shoes with cushioned soles
+Wireless Gaming Mouse,GAMING-GM001-170,Gaming,85.53,46.63,261,33,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-171,Electronics,139.23,81.63,184,25,Noise-cancelling over-ear headphones with 30hr battery
+Desk Organizer Set,OFFICE-DO001-172,Office Supplies,29.68,12.8,333,42,5-piece desk organizer with pen holder and tray
+Digital Kitchen Scale,HOME-KS001-173,Home & Kitchen,26.25,11.01,485,48,Precision digital scale with LCD display
+Protein Powder 2lb,HEALTH-PP001-174,Health,60.91,27.68,279,41,"Whey protein isolate, vanilla flavor, 30 servings"
+Women's Winter Jacket,FASHION-WJ001-175,Fashion,134.95,70.8,97,15,Waterproof winter jacket with thermal lining
+Wireless Gaming Mouse,GAMING-GM001-176,Gaming,85.03,47.14,231,28,RGB wireless mouse with 16000 DPI sensor
+Children's Building Blocks,TOYS-CB001-177,Toys,45.19,21.03,219,36,200-piece educational building blocks set
+Air Purifier,HOME-AP001-178,Home & Kitchen,211.3,128.6,48,8,HEPA filter air purifier for medium rooms
+Wireless Bluetooth Headphones,ELEC-BT001-179,Electronics,120.6,81.77,171,23,Noise-cancelling over-ear headphones with 30hr battery
+Fitness Tracker Band,ELEC-FT001-180,Electronics,73.29,41.15,196,24,"Heart rate monitor, sleep tracking, waterproof"
+Women's Winter Jacket,FASHION-WJ001-181,Fashion,125.26,68.45,74,12,Waterproof winter jacket with thermal lining
+Fitness Tracker Band,ELEC-FT001-182,Electronics,80.95,40.99,197,26,"Heart rate monitor, sleep tracking, waterproof"
+Backpack Pro,BAGS-BP001-183,Bags & Luggage,84.74,31.52,161,26,Water-resistant backpack with laptop compartment
+Office Desk Lamp,OFFICE-DL001-184,Office Supplies,49.92,21.06,187,22,LED desk lamp with adjustable brightness and USB port
+Yoga Mat Premium,Sports-YM001-185,Sports & Fitness,36.17,20.3,320,48,Eco-friendly non-slip yoga mat 6mm thick
+Desk Organizer Set,OFFICE-DO001-186,Office Supplies,29.7,14.52,410,44,5-piece desk organizer with pen holder and tray
+Air Purifier,HOME-AP001-187,Home & Kitchen,201.25,112.58,67,7,HEPA filter air purifier for medium rooms
+Smartphone X12 Pro,ELEC-PH001-188,Electronics,945.47,592.9,110,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Desk Organizer Set,OFFICE-DO001-189,Office Supplies,27.61,13.85,356,35,5-piece desk organizer with pen holder and tray
+Women's Winter Jacket,FASHION-WJ001-190,Fashion,127.31,70,95,17,Waterproof winter jacket with thermal lining
+Desk Organizer Set,OFFICE-DO001-191,Office Supplies,28.76,12.7,370,36,5-piece desk organizer with pen holder and tray
+Fitness Tracker Band,ELEC-FT001-192,Electronics,82.55,39.92,201,23,"Heart rate monitor, sleep tracking, waterproof"
+Men's Casual Shirt,FASHION-MS001-193,Fashion,39.93,19.68,282,50,"Cotton blend casual shirt, available in multiple colors"
+Protein Powder 2lb,HEALTH-PP001-194,Health,58.27,26.65,311,44,"Whey protein isolate, vanilla flavor, 30 servings"
+Portable Speaker,ELEC-PS001-195,Electronics,66.5,37.19,269,28,Bluetooth speaker with 12hr battery and waterproof design
+Desk Organizer Set,OFFICE-DO001-196,Office Supplies,32.76,13.63,390,39,5-piece desk organizer with pen holder and tray
+Portable Speaker,ELEC-PS001-197,Electronics,75.05,37.6,191,34,Bluetooth speaker with 12hr battery and waterproof design
+Yoga Mat Premium,Sports-YM001-198,Sports & Fitness,33.2,18.74,210,43,Eco-friendly non-slip yoga mat 6mm thick
+Portable Speaker,ELEC-PS001-199,Electronics,75.28,37.14,168,25,Bluetooth speaker with 12hr battery and waterproof design
+Children's Building Blocks,TOYS-CB001-200,Toys,49,21.39,248,40,200-piece educational building blocks set
+Gaming Laptop,GAMING-GL001-201,Gaming,1463.49,1206.9,41,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Office Desk Lamp,OFFICE-DL001-202,Office Supplies,49.19,23.17,143,22,LED desk lamp with adjustable brightness and USB port
+Backpack Pro,BAGS-BP001-203,Bags & Luggage,84.58,37.55,214,28,Water-resistant backpack with laptop compartment
+Yoga Mat Premium,Sports-YM001-204,Sports & Fitness,36.15,17.13,292,46,Eco-friendly non-slip yoga mat 6mm thick
+Men's Casual Shirt,FASHION-MS001-205,Fashion,39.59,17.6,401,42,"Cotton blend casual shirt, available in multiple colors"
+Desk Organizer Set,OFFICE-DO001-206,Office Supplies,27.83,14.49,342,47,5-piece desk organizer with pen holder and tray
+Electric Toothbrush,HEALTH-ET001-207,Health,81.34,47.98,99,22,Sonic electric toothbrush with 3 brushing modes
+Children's Building Blocks,TOYS-CB001-208,Toys,51.16,22.66,303,40,200-piece educational building blocks set
+Office Desk Lamp,OFFICE-DL001-209,Office Supplies,45.75,22.71,203,22,LED desk lamp with adjustable brightness and USB port
+Office Desk Lamp,OFFICE-DL001-210,Office Supplies,51.96,22.49,214,25,LED desk lamp with adjustable brightness and USB port
+Children's Building Blocks,TOYS-CB001-211,Toys,51.93,21.85,285,34,200-piece educational building blocks set
+Wireless Gaming Mouse,GAMING-GM001-212,Gaming,83.76,42.88,167,24,RGB wireless mouse with 16000 DPI sensor
+Coffee Maker Deluxe,HOME-CM001-213,Home & Kitchen,164.51,88.39,52,10,Programmable 12-cup coffee maker with thermal carafe
+Men's Casual Shirt,FASHION-MS001-214,Fashion,40.57,17.25,436,42,"Cotton blend casual shirt, available in multiple colors"
+Wireless Gaming Mouse,GAMING-GM001-215,Gaming,91.2,44.62,249,33,RGB wireless mouse with 16000 DPI sensor
+Office Desk Lamp,OFFICE-DL001-216,Office Supplies,48.9,23,164,22,LED desk lamp with adjustable brightness and USB port
+Portable Speaker,ELEC-PS001-217,Electronics,63.48,34.23,202,25,Bluetooth speaker with 12hr battery and waterproof design
+Running Shoes Pro,Sports-RS001-218,Sports & Fitness,90.67,43.65,158,30,Lightweight running shoes with cushioned soles
+Protein Powder 2lb,HEALTH-PP001-219,Health,63.58,27.52,236,47,"Whey protein isolate, vanilla flavor, 30 servings"
+Children's Building Blocks,TOYS-CB001-220,Toys,54.18,20.27,249,28,200-piece educational building blocks set
+Children's Building Blocks,TOYS-CB001-221,Toys,52.58,22.1,316,41,200-piece educational building blocks set
+Coffee Maker Deluxe,HOME-CM001-222,Home & Kitchen,151.1,86.36,45,8,Programmable 12-cup coffee maker with thermal carafe
+Fitness Tracker Band,ELEC-FT001-223,Electronics,79.91,44.94,229,23,"Heart rate monitor, sleep tracking, waterproof"
+Children's Building Blocks,TOYS-CB001-224,Toys,48.18,20.05,228,32,200-piece educational building blocks set
+Men's Casual Shirt,FASHION-MS001-225,Fashion,36.43,16.96,416,45,"Cotton blend casual shirt, available in multiple colors"
+Digital Kitchen Scale,HOME-KS001-226,Home & Kitchen,22.94,11.77,513,65,Precision digital scale with LCD display
+Gaming Laptop,GAMING-GL001-227,Gaming,1501.67,1001.05,41,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Wireless Gaming Mouse,GAMING-GM001-228,Gaming,86.17,42.54,166,24,RGB wireless mouse with 16000 DPI sensor
+Men's Casual Shirt,FASHION-MS001-229,Fashion,41.56,17.03,438,50,"Cotton blend casual shirt, available in multiple colors"
+Ceramic Dinner Set,HOME-DS001-230,Home & Kitchen,85.99,41.64,139,23,"16-piece ceramic dinner set, dishwasher safe"
+Desk Organizer Set,OFFICE-DO001-231,Office Supplies,30.37,13.64,309,32,5-piece desk organizer with pen holder and tray
+Office Desk Lamp,OFFICE-DL001-232,Office Supplies,48.34,20.47,165,22,LED desk lamp with adjustable brightness and USB port
+Backpack Pro,BAGS-BP001-233,Bags & Luggage,79.39,35.2,134,24,Water-resistant backpack with laptop compartment
+Backpack Pro,BAGS-BP001-234,Bags & Luggage,80.21,37.94,187,28,Water-resistant backpack with laptop compartment
+Portable Speaker,ELEC-PS001-235,Electronics,65.78,37.18,214,28,Bluetooth speaker with 12hr battery and waterproof design
+Backpack Pro,BAGS-BP001-236,Bags & Luggage,86.09,32.07,189,21,Water-resistant backpack with laptop compartment
+Electric Toothbrush,HEALTH-ET001-237,Health,92.45,43.26,127,20,Sonic electric toothbrush with 3 brushing modes
+Ceramic Dinner Set,HOME-DS001-238,Home & Kitchen,75.11,41.86,143,18,"16-piece ceramic dinner set, dishwasher safe"
+Portable Speaker,ELEC-PS001-239,Electronics,68.77,31.85,170,24,Bluetooth speaker with 12hr battery and waterproof design
+Men's Casual Shirt,FASHION-MS001-240,Fashion,41.59,16.46,291,40,"Cotton blend casual shirt, available in multiple colors"
+Gaming Laptop,GAMING-GL001-241,Gaming,1576.02,1102.15,51,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Coffee Maker Deluxe,HOME-CM001-242,Home & Kitchen,164.63,89.99,65,11,Programmable 12-cup coffee maker with thermal carafe
+Electric Toothbrush,HEALTH-ET001-243,Health,88.36,49.93,119,16,Sonic electric toothbrush with 3 brushing modes
+Office Desk Lamp,OFFICE-DL001-244,Office Supplies,51.7,20.64,171,21,LED desk lamp with adjustable brightness and USB port
+Wireless Gaming Mouse,GAMING-GM001-245,Gaming,88.34,45.14,182,28,RGB wireless mouse with 16000 DPI sensor
+Electric Toothbrush,HEALTH-ET001-246,Health,89.21,52.23,137,20,Sonic electric toothbrush with 3 brushing modes
+Air Purifier,HOME-AP001-247,Home & Kitchen,217.54,118.84,61,7,HEPA filter air purifier for medium rooms
+Electric Toothbrush,HEALTH-ET001-248,Health,81.27,49.92,153,22,Sonic electric toothbrush with 3 brushing modes
+Desk Organizer Set,OFFICE-DO001-249,Office Supplies,31,14.28,259,39,5-piece desk organizer with pen holder and tray
+Office Desk Lamp,OFFICE-DL001-250,Office Supplies,47.21,23.11,163,20,LED desk lamp with adjustable brightness and USB port
+Protein Powder 2lb,HEALTH-PP001-251,Health,56.3,26.08,250,35,"Whey protein isolate, vanilla flavor, 30 servings"
+Air Purifier,HOME-AP001-252,Home & Kitchen,217.74,129.2,58,6,HEPA filter air purifier for medium rooms
+Running Shoes Pro,Sports-RS001-253,Sports & Fitness,93.48,41.2,216,26,Lightweight running shoes with cushioned soles
+Smartphone X12 Pro,ELEC-PH001-254,Electronics,1055.81,648.57,97,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Digital Kitchen Scale,HOME-KS001-255,Home & Kitchen,23.15,11.73,378,56,Precision digital scale with LCD display
+Protein Powder 2lb,HEALTH-PP001-256,Health,62.45,26.58,234,42,"Whey protein isolate, vanilla flavor, 30 servings"
+Running Shoes Pro,Sports-RS001-257,Sports & Fitness,90.02,47.72,248,34,Lightweight running shoes with cushioned soles
+Air Purifier,HOME-AP001-258,Home & Kitchen,211.42,127.02,61,7,HEPA filter air purifier for medium rooms
+Air Purifier,HOME-AP001-259,Home & Kitchen,185.72,127.62,46,9,HEPA filter air purifier for medium rooms
+Portable Speaker,ELEC-PS001-260,Electronics,65.34,33.33,184,35,Bluetooth speaker with 12hr battery and waterproof design
+Wireless Gaming Mouse,GAMING-GM001-261,Gaming,87.72,41.69,182,30,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-262,Electronics,121.69,71.52,148,24,Noise-cancelling over-ear headphones with 30hr battery
+Men's Casual Shirt,FASHION-MS001-263,Fashion,39.55,16.32,328,58,"Cotton blend casual shirt, available in multiple colors"
+Smartphone X12 Pro,ELEC-PH001-264,Electronics,990.02,704.32,105,17,"Latest flagship with 6.7"" OLED display and triple camera"
+Running Shoes Pro,Sports-RS001-265,Sports & Fitness,95.57,42.74,194,24,Lightweight running shoes with cushioned soles
+Protein Powder 2lb,HEALTH-PP001-266,Health,57.03,25.33,230,32,"Whey protein isolate, vanilla flavor, 30 servings"
+Gaming Laptop,GAMING-GL001-267,Gaming,1646.73,1095.35,34,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Wireless Bluetooth Headphones,ELEC-BT001-268,Electronics,135.36,71.97,120,28,Noise-cancelling over-ear headphones with 30hr battery
+Women's Winter Jacket,FASHION-WJ001-269,Fashion,125.89,68.26,99,13,Waterproof winter jacket with thermal lining
+Office Desk Lamp,OFFICE-DL001-270,Office Supplies,54.76,22.31,216,27,LED desk lamp with adjustable brightness and USB port
+Protein Powder 2lb,HEALTH-PP001-271,Health,64.15,27.01,322,47,"Whey protein isolate, vanilla flavor, 30 servings"
+Office Desk Lamp,OFFICE-DL001-272,Office Supplies,45.05,21.35,183,22,LED desk lamp with adjustable brightness and USB port
+Portable Speaker,ELEC-PS001-273,Electronics,63.32,36.74,271,30,Bluetooth speaker with 12hr battery and waterproof design
+Electric Toothbrush,HEALTH-ET001-274,Health,84.62,45.61,165,19,Sonic electric toothbrush with 3 brushing modes
+Office Desk Lamp,OFFICE-DL001-275,Office Supplies,51.88,22.33,205,29,LED desk lamp with adjustable brightness and USB port
+Smartphone X12 Pro,ELEC-PH001-276,Electronics,1040.28,692.58,97,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Electric Toothbrush,HEALTH-ET001-277,Health,88.43,50.53,155,20,Sonic electric toothbrush with 3 brushing modes
+Wireless Bluetooth Headphones,ELEC-BT001-278,Electronics,134.13,68.7,146,29,Noise-cancelling over-ear headphones with 30hr battery
+Running Shoes Pro,Sports-RS001-279,Sports & Fitness,94.47,48.34,142,31,Lightweight running shoes with cushioned soles
+Electric Toothbrush,HEALTH-ET001-280,Health,85.24,46.08,156,17,Sonic electric toothbrush with 3 brushing modes
+Fitness Tracker Band,ELEC-FT001-281,Electronics,82.06,38.91,220,22,"Heart rate monitor, sleep tracking, waterproof"
+Coffee Maker Deluxe,HOME-CM001-282,Home & Kitchen,155.67,90.36,50,9,Programmable 12-cup coffee maker with thermal carafe
+Office Desk Lamp,OFFICE-DL001-283,Office Supplies,48.56,20.34,175,26,LED desk lamp with adjustable brightness and USB port
+Office Desk Lamp,OFFICE-DL001-284,Office Supplies,52.38,21.55,193,20,LED desk lamp with adjustable brightness and USB port
+Men's Casual Shirt,FASHION-MS001-285,Fashion,42.06,19.3,285,43,"Cotton blend casual shirt, available in multiple colors"
+Office Desk Lamp,OFFICE-DL001-286,Office Supplies,45.27,23.43,231,27,LED desk lamp with adjustable brightness and USB port
+Protein Powder 2lb,HEALTH-PP001-287,Health,61.35,29.14,198,42,"Whey protein isolate, vanilla flavor, 30 servings"
+Coffee Maker Deluxe,HOME-CM001-288,Home & Kitchen,138.22,90.3,49,9,Programmable 12-cup coffee maker with thermal carafe
+Running Shoes Pro,Sports-RS001-289,Sports & Fitness,82.48,49.34,240,30,Lightweight running shoes with cushioned soles
+Protein Powder 2lb,HEALTH-PP001-290,Health,57.31,29.91,276,40,"Whey protein isolate, vanilla flavor, 30 servings"
+Smartphone X12 Pro,ELEC-PH001-291,Electronics,1002.12,708.78,107,12,"Latest flagship with 6.7"" OLED display and triple camera"
+Air Purifier,HOME-AP001-292,Home & Kitchen,214.99,130.11,62,7,HEPA filter air purifier for medium rooms
+Coffee Maker Deluxe,HOME-CM001-293,Home & Kitchen,154.69,81.74,71,11,Programmable 12-cup coffee maker with thermal carafe
+Electric Toothbrush,HEALTH-ET001-294,Health,87.98,43.49,151,18,Sonic electric toothbrush with 3 brushing modes
+Fitness Tracker Band,ELEC-FT001-295,Electronics,85,41.38,200,21,"Heart rate monitor, sleep tracking, waterproof"
+Wireless Gaming Mouse,GAMING-GM001-296,Gaming,82.85,47.79,208,33,RGB wireless mouse with 16000 DPI sensor
+Portable Speaker,ELEC-PS001-297,Electronics,67.22,32.94,199,28,Bluetooth speaker with 12hr battery and waterproof design
+Office Desk Lamp,OFFICE-DL001-298,Office Supplies,53.4,23.07,148,26,LED desk lamp with adjustable brightness and USB port
+Women's Winter Jacket,FASHION-WJ001-299,Fashion,121.39,61.52,89,13,Waterproof winter jacket with thermal lining
+Wireless Gaming Mouse,GAMING-GM001-300,Gaming,84.13,43.45,228,26,RGB wireless mouse with 16000 DPI sensor
+Children's Building Blocks,TOYS-CB001-301,Toys,51.86,23.53,251,40,200-piece educational building blocks set
+Wireless Bluetooth Headphones,ELEC-BT001-302,Electronics,136.69,72.27,135,23,Noise-cancelling over-ear headphones with 30hr battery
+Smartphone X12 Pro,ELEC-PH001-303,Electronics,1006.32,586.07,72,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Protein Powder 2lb,HEALTH-PP001-304,Health,60.76,30.47,242,45,"Whey protein isolate, vanilla flavor, 30 servings"
+Desk Organizer Set,OFFICE-DO001-305,Office Supplies,28.76,13.23,315,45,5-piece desk organizer with pen holder and tray
+Ceramic Dinner Set,HOME-DS001-306,Home & Kitchen,75.88,38.39,123,18,"16-piece ceramic dinner set, dishwasher safe"
+Air Purifier,HOME-AP001-307,Home & Kitchen,204.22,120.61,50,6,HEPA filter air purifier for medium rooms
+Gaming Laptop,GAMING-GL001-308,Gaming,1465.7,1055.16,39,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Coffee Maker Deluxe,HOME-CM001-309,Home & Kitchen,142.36,79.26,71,8,Programmable 12-cup coffee maker with thermal carafe
+Ceramic Dinner Set,HOME-DS001-310,Home & Kitchen,77.31,37,86,17,"16-piece ceramic dinner set, dishwasher safe"
+Ceramic Dinner Set,HOME-DS001-311,Home & Kitchen,76.81,39.9,151,22,"16-piece ceramic dinner set, dishwasher safe"
+Men's Casual Shirt,FASHION-MS001-312,Fashion,41.16,16.36,297,46,"Cotton blend casual shirt, available in multiple colors"
+Portable Speaker,ELEC-PS001-313,Electronics,64.23,36.76,208,33,Bluetooth speaker with 12hr battery and waterproof design
+Gaming Laptop,GAMING-GL001-314,Gaming,1475.88,1032.92,49,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Gaming Laptop,GAMING-GL001-315,Gaming,1598.94,1164.36,29,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Office Desk Lamp,OFFICE-DL001-316,Office Supplies,46.28,21.86,187,25,LED desk lamp with adjustable brightness and USB port
+Men's Casual Shirt,FASHION-MS001-317,Fashion,36.94,17.55,295,42,"Cotton blend casual shirt, available in multiple colors"
+Running Shoes Pro,Sports-RS001-318,Sports & Fitness,88.22,41.82,234,33,Lightweight running shoes with cushioned soles
+Men's Casual Shirt,FASHION-MS001-319,Fashion,40.66,17.66,413,46,"Cotton blend casual shirt, available in multiple colors"
+Fitness Tracker Band,ELEC-FT001-320,Electronics,84.74,38.15,139,26,"Heart rate monitor, sleep tracking, waterproof"
+Running Shoes Pro,Sports-RS001-321,Sports & Fitness,86.75,47.14,156,26,Lightweight running shoes with cushioned soles
+Smartphone X12 Pro,ELEC-PH001-322,Electronics,973.81,600.66,96,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Desk Organizer Set,OFFICE-DO001-323,Office Supplies,27.62,14.93,315,38,5-piece desk organizer with pen holder and tray
+Yoga Mat Premium,Sports-YM001-324,Sports & Fitness,33.62,18.7,366,59,Eco-friendly non-slip yoga mat 6mm thick
+Electric Toothbrush,HEALTH-ET001-325,Health,90.23,46.58,136,22,Sonic electric toothbrush with 3 brushing modes
+Air Purifier,HOME-AP001-326,Home & Kitchen,181.03,120.6,45,7,HEPA filter air purifier for medium rooms
+Electric Toothbrush,HEALTH-ET001-327,Health,93.5,48.3,120,22,Sonic electric toothbrush with 3 brushing modes
+Air Purifier,HOME-AP001-328,Home & Kitchen,204.39,113.33,55,9,HEPA filter air purifier for medium rooms
+Digital Kitchen Scale,HOME-KS001-329,Home & Kitchen,24.45,11.73,445,61,Precision digital scale with LCD display
+Running Shoes Pro,Sports-RS001-330,Sports & Fitness,95.53,47.82,159,29,Lightweight running shoes with cushioned soles
+Running Shoes Pro,Sports-RS001-331,Sports & Fitness,85.07,46.76,159,27,Lightweight running shoes with cushioned soles
+Yoga Mat Premium,Sports-YM001-332,Sports & Fitness,33.64,18.92,355,51,Eco-friendly non-slip yoga mat 6mm thick
+Digital Kitchen Scale,HOME-KS001-333,Home & Kitchen,23.75,10.98,395,69,Precision digital scale with LCD display
+Desk Organizer Set,OFFICE-DO001-334,Office Supplies,29.39,15.01,252,41,5-piece desk organizer with pen holder and tray
+Air Purifier,HOME-AP001-335,Home & Kitchen,208.5,117.18,49,8,HEPA filter air purifier for medium rooms
+Running Shoes Pro,Sports-RS001-336,Sports & Fitness,82.23,42.57,183,32,Lightweight running shoes with cushioned soles
+Office Desk Lamp,OFFICE-DL001-337,Office Supplies,49.99,19.88,177,28,LED desk lamp with adjustable brightness and USB port
+Yoga Mat Premium,Sports-YM001-338,Sports & Fitness,32.11,18.28,258,58,Eco-friendly non-slip yoga mat 6mm thick
+Coffee Maker Deluxe,HOME-CM001-339,Home & Kitchen,147.38,77.63,61,8,Programmable 12-cup coffee maker with thermal carafe
+Air Purifier,HOME-AP001-340,Home & Kitchen,205.24,116.71,50,8,HEPA filter air purifier for medium rooms
+Backpack Pro,BAGS-BP001-341,Bags & Luggage,73.6,31.72,173,25,Water-resistant backpack with laptop compartment
+Digital Kitchen Scale,HOME-KS001-342,Home & Kitchen,26.62,10.69,402,53,Precision digital scale with LCD display
+Smartphone X12 Pro,ELEC-PH001-343,Electronics,926.29,593.71,96,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Gaming Laptop,GAMING-GL001-344,Gaming,1556.78,1000.35,50,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Fitness Tracker Band,ELEC-FT001-345,Electronics,75.98,38.15,159,29,"Heart rate monitor, sleep tracking, waterproof"
+Ceramic Dinner Set,HOME-DS001-346,Home & Kitchen,76.12,36.04,134,19,"16-piece ceramic dinner set, dishwasher safe"
+Men's Casual Shirt,FASHION-MS001-347,Fashion,43.31,19.04,350,46,"Cotton blend casual shirt, available in multiple colors"
+Backpack Pro,BAGS-BP001-348,Bags & Luggage,80.33,36.41,184,28,Water-resistant backpack with laptop compartment
+Fitness Tracker Band,ELEC-FT001-349,Electronics,79.04,40.5,188,26,"Heart rate monitor, sleep tracking, waterproof"
+Women's Winter Jacket,FASHION-WJ001-350,Fashion,133.36,69.89,67,15,Waterproof winter jacket with thermal lining
+Yoga Mat Premium,Sports-YM001-351,Sports & Fitness,36.48,17.51,289,49,Eco-friendly non-slip yoga mat 6mm thick
+Coffee Maker Deluxe,HOME-CM001-352,Home & Kitchen,144.09,79.71,62,11,Programmable 12-cup coffee maker with thermal carafe
+Wireless Bluetooth Headphones,ELEC-BT001-353,Electronics,119.23,70.89,153,26,Noise-cancelling over-ear headphones with 30hr battery
+Smartphone X12 Pro,ELEC-PH001-354,Electronics,949.62,634.46,109,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Running Shoes Pro,Sports-RS001-355,Sports & Fitness,92.22,41.29,166,25,Lightweight running shoes with cushioned soles
+Wireless Gaming Mouse,GAMING-GM001-356,Gaming,91.72,48.06,265,26,RGB wireless mouse with 16000 DPI sensor
+Coffee Maker Deluxe,HOME-CM001-357,Home & Kitchen,153.37,77.08,75,10,Programmable 12-cup coffee maker with thermal carafe
+Office Desk Lamp,OFFICE-DL001-358,Office Supplies,51.32,22.45,208,26,LED desk lamp with adjustable brightness and USB port
+Coffee Maker Deluxe,HOME-CM001-359,Home & Kitchen,155.35,87.6,60,9,Programmable 12-cup coffee maker with thermal carafe
+Air Purifier,HOME-AP001-360,Home & Kitchen,184.13,120.73,44,6,HEPA filter air purifier for medium rooms
+Office Desk Lamp,OFFICE-DL001-361,Office Supplies,52.24,23.46,185,28,LED desk lamp with adjustable brightness and USB port
+Running Shoes Pro,Sports-RS001-362,Sports & Fitness,83.47,49.02,224,32,Lightweight running shoes with cushioned soles
+Men's Casual Shirt,FASHION-MS001-363,Fashion,39.86,18.08,363,53,"Cotton blend casual shirt, available in multiple colors"
+Children's Building Blocks,TOYS-CB001-364,Toys,45.37,22.35,347,31,200-piece educational building blocks set
+Protein Powder 2lb,HEALTH-PP001-365,Health,56.41,30.28,248,35,"Whey protein isolate, vanilla flavor, 30 servings"
+Fitness Tracker Band,ELEC-FT001-366,Electronics,75.18,45.54,177,24,"Heart rate monitor, sleep tracking, waterproof"
+Children's Building Blocks,TOYS-CB001-367,Toys,45.47,23.73,235,29,200-piece educational building blocks set
+Air Purifier,HOME-AP001-368,Home & Kitchen,196.33,126.04,47,6,HEPA filter air purifier for medium rooms
+Digital Kitchen Scale,HOME-KS001-369,Home & Kitchen,22.94,10.27,476,61,Precision digital scale with LCD display
+Women's Winter Jacket,FASHION-WJ001-370,Fashion,122.47,63.06,90,13,Waterproof winter jacket with thermal lining
+Ceramic Dinner Set,HOME-DS001-371,Home & Kitchen,74.09,43.3,88,23,"16-piece ceramic dinner set, dishwasher safe"
+Gaming Laptop,GAMING-GL001-372,Gaming,1496.5,1205.82,40,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Office Desk Lamp,OFFICE-DL001-373,Office Supplies,48.05,22.98,139,23,LED desk lamp with adjustable brightness and USB port
+Children's Building Blocks,TOYS-CB001-374,Toys,52.56,21.23,358,34,200-piece educational building blocks set
+Wireless Gaming Mouse,GAMING-GM001-375,Gaming,84.56,46.74,184,26,RGB wireless mouse with 16000 DPI sensor
+Air Purifier,HOME-AP001-376,Home & Kitchen,185.5,111.78,51,8,HEPA filter air purifier for medium rooms
+Coffee Maker Deluxe,HOME-CM001-377,Home & Kitchen,163.55,82.64,62,8,Programmable 12-cup coffee maker with thermal carafe
+Yoga Mat Premium,Sports-YM001-378,Sports & Fitness,34.08,19.57,347,50,Eco-friendly non-slip yoga mat 6mm thick
+Coffee Maker Deluxe,HOME-CM001-379,Home & Kitchen,155.6,76.83,47,9,Programmable 12-cup coffee maker with thermal carafe
+Wireless Bluetooth Headphones,ELEC-BT001-380,Electronics,120.02,74.87,119,24,Noise-cancelling over-ear headphones with 30hr battery
+Men's Casual Shirt,FASHION-MS001-381,Fashion,43.58,19.79,423,55,"Cotton blend casual shirt, available in multiple colors"
+Women's Winter Jacket,FASHION-WJ001-382,Fashion,134.42,64.96,104,13,Waterproof winter jacket with thermal lining
+Backpack Pro,BAGS-BP001-383,Bags & Luggage,72.04,37.27,149,21,Water-resistant backpack with laptop compartment
+Wireless Gaming Mouse,GAMING-GM001-384,Gaming,88.12,46.27,227,29,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-385,Electronics,121.82,69.24,136,21,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Bluetooth Headphones,ELEC-BT001-386,Electronics,142.17,70.74,184,21,Noise-cancelling over-ear headphones with 30hr battery
+Air Purifier,HOME-AP001-387,Home & Kitchen,217.45,126.08,40,6,HEPA filter air purifier for medium rooms
+Electric Toothbrush,HEALTH-ET001-388,Health,90.42,47.73,123,23,Sonic electric toothbrush with 3 brushing modes
+Wireless Bluetooth Headphones,ELEC-BT001-389,Electronics,138.48,78.51,122,24,Noise-cancelling over-ear headphones with 30hr battery
+Desk Organizer Set,OFFICE-DO001-390,Office Supplies,32.07,14.68,273,41,5-piece desk organizer with pen holder and tray
+Ceramic Dinner Set,HOME-DS001-391,Home & Kitchen,83.1,38.34,126,16,"16-piece ceramic dinner set, dishwasher safe"
+Backpack Pro,BAGS-BP001-392,Bags & Luggage,80.6,35.3,229,23,Water-resistant backpack with laptop compartment
+Gaming Laptop,GAMING-GL001-393,Gaming,1720.27,1079.49,38,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Children's Building Blocks,TOYS-CB001-394,Toys,54.71,24.16,287,37,200-piece educational building blocks set
+Wireless Gaming Mouse,GAMING-GM001-395,Gaming,91.96,46.36,203,32,RGB wireless mouse with 16000 DPI sensor
+Protein Powder 2lb,HEALTH-PP001-396,Health,63.67,26.5,192,41,"Whey protein isolate, vanilla flavor, 30 servings"
+Ceramic Dinner Set,HOME-DS001-397,Home & Kitchen,84.16,38.42,117,22,"16-piece ceramic dinner set, dishwasher safe"
+Coffee Maker Deluxe,HOME-CM001-398,Home & Kitchen,141.97,89.42,46,10,Programmable 12-cup coffee maker with thermal carafe
+Wireless Bluetooth Headphones,ELEC-BT001-399,Electronics,141.61,81.13,160,25,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-400,Toys,47.19,23.92,324,39,200-piece educational building blocks set
+Digital Kitchen Scale,HOME-KS001-401,Home & Kitchen,23.57,11.91,507,65,Precision digital scale with LCD display
+Ceramic Dinner Set,HOME-DS001-402,Home & Kitchen,80.39,40.67,124,19,"16-piece ceramic dinner set, dishwasher safe"
+Yoga Mat Premium,Sports-YM001-403,Sports & Fitness,33.97,17.12,351,43,Eco-friendly non-slip yoga mat 6mm thick
+Women's Winter Jacket,FASHION-WJ001-404,Fashion,131.07,64.31,68,12,Waterproof winter jacket with thermal lining
+Wireless Gaming Mouse,GAMING-GM001-405,Gaming,89.77,45.8,185,34,RGB wireless mouse with 16000 DPI sensor
+Yoga Mat Premium,Sports-YM001-406,Sports & Fitness,33.47,17.11,289,44,Eco-friendly non-slip yoga mat 6mm thick
+Protein Powder 2lb,HEALTH-PP001-407,Health,57.43,28.09,232,39,"Whey protein isolate, vanilla flavor, 30 servings"
+Desk Organizer Set,OFFICE-DO001-408,Office Supplies,27.42,14.19,264,36,5-piece desk organizer with pen holder and tray
+Smartphone X12 Pro,ELEC-PH001-409,Electronics,911.78,641.55,78,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Protein Powder 2lb,HEALTH-PP001-410,Health,55.29,26.87,236,44,"Whey protein isolate, vanilla flavor, 30 servings"
+Backpack Pro,BAGS-BP001-411,Bags & Luggage,80.19,36.25,172,27,Water-resistant backpack with laptop compartment
+Women's Winter Jacket,FASHION-WJ001-412,Fashion,119.65,65.91,89,17,Waterproof winter jacket with thermal lining
+Air Purifier,HOME-AP001-413,Home & Kitchen,191.87,125.96,47,7,HEPA filter air purifier for medium rooms
+Fitness Tracker Band,ELEC-FT001-414,Electronics,84.26,38.27,206,25,"Heart rate monitor, sleep tracking, waterproof"
+Wireless Bluetooth Headphones,ELEC-BT001-415,Electronics,138.95,79.48,148,21,Noise-cancelling over-ear headphones with 30hr battery
+Desk Organizer Set,OFFICE-DO001-416,Office Supplies,28.77,12.69,328,43,5-piece desk organizer with pen holder and tray
+Men's Casual Shirt,FASHION-MS001-417,Fashion,43.14,16.63,443,59,"Cotton blend casual shirt, available in multiple colors"
+Coffee Maker Deluxe,HOME-CM001-418,Home & Kitchen,159.62,84.64,45,8,Programmable 12-cup coffee maker with thermal carafe
+Protein Powder 2lb,HEALTH-PP001-419,Health,61.87,28.07,198,42,"Whey protein isolate, vanilla flavor, 30 servings"
+Running Shoes Pro,Sports-RS001-420,Sports & Fitness,89.72,47.41,164,31,Lightweight running shoes with cushioned soles
+Children's Building Blocks,TOYS-CB001-421,Toys,51.14,23.67,207,39,200-piece educational building blocks set
+Running Shoes Pro,Sports-RS001-422,Sports & Fitness,95.66,41.78,154,29,Lightweight running shoes with cushioned soles
+Gaming Laptop,GAMING-GL001-423,Gaming,1532.9,1109.48,41,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Women's Winter Jacket,FASHION-WJ001-424,Fashion,139.75,68.89,78,15,Waterproof winter jacket with thermal lining
+Office Desk Lamp,OFFICE-DL001-425,Office Supplies,45.56,23.52,212,22,LED desk lamp with adjustable brightness and USB port
+Gaming Laptop,GAMING-GL001-426,Gaming,1606.12,997.67,33,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Ceramic Dinner Set,HOME-DS001-427,Home & Kitchen,85.28,39.66,99,16,"16-piece ceramic dinner set, dishwasher safe"
+Children's Building Blocks,TOYS-CB001-428,Toys,45.21,23.34,202,32,200-piece educational building blocks set
+Backpack Pro,BAGS-BP001-429,Bags & Luggage,74.56,36.93,139,29,Water-resistant backpack with laptop compartment
+Gaming Laptop,GAMING-GL001-430,Gaming,1708.17,1039.17,47,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Children's Building Blocks,TOYS-CB001-431,Toys,52.26,21.12,352,29,200-piece educational building blocks set
+Wireless Bluetooth Headphones,ELEC-BT001-432,Electronics,139.3,70.3,116,23,Noise-cancelling over-ear headphones with 30hr battery
+Backpack Pro,BAGS-BP001-433,Bags & Luggage,78.25,34.85,128,29,Water-resistant backpack with laptop compartment
+Air Purifier,HOME-AP001-434,Home & Kitchen,216.22,124.12,54,9,HEPA filter air purifier for medium rooms
+Fitness Tracker Band,ELEC-FT001-435,Electronics,76.56,38.05,157,22,"Heart rate monitor, sleep tracking, waterproof"
+Wireless Gaming Mouse,GAMING-GM001-436,Gaming,86.42,46.65,220,27,RGB wireless mouse with 16000 DPI sensor
+Coffee Maker Deluxe,HOME-CM001-437,Home & Kitchen,155.94,79.63,63,9,Programmable 12-cup coffee maker with thermal carafe
+Office Desk Lamp,OFFICE-DL001-438,Office Supplies,47.1,22.44,139,22,LED desk lamp with adjustable brightness and USB port
+Children's Building Blocks,TOYS-CB001-439,Toys,54.55,23.09,336,30,200-piece educational building blocks set
+Office Desk Lamp,OFFICE-DL001-440,Office Supplies,53.77,19.92,140,29,LED desk lamp with adjustable brightness and USB port
+Children's Building Blocks,TOYS-CB001-441,Toys,50.81,23.67,297,34,200-piece educational building blocks set
+Yoga Mat Premium,Sports-YM001-442,Sports & Fitness,32.13,18.99,329,44,Eco-friendly non-slip yoga mat 6mm thick
+Smartphone X12 Pro,ELEC-PH001-443,Electronics,981.59,643.02,105,12,"Latest flagship with 6.7"" OLED display and triple camera"
+Electric Toothbrush,HEALTH-ET001-444,Health,82.32,46.7,151,19,Sonic electric toothbrush with 3 brushing modes
+Digital Kitchen Scale,HOME-KS001-445,Home & Kitchen,26.12,10.15,367,70,Precision digital scale with LCD display
+Fitness Tracker Band,ELEC-FT001-446,Electronics,79.74,44.54,208,24,"Heart rate monitor, sleep tracking, waterproof"
+Wireless Bluetooth Headphones,ELEC-BT001-447,Electronics,125.47,80.39,126,20,Noise-cancelling over-ear headphones with 30hr battery
+Backpack Pro,BAGS-BP001-448,Bags & Luggage,76.23,35.02,233,26,Water-resistant backpack with laptop compartment
+Wireless Gaming Mouse,GAMING-GM001-449,Gaming,95.14,48.03,259,31,RGB wireless mouse with 16000 DPI sensor
+Coffee Maker Deluxe,HOME-CM001-450,Home & Kitchen,146.72,81.56,51,10,Programmable 12-cup coffee maker with thermal carafe
+Wireless Bluetooth Headphones,ELEC-BT001-451,Electronics,129.72,80.46,150,21,Noise-cancelling over-ear headphones with 30hr battery
+Ceramic Dinner Set,HOME-DS001-452,Home & Kitchen,72.59,39.81,112,23,"16-piece ceramic dinner set, dishwasher safe"
+Women's Winter Jacket,FASHION-WJ001-453,Fashion,135.3,65.04,78,17,Waterproof winter jacket with thermal lining
+Fitness Tracker Band,ELEC-FT001-454,Electronics,85.49,43.97,148,24,"Heart rate monitor, sleep tracking, waterproof"
+Men's Casual Shirt,FASHION-MS001-455,Fashion,39.18,16.46,397,45,"Cotton blend casual shirt, available in multiple colors"
+Desk Organizer Set,OFFICE-DO001-456,Office Supplies,31.48,14.42,237,35,5-piece desk organizer with pen holder and tray
+Air Purifier,HOME-AP001-457,Home & Kitchen,208.85,111.8,48,6,HEPA filter air purifier for medium rooms
+Women's Winter Jacket,FASHION-WJ001-458,Fashion,122.44,60.87,72,16,Waterproof winter jacket with thermal lining
+Wireless Bluetooth Headphones,ELEC-BT001-459,Electronics,126.28,70.11,154,27,Noise-cancelling over-ear headphones with 30hr battery
+Ceramic Dinner Set,HOME-DS001-460,Home & Kitchen,73.41,38.73,105,16,"16-piece ceramic dinner set, dishwasher safe"
+Air Purifier,HOME-AP001-461,Home & Kitchen,202.42,116.25,40,9,HEPA filter air purifier for medium rooms
+Wireless Gaming Mouse,GAMING-GM001-462,Gaming,83.74,42.96,181,35,RGB wireless mouse with 16000 DPI sensor
+Coffee Maker Deluxe,HOME-CM001-463,Home & Kitchen,163.26,90.74,64,8,Programmable 12-cup coffee maker with thermal carafe
+Portable Speaker,ELEC-PS001-464,Electronics,63.6,34.86,204,30,Bluetooth speaker with 12hr battery and waterproof design
+Fitness Tracker Band,ELEC-FT001-465,Electronics,87.27,38.41,157,26,"Heart rate monitor, sleep tracking, waterproof"
+Office Desk Lamp,OFFICE-DL001-466,Office Supplies,51.91,22.52,191,23,LED desk lamp with adjustable brightness and USB port
+Office Desk Lamp,OFFICE-DL001-467,Office Supplies,48.03,23.51,156,27,LED desk lamp with adjustable brightness and USB port
+Ceramic Dinner Set,HOME-DS001-468,Home & Kitchen,84.73,43.52,108,18,"16-piece ceramic dinner set, dishwasher safe"
+Air Purifier,HOME-AP001-469,Home & Kitchen,214.01,111.09,53,6,HEPA filter air purifier for medium rooms
+Air Purifier,HOME-AP001-470,Home & Kitchen,184.33,109.82,49,8,HEPA filter air purifier for medium rooms
+Backpack Pro,BAGS-BP001-471,Bags & Luggage,74.51,36.52,151,28,Water-resistant backpack with laptop compartment
+Gaming Laptop,GAMING-GL001-472,Gaming,1621.12,1054.4,42,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Backpack Pro,BAGS-BP001-473,Bags & Luggage,79.87,33.33,225,20,Water-resistant backpack with laptop compartment
+Electric Toothbrush,HEALTH-ET001-474,Health,90.28,44.16,109,23,Sonic electric toothbrush with 3 brushing modes
+Wireless Gaming Mouse,GAMING-GM001-475,Gaming,83.27,44.79,247,25,RGB wireless mouse with 16000 DPI sensor
+Electric Toothbrush,HEALTH-ET001-476,Health,96.34,44.79,130,19,Sonic electric toothbrush with 3 brushing modes
+Smartphone X12 Pro,ELEC-PH001-477,Electronics,922.02,635.35,60,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Women's Winter Jacket,FASHION-WJ001-478,Fashion,138.34,64.6,72,15,Waterproof winter jacket with thermal lining
+Protein Powder 2lb,HEALTH-PP001-479,Health,60.44,30.05,210,39,"Whey protein isolate, vanilla flavor, 30 servings"
+Ceramic Dinner Set,HOME-DS001-480,Home & Kitchen,77.05,37.52,127,21,"16-piece ceramic dinner set, dishwasher safe"
+Fitness Tracker Band,ELEC-FT001-481,Electronics,84.51,38.55,207,20,"Heart rate monitor, sleep tracking, waterproof"
+Desk Organizer Set,OFFICE-DO001-482,Office Supplies,27.71,13.3,358,42,5-piece desk organizer with pen holder and tray
+Coffee Maker Deluxe,HOME-CM001-483,Home & Kitchen,138.09,92.34,75,9,Programmable 12-cup coffee maker with thermal carafe
+Running Shoes Pro,Sports-RS001-484,Sports & Fitness,81.19,43.23,240,34,Lightweight running shoes with cushioned soles
+Running Shoes Pro,Sports-RS001-485,Sports & Fitness,88.18,45.46,200,30,Lightweight running shoes with cushioned soles
+Women's Winter Jacket,FASHION-WJ001-486,Fashion,118.36,64.49,102,15,Waterproof winter jacket with thermal lining
+Smartphone X12 Pro,ELEC-PH001-487,Electronics,965.82,601.72,83,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Fitness Tracker Band,ELEC-FT001-488,Electronics,86.18,43.42,176,23,"Heart rate monitor, sleep tracking, waterproof"
+Fitness Tracker Band,ELEC-FT001-489,Electronics,73.19,43.83,236,28,"Heart rate monitor, sleep tracking, waterproof"
+Wireless Bluetooth Headphones,ELEC-BT001-490,Electronics,141.09,80.4,132,21,Noise-cancelling over-ear headphones with 30hr battery
+Protein Powder 2lb,HEALTH-PP001-491,Health,56.38,28.44,205,43,"Whey protein isolate, vanilla flavor, 30 servings"
+Coffee Maker Deluxe,HOME-CM001-492,Home & Kitchen,156.57,81.3,67,8,Programmable 12-cup coffee maker with thermal carafe
+Gaming Laptop,GAMING-GL001-493,Gaming,1596.42,1100.3,46,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Gaming Laptop,GAMING-GL001-494,Gaming,1492.18,1183.33,46,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Fitness Tracker Band,ELEC-FT001-495,Electronics,81.52,41.28,152,26,"Heart rate monitor, sleep tracking, waterproof"
+Women's Winter Jacket,FASHION-WJ001-496,Fashion,126.22,64.52,88,17,Waterproof winter jacket with thermal lining
+Running Shoes Pro,Sports-RS001-497,Sports & Fitness,96.59,43.36,162,31,Lightweight running shoes with cushioned soles
+Office Desk Lamp,OFFICE-DL001-498,Office Supplies,51.84,21.23,134,24,LED desk lamp with adjustable brightness and USB port
+Fitness Tracker Band,ELEC-FT001-499,Electronics,80,45.18,152,25,"Heart rate monitor, sleep tracking, waterproof"
+Portable Speaker,ELEC-PS001-500,Electronics,67.04,38.33,261,31,Bluetooth speaker with 12hr battery and waterproof design
+Backpack Pro,BAGS-BP001-501,Bags & Luggage,76.76,31.69,126,24,Water-resistant backpack with laptop compartment
+Protein Powder 2lb,HEALTH-PP001-502,Health,65.93,30.08,314,44,"Whey protein isolate, vanilla flavor, 30 servings"
+Men's Casual Shirt,FASHION-MS001-503,Fashion,41.72,17.16,422,48,"Cotton blend casual shirt, available in multiple colors"
+Gaming Laptop,GAMING-GL001-504,Gaming,1635.72,1206.39,48,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Children's Building Blocks,TOYS-CB001-505,Toys,48.27,20.64,293,40,200-piece educational building blocks set
+Running Shoes Pro,Sports-RS001-506,Sports & Fitness,90.15,43.92,161,30,Lightweight running shoes with cushioned soles
+Yoga Mat Premium,Sports-YM001-507,Sports & Fitness,33.14,17.74,315,55,Eco-friendly non-slip yoga mat 6mm thick
+Office Desk Lamp,OFFICE-DL001-508,Office Supplies,51.25,21.76,194,29,LED desk lamp with adjustable brightness and USB port
+Women's Winter Jacket,FASHION-WJ001-509,Fashion,140.86,65.49,93,12,Waterproof winter jacket with thermal lining
+Wireless Gaming Mouse,GAMING-GM001-510,Gaming,96.28,47.8,208,28,RGB wireless mouse with 16000 DPI sensor
+Smartphone X12 Pro,ELEC-PH001-511,Electronics,1028.79,660.63,65,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Wireless Bluetooth Headphones,ELEC-BT001-512,Electronics,135.58,71.76,168,21,Noise-cancelling over-ear headphones with 30hr battery
+Running Shoes Pro,Sports-RS001-513,Sports & Fitness,94.2,43.33,152,25,Lightweight running shoes with cushioned soles
+Desk Organizer Set,OFFICE-DO001-514,Office Supplies,30.12,12.66,346,40,5-piece desk organizer with pen holder and tray
+Gaming Laptop,GAMING-GL001-515,Gaming,1723.75,1179.62,39,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Children's Building Blocks,TOYS-CB001-516,Toys,54.52,22.68,323,28,200-piece educational building blocks set
+Air Purifier,HOME-AP001-517,Home & Kitchen,210.11,124.77,70,8,HEPA filter air purifier for medium rooms
+Yoga Mat Premium,Sports-YM001-518,Sports & Fitness,34.63,18.56,303,59,Eco-friendly non-slip yoga mat 6mm thick
+Backpack Pro,BAGS-BP001-519,Bags & Luggage,83.15,37.85,127,21,Water-resistant backpack with laptop compartment
+Office Desk Lamp,OFFICE-DL001-520,Office Supplies,45.33,23.92,138,22,LED desk lamp with adjustable brightness and USB port
+Running Shoes Pro,Sports-RS001-521,Sports & Fitness,93.54,47.35,221,28,Lightweight running shoes with cushioned soles
+Gaming Laptop,GAMING-GL001-522,Gaming,1456.04,1059.73,49,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Coffee Maker Deluxe,HOME-CM001-523,Home & Kitchen,148.13,78.95,62,9,Programmable 12-cup coffee maker with thermal carafe
+Children's Building Blocks,TOYS-CB001-524,Toys,47.05,23.41,215,39,200-piece educational building blocks set
+Coffee Maker Deluxe,HOME-CM001-525,Home & Kitchen,153.46,86.92,60,8,Programmable 12-cup coffee maker with thermal carafe
+Portable Speaker,ELEC-PS001-526,Electronics,66.64,33.95,177,35,Bluetooth speaker with 12hr battery and waterproof design
+Running Shoes Pro,Sports-RS001-527,Sports & Fitness,84.14,45.86,253,31,Lightweight running shoes with cushioned soles
+Electric Toothbrush,HEALTH-ET001-528,Health,94.41,46.56,112,19,Sonic electric toothbrush with 3 brushing modes
+Women's Winter Jacket,FASHION-WJ001-529,Fashion,131.77,68.64,75,12,Waterproof winter jacket with thermal lining
+Children's Building Blocks,TOYS-CB001-530,Toys,53.45,20.98,349,37,200-piece educational building blocks set
+Electric Toothbrush,HEALTH-ET001-531,Health,91.29,49.22,161,17,Sonic electric toothbrush with 3 brushing modes
+Wireless Bluetooth Headphones,ELEC-BT001-532,Electronics,117.96,80.11,171,29,Noise-cancelling over-ear headphones with 30hr battery
+Electric Toothbrush,HEALTH-ET001-533,Health,87.71,51.41,130,21,Sonic electric toothbrush with 3 brushing modes
+Women's Winter Jacket,FASHION-WJ001-534,Fashion,117.11,67.97,97,12,Waterproof winter jacket with thermal lining
+Ceramic Dinner Set,HOME-DS001-535,Home & Kitchen,73.94,41.06,106,19,"16-piece ceramic dinner set, dishwasher safe"
+Fitness Tracker Band,ELEC-FT001-536,Electronics,82.69,38.58,205,22,"Heart rate monitor, sleep tracking, waterproof"
+Portable Speaker,ELEC-PS001-537,Electronics,64.52,38.14,235,34,Bluetooth speaker with 12hr battery and waterproof design
+Portable Speaker,ELEC-PS001-538,Electronics,72.53,31.94,200,33,Bluetooth speaker with 12hr battery and waterproof design
+Wireless Bluetooth Headphones,ELEC-BT001-539,Electronics,117.07,78.86,143,29,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-540,Toys,52.27,23.42,309,39,200-piece educational building blocks set
+Electric Toothbrush,HEALTH-ET001-541,Health,98.79,44.37,123,18,Sonic electric toothbrush with 3 brushing modes
+Wireless Gaming Mouse,GAMING-GM001-542,Gaming,90.96,44.85,203,27,RGB wireless mouse with 16000 DPI sensor
+Desk Organizer Set,OFFICE-DO001-543,Office Supplies,29.21,14.03,246,35,5-piece desk organizer with pen holder and tray
+Digital Kitchen Scale,HOME-KS001-544,Home & Kitchen,26.74,11.46,380,49,Precision digital scale with LCD display
+Backpack Pro,BAGS-BP001-545,Bags & Luggage,74.34,34.86,169,29,Water-resistant backpack with laptop compartment
+Air Purifier,HOME-AP001-546,Home & Kitchen,190.44,130.68,68,7,HEPA filter air purifier for medium rooms
+Air Purifier,HOME-AP001-547,Home & Kitchen,210.5,120.23,62,8,HEPA filter air purifier for medium rooms
+Fitness Tracker Band,ELEC-FT001-548,Electronics,81.58,45.82,229,24,"Heart rate monitor, sleep tracking, waterproof"
+Digital Kitchen Scale,HOME-KS001-549,Home & Kitchen,25.16,9.97,517,54,Precision digital scale with LCD display
+Yoga Mat Premium,Sports-YM001-550,Sports & Fitness,36.31,19.76,237,57,Eco-friendly non-slip yoga mat 6mm thick
+Desk Organizer Set,OFFICE-DO001-551,Office Supplies,27.75,14.32,239,45,5-piece desk organizer with pen holder and tray
+Smartphone X12 Pro,ELEC-PH001-552,Electronics,943.61,647.11,80,13,"Latest flagship with 6.7"" OLED display and triple camera"
+Ceramic Dinner Set,HOME-DS001-553,Home & Kitchen,83.66,39.38,116,23,"16-piece ceramic dinner set, dishwasher safe"
+Men's Casual Shirt,FASHION-MS001-554,Fashion,36.18,19.48,385,54,"Cotton blend casual shirt, available in multiple colors"
+Electric Toothbrush,HEALTH-ET001-555,Health,86.79,46.14,114,19,Sonic electric toothbrush with 3 brushing modes
+Wireless Bluetooth Headphones,ELEC-BT001-556,Electronics,127.08,71.43,173,22,Noise-cancelling over-ear headphones with 30hr battery
+Digital Kitchen Scale,HOME-KS001-557,Home & Kitchen,24.71,11.85,322,60,Precision digital scale with LCD display
+Coffee Maker Deluxe,HOME-CM001-558,Home & Kitchen,153.84,79.5,49,10,Programmable 12-cup coffee maker with thermal carafe
+Portable Speaker,ELEC-PS001-559,Electronics,76.03,37.97,178,24,Bluetooth speaker with 12hr battery and waterproof design
+Air Purifier,HOME-AP001-560,Home & Kitchen,211.79,122.88,65,9,HEPA filter air purifier for medium rooms
+Ceramic Dinner Set,HOME-DS001-561,Home & Kitchen,83.24,38.87,139,17,"16-piece ceramic dinner set, dishwasher safe"
+Running Shoes Pro,Sports-RS001-562,Sports & Fitness,83.75,47.18,241,31,Lightweight running shoes with cushioned soles
+Digital Kitchen Scale,HOME-KS001-563,Home & Kitchen,25.75,9.97,429,53,Precision digital scale with LCD display
+Digital Kitchen Scale,HOME-KS001-564,Home & Kitchen,27.41,11.78,280,51,Precision digital scale with LCD display
+Protein Powder 2lb,HEALTH-PP001-565,Health,55.45,29.76,250,33,"Whey protein isolate, vanilla flavor, 30 servings"
+Smartphone X12 Pro,ELEC-PH001-566,Electronics,1018.9,710.75,62,17,"Latest flagship with 6.7"" OLED display and triple camera"
+Coffee Maker Deluxe,HOME-CM001-567,Home & Kitchen,142.04,88.76,57,8,Programmable 12-cup coffee maker with thermal carafe
+Coffee Maker Deluxe,HOME-CM001-568,Home & Kitchen,152.17,84.7,77,11,Programmable 12-cup coffee maker with thermal carafe
+Wireless Gaming Mouse,GAMING-GM001-569,Gaming,83.63,48.99,156,26,RGB wireless mouse with 16000 DPI sensor
+Gaming Laptop,GAMING-GL001-570,Gaming,1553.73,1147.36,43,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Protein Powder 2lb,HEALTH-PP001-571,Health,55.47,27.71,305,41,"Whey protein isolate, vanilla flavor, 30 servings"
+Gaming Laptop,GAMING-GL001-572,Gaming,1492.4,1078.92,30,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Women's Winter Jacket,FASHION-WJ001-573,Fashion,142.35,63.54,81,15,Waterproof winter jacket with thermal lining
+Gaming Laptop,GAMING-GL001-574,Gaming,1645.94,1066.78,37,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Protein Powder 2lb,HEALTH-PP001-575,Health,56.94,26.61,194,40,"Whey protein isolate, vanilla flavor, 30 servings"
+Wireless Gaming Mouse,GAMING-GM001-576,Gaming,88.38,46.89,172,30,RGB wireless mouse with 16000 DPI sensor
+Coffee Maker Deluxe,HOME-CM001-577,Home & Kitchen,144.29,82.81,49,8,Programmable 12-cup coffee maker with thermal carafe
+Portable Speaker,ELEC-PS001-578,Electronics,67.8,36.21,172,27,Bluetooth speaker with 12hr battery and waterproof design
+Office Desk Lamp,OFFICE-DL001-579,Office Supplies,48.55,20.97,207,29,LED desk lamp with adjustable brightness and USB port
+Desk Organizer Set,OFFICE-DO001-580,Office Supplies,28.08,14.52,254,46,5-piece desk organizer with pen holder and tray
+Digital Kitchen Scale,HOME-KS001-581,Home & Kitchen,24.29,10.37,431,66,Precision digital scale with LCD display
+Women's Winter Jacket,FASHION-WJ001-582,Fashion,135.93,66.11,82,14,Waterproof winter jacket with thermal lining
+Running Shoes Pro,Sports-RS001-583,Sports & Fitness,94.27,45.5,255,29,Lightweight running shoes with cushioned soles
+Smartphone X12 Pro,ELEC-PH001-584,Electronics,910.14,598.78,75,12,"Latest flagship with 6.7"" OLED display and triple camera"
+Desk Organizer Set,OFFICE-DO001-585,Office Supplies,31.06,14.19,357,32,5-piece desk organizer with pen holder and tray
+Men's Casual Shirt,FASHION-MS001-586,Fashion,43,19.02,350,51,"Cotton blend casual shirt, available in multiple colors"
+Protein Powder 2lb,HEALTH-PP001-587,Health,62.8,26.44,196,36,"Whey protein isolate, vanilla flavor, 30 servings"
+Ceramic Dinner Set,HOME-DS001-588,Home & Kitchen,76.47,37.06,133,22,"16-piece ceramic dinner set, dishwasher safe"
+Digital Kitchen Scale,HOME-KS001-589,Home & Kitchen,26.55,11.3,506,63,Precision digital scale with LCD display
+Digital Kitchen Scale,HOME-KS001-590,Home & Kitchen,26.74,10.16,433,52,Precision digital scale with LCD display
+Backpack Pro,BAGS-BP001-591,Bags & Luggage,73.05,33.96,194,26,Water-resistant backpack with laptop compartment
+Smartphone X12 Pro,ELEC-PH001-592,Electronics,921.97,690.5,62,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Smartphone X12 Pro,ELEC-PH001-593,Electronics,922.44,607.88,81,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Desk Organizer Set,OFFICE-DO001-594,Office Supplies,29.95,14.21,384,47,5-piece desk organizer with pen holder and tray
+Fitness Tracker Band,ELEC-FT001-595,Electronics,80.27,42.19,167,21,"Heart rate monitor, sleep tracking, waterproof"
+Women's Winter Jacket,FASHION-WJ001-596,Fashion,128.02,60.68,66,17,Waterproof winter jacket with thermal lining
+Men's Casual Shirt,FASHION-MS001-597,Fashion,41.47,17.62,291,55,"Cotton blend casual shirt, available in multiple colors"
+Backpack Pro,BAGS-BP001-598,Bags & Luggage,79.97,32.86,202,23,Water-resistant backpack with laptop compartment
+Fitness Tracker Band,ELEC-FT001-599,Electronics,78.91,40.1,195,20,"Heart rate monitor, sleep tracking, waterproof"
+Digital Kitchen Scale,HOME-KS001-600,Home & Kitchen,23.5,10.7,390,62,Precision digital scale with LCD display
+Yoga Mat Premium,Sports-YM001-601,Sports & Fitness,37.37,19.18,243,45,Eco-friendly non-slip yoga mat 6mm thick
+Coffee Maker Deluxe,HOME-CM001-602,Home & Kitchen,161.54,85.45,47,8,Programmable 12-cup coffee maker with thermal carafe
+Wireless Gaming Mouse,GAMING-GM001-603,Gaming,85.56,42.16,183,31,RGB wireless mouse with 16000 DPI sensor
+Protein Powder 2lb,HEALTH-PP001-604,Health,65.08,25.99,317,44,"Whey protein isolate, vanilla flavor, 30 servings"
+Yoga Mat Premium,Sports-YM001-605,Sports & Fitness,34.23,18.55,380,54,Eco-friendly non-slip yoga mat 6mm thick
+Fitness Tracker Band,ELEC-FT001-606,Electronics,77.62,42.92,142,27,"Heart rate monitor, sleep tracking, waterproof"
+Running Shoes Pro,Sports-RS001-607,Sports & Fitness,89.19,42.5,168,34,Lightweight running shoes with cushioned soles
+Fitness Tracker Band,ELEC-FT001-608,Electronics,81.45,45.58,158,28,"Heart rate monitor, sleep tracking, waterproof"
+Children's Building Blocks,TOYS-CB001-609,Toys,50.73,22.29,315,30,200-piece educational building blocks set
+Smartphone X12 Pro,ELEC-PH001-610,Electronics,993.54,704.44,71,17,"Latest flagship with 6.7"" OLED display and triple camera"
+Electric Toothbrush,HEALTH-ET001-611,Health,93.96,52.55,107,22,Sonic electric toothbrush with 3 brushing modes
+Women's Winter Jacket,FASHION-WJ001-612,Fashion,129,64.88,86,16,Waterproof winter jacket with thermal lining
+Protein Powder 2lb,HEALTH-PP001-613,Health,55.13,28.62,264,34,"Whey protein isolate, vanilla flavor, 30 servings"
+Running Shoes Pro,Sports-RS001-614,Sports & Fitness,82.91,42.49,170,29,Lightweight running shoes with cushioned soles
+Air Purifier,HOME-AP001-615,Home & Kitchen,217.13,122.96,65,6,HEPA filter air purifier for medium rooms
+Coffee Maker Deluxe,HOME-CM001-616,Home & Kitchen,148.15,79.96,70,11,Programmable 12-cup coffee maker with thermal carafe
+Wireless Gaming Mouse,GAMING-GM001-617,Gaming,85.12,48.7,269,26,RGB wireless mouse with 16000 DPI sensor
+Desk Organizer Set,OFFICE-DO001-618,Office Supplies,32.28,13.28,296,34,5-piece desk organizer with pen holder and tray
+Men's Casual Shirt,FASHION-MS001-619,Fashion,42.87,17.15,373,49,"Cotton blend casual shirt, available in multiple colors"
+Smartphone X12 Pro,ELEC-PH001-620,Electronics,986.95,638.4,90,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Ceramic Dinner Set,HOME-DS001-621,Home & Kitchen,85.92,41.01,137,21,"16-piece ceramic dinner set, dishwasher safe"
+Coffee Maker Deluxe,HOME-CM001-622,Home & Kitchen,152.18,84.46,62,10,Programmable 12-cup coffee maker with thermal carafe
+Smartphone X12 Pro,ELEC-PH001-623,Electronics,981.43,596.4,91,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Backpack Pro,BAGS-BP001-624,Bags & Luggage,75.09,37.56,217,26,Water-resistant backpack with laptop compartment
+Backpack Pro,BAGS-BP001-625,Bags & Luggage,78.52,37.81,161,24,Water-resistant backpack with laptop compartment
+Wireless Gaming Mouse,GAMING-GM001-626,Gaming,85.51,49.41,202,31,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-627,Electronics,137.76,72.97,171,27,Noise-cancelling over-ear headphones with 30hr battery
+Men's Casual Shirt,FASHION-MS001-628,Fashion,41.14,17.39,304,46,"Cotton blend casual shirt, available in multiple colors"
+Wireless Bluetooth Headphones,ELEC-BT001-629,Electronics,127.58,78.11,136,20,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-630,Toys,45.78,22.64,233,33,200-piece educational building blocks set
+Electric Toothbrush,HEALTH-ET001-631,Health,90.31,48.75,122,19,Sonic electric toothbrush with 3 brushing modes
+Electric Toothbrush,HEALTH-ET001-632,Health,89.8,47.44,163,20,Sonic electric toothbrush with 3 brushing modes
+Digital Kitchen Scale,HOME-KS001-633,Home & Kitchen,25.32,10.84,378,59,Precision digital scale with LCD display
+Desk Organizer Set,OFFICE-DO001-634,Office Supplies,30.95,13.51,354,33,5-piece desk organizer with pen holder and tray
+Air Purifier,HOME-AP001-635,Home & Kitchen,213.19,115.77,53,8,HEPA filter air purifier for medium rooms
+Digital Kitchen Scale,HOME-KS001-636,Home & Kitchen,25.69,10.28,295,54,Precision digital scale with LCD display
+Wireless Bluetooth Headphones,ELEC-BT001-637,Electronics,127.03,79.92,143,28,Noise-cancelling over-ear headphones with 30hr battery
+Ceramic Dinner Set,HOME-DS001-638,Home & Kitchen,77.66,39.49,113,20,"16-piece ceramic dinner set, dishwasher safe"
+Ceramic Dinner Set,HOME-DS001-639,Home & Kitchen,78.4,43.23,106,20,"16-piece ceramic dinner set, dishwasher safe"
+Men's Casual Shirt,FASHION-MS001-640,Fashion,37.06,16.81,440,53,"Cotton blend casual shirt, available in multiple colors"
+Portable Speaker,ELEC-PS001-641,Electronics,65.52,35.49,254,24,Bluetooth speaker with 12hr battery and waterproof design
+Office Desk Lamp,OFFICE-DL001-642,Office Supplies,51.9,21.8,159,26,LED desk lamp with adjustable brightness and USB port
+Wireless Bluetooth Headphones,ELEC-BT001-643,Electronics,133.03,70.94,110,20,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-644,Toys,54.97,22.48,243,41,200-piece educational building blocks set
+Smartphone X12 Pro,ELEC-PH001-645,Electronics,981.66,615.04,108,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Digital Kitchen Scale,HOME-KS001-646,Home & Kitchen,23.41,10.92,407,67,Precision digital scale with LCD display
+Backpack Pro,BAGS-BP001-647,Bags & Luggage,77.57,38.24,140,22,Water-resistant backpack with laptop compartment
+Coffee Maker Deluxe,HOME-CM001-648,Home & Kitchen,138.34,85.96,45,10,Programmable 12-cup coffee maker with thermal carafe
+Backpack Pro,BAGS-BP001-649,Bags & Luggage,77.73,37.58,169,29,Water-resistant backpack with laptop compartment
+Running Shoes Pro,Sports-RS001-650,Sports & Fitness,83.2,44.5,250,35,Lightweight running shoes with cushioned soles
+Ceramic Dinner Set,HOME-DS001-651,Home & Kitchen,76.29,39.77,111,23,"16-piece ceramic dinner set, dishwasher safe"
+Fitness Tracker Band,ELEC-FT001-652,Electronics,83.97,39.18,181,25,"Heart rate monitor, sleep tracking, waterproof"
+Smartphone X12 Pro,ELEC-PH001-653,Electronics,921.89,684.39,108,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Air Purifier,HOME-AP001-654,Home & Kitchen,219.87,109.09,41,8,HEPA filter air purifier for medium rooms
+Yoga Mat Premium,Sports-YM001-655,Sports & Fitness,36.87,19.75,228,44,Eco-friendly non-slip yoga mat 6mm thick
+Protein Powder 2lb,HEALTH-PP001-656,Health,62.51,26.29,207,41,"Whey protein isolate, vanilla flavor, 30 servings"
+Protein Powder 2lb,HEALTH-PP001-657,Health,60.73,30.22,197,32,"Whey protein isolate, vanilla flavor, 30 servings"
+Digital Kitchen Scale,HOME-KS001-658,Home & Kitchen,22.94,11.68,332,53,Precision digital scale with LCD display
+Yoga Mat Premium,Sports-YM001-659,Sports & Fitness,34.17,17.5,294,40,Eco-friendly non-slip yoga mat 6mm thick
+Digital Kitchen Scale,HOME-KS001-660,Home & Kitchen,22.57,10.87,360,61,Precision digital scale with LCD display
+Fitness Tracker Band,ELEC-FT001-661,Electronics,78.43,41.58,192,27,"Heart rate monitor, sleep tracking, waterproof"
+Coffee Maker Deluxe,HOME-CM001-662,Home & Kitchen,163.42,86.07,62,10,Programmable 12-cup coffee maker with thermal carafe
+Portable Speaker,ELEC-PS001-663,Electronics,65.63,36.12,235,30,Bluetooth speaker with 12hr battery and waterproof design
+Desk Organizer Set,OFFICE-DO001-664,Office Supplies,30.61,14.74,231,42,5-piece desk organizer with pen holder and tray
+Children's Building Blocks,TOYS-CB001-665,Toys,51.91,22.4,259,30,200-piece educational building blocks set
+Running Shoes Pro,Sports-RS001-666,Sports & Fitness,94.4,41.75,151,34,Lightweight running shoes with cushioned soles
+Backpack Pro,BAGS-BP001-667,Bags & Luggage,83.48,38.16,227,22,Water-resistant backpack with laptop compartment
+Smartphone X12 Pro,ELEC-PH001-668,Electronics,1084.16,604.77,94,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Fitness Tracker Band,ELEC-FT001-669,Electronics,86.75,38.81,136,25,"Heart rate monitor, sleep tracking, waterproof"
+Protein Powder 2lb,HEALTH-PP001-670,Health,65.31,26.74,235,37,"Whey protein isolate, vanilla flavor, 30 servings"
+Children's Building Blocks,TOYS-CB001-671,Toys,50.88,19.91,263,36,200-piece educational building blocks set
+Wireless Bluetooth Headphones,ELEC-BT001-672,Electronics,136.73,82.71,173,24,Noise-cancelling over-ear headphones with 30hr battery
+Women's Winter Jacket,FASHION-WJ001-673,Fashion,129.78,59.32,102,15,Waterproof winter jacket with thermal lining
+Ceramic Dinner Set,HOME-DS001-674,Home & Kitchen,81.24,43.12,120,18,"16-piece ceramic dinner set, dishwasher safe"
+Portable Speaker,ELEC-PS001-675,Electronics,69.64,34.92,220,33,Bluetooth speaker with 12hr battery and waterproof design
+Wireless Gaming Mouse,GAMING-GM001-676,Gaming,91,43.7,215,34,RGB wireless mouse with 16000 DPI sensor
+Children's Building Blocks,TOYS-CB001-677,Toys,46.8,23.32,317,35,200-piece educational building blocks set
+Women's Winter Jacket,FASHION-WJ001-678,Fashion,121.47,70.25,114,13,Waterproof winter jacket with thermal lining
+Yoga Mat Premium,Sports-YM001-679,Sports & Fitness,34.35,17.75,384,49,Eco-friendly non-slip yoga mat 6mm thick
+Fitness Tracker Band,ELEC-FT001-680,Electronics,82.45,44,228,22,"Heart rate monitor, sleep tracking, waterproof"
+Digital Kitchen Scale,HOME-KS001-681,Home & Kitchen,23.4,10.18,349,54,Precision digital scale with LCD display
+Smartphone X12 Pro,ELEC-PH001-682,Electronics,939.84,629.46,97,17,"Latest flagship with 6.7"" OLED display and triple camera"
+Women's Winter Jacket,FASHION-WJ001-683,Fashion,135.5,67.85,81,15,Waterproof winter jacket with thermal lining
+Smartphone X12 Pro,ELEC-PH001-684,Electronics,965.85,695.32,72,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Office Desk Lamp,OFFICE-DL001-685,Office Supplies,52.78,22.25,141,28,LED desk lamp with adjustable brightness and USB port
+Children's Building Blocks,TOYS-CB001-686,Toys,53.44,22.43,251,28,200-piece educational building blocks set
+Digital Kitchen Scale,HOME-KS001-687,Home & Kitchen,23.68,12.02,381,69,Precision digital scale with LCD display
+Protein Powder 2lb,HEALTH-PP001-688,Health,64.63,30.16,308,42,"Whey protein isolate, vanilla flavor, 30 servings"
+Backpack Pro,BAGS-BP001-689,Bags & Luggage,84.89,38.1,222,22,Water-resistant backpack with laptop compartment
+Backpack Pro,BAGS-BP001-690,Bags & Luggage,74.47,32.38,154,24,Water-resistant backpack with laptop compartment
+Children's Building Blocks,TOYS-CB001-691,Toys,51.83,23.24,323,35,200-piece educational building blocks set
+Children's Building Blocks,TOYS-CB001-692,Toys,45.39,20.38,289,36,200-piece educational building blocks set
+Fitness Tracker Band,ELEC-FT001-693,Electronics,75.86,43.27,216,29,"Heart rate monitor, sleep tracking, waterproof"
+Protein Powder 2lb,HEALTH-PP001-694,Health,62.37,29.28,197,40,"Whey protein isolate, vanilla flavor, 30 servings"
+Protein Powder 2lb,HEALTH-PP001-695,Health,64.83,26.25,208,46,"Whey protein isolate, vanilla flavor, 30 servings"
+Backpack Pro,BAGS-BP001-696,Bags & Luggage,74.86,33.01,224,22,Water-resistant backpack with laptop compartment
+Children's Building Blocks,TOYS-CB001-697,Toys,52.9,22.05,334,40,200-piece educational building blocks set
+Men's Casual Shirt,FASHION-MS001-698,Fashion,40.89,18.67,277,45,"Cotton blend casual shirt, available in multiple colors"
+Portable Speaker,ELEC-PS001-699,Electronics,72.22,33.66,153,28,Bluetooth speaker with 12hr battery and waterproof design
+Wireless Gaming Mouse,GAMING-GM001-700,Gaming,92.11,46.42,258,27,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-701,Electronics,141.79,71.17,158,23,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Bluetooth Headphones,ELEC-BT001-702,Electronics,140.76,80.21,136,20,Noise-cancelling over-ear headphones with 30hr battery
+Smartphone X12 Pro,ELEC-PH001-703,Electronics,1042.21,642.32,106,12,"Latest flagship with 6.7"" OLED display and triple camera"
+Digital Kitchen Scale,HOME-KS001-704,Home & Kitchen,24.25,10.86,501,64,Precision digital scale with LCD display
+Wireless Gaming Mouse,GAMING-GM001-705,Gaming,93.7,48.83,258,33,RGB wireless mouse with 16000 DPI sensor
+Digital Kitchen Scale,HOME-KS001-706,Home & Kitchen,23.72,10.26,325,64,Precision digital scale with LCD display
+Smartphone X12 Pro,ELEC-PH001-707,Electronics,1080.48,691.83,72,13,"Latest flagship with 6.7"" OLED display and triple camera"
+Ceramic Dinner Set,HOME-DS001-708,Home & Kitchen,76.62,38.93,121,21,"16-piece ceramic dinner set, dishwasher safe"
+Coffee Maker Deluxe,HOME-CM001-709,Home & Kitchen,159.14,85.87,73,9,Programmable 12-cup coffee maker with thermal carafe
+Children's Building Blocks,TOYS-CB001-710,Toys,51.26,20.3,257,28,200-piece educational building blocks set
+Men's Casual Shirt,FASHION-MS001-711,Fashion,41.33,17.22,289,54,"Cotton blend casual shirt, available in multiple colors"
+Yoga Mat Premium,Sports-YM001-712,Sports & Fitness,37.74,17.14,211,58,Eco-friendly non-slip yoga mat 6mm thick
+Coffee Maker Deluxe,HOME-CM001-713,Home & Kitchen,135.39,81.69,44,9,Programmable 12-cup coffee maker with thermal carafe
+Women's Winter Jacket,FASHION-WJ001-714,Fashion,138.82,63.56,111,16,Waterproof winter jacket with thermal lining
+Smartphone X12 Pro,ELEC-PH001-715,Electronics,978.3,617.1,64,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Yoga Mat Premium,Sports-YM001-716,Sports & Fitness,35.52,19.41,280,47,Eco-friendly non-slip yoga mat 6mm thick
+Digital Kitchen Scale,HOME-KS001-717,Home & Kitchen,25.86,12,349,65,Precision digital scale with LCD display
+Air Purifier,HOME-AP001-718,Home & Kitchen,206.85,108.54,54,6,HEPA filter air purifier for medium rooms
+Office Desk Lamp,OFFICE-DL001-719,Office Supplies,53.79,21.61,142,27,LED desk lamp with adjustable brightness and USB port
+Electric Toothbrush,HEALTH-ET001-720,Health,93.67,52.74,104,21,Sonic electric toothbrush with 3 brushing modes
+Wireless Gaming Mouse,GAMING-GM001-721,Gaming,84.35,41.28,260,33,RGB wireless mouse with 16000 DPI sensor
+Wireless Gaming Mouse,GAMING-GM001-722,Gaming,87.34,41.87,182,31,RGB wireless mouse with 16000 DPI sensor
+Children's Building Blocks,TOYS-CB001-723,Toys,54.97,23.42,262,28,200-piece educational building blocks set
+Coffee Maker Deluxe,HOME-CM001-724,Home & Kitchen,154.13,88.61,75,9,Programmable 12-cup coffee maker with thermal carafe
+Gaming Laptop,GAMING-GL001-725,Gaming,1573.51,1050.28,43,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Men's Casual Shirt,FASHION-MS001-726,Fashion,37.92,17.32,408,46,"Cotton blend casual shirt, available in multiple colors"
+Protein Powder 2lb,HEALTH-PP001-727,Health,57.86,25.26,206,46,"Whey protein isolate, vanilla flavor, 30 servings"
+Gaming Laptop,GAMING-GL001-728,Gaming,1573.49,1115.63,28,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Yoga Mat Premium,Sports-YM001-729,Sports & Fitness,36.1,17.21,262,42,Eco-friendly non-slip yoga mat 6mm thick
+Portable Speaker,ELEC-PS001-730,Electronics,70.88,37.8,161,24,Bluetooth speaker with 12hr battery and waterproof design
+Electric Toothbrush,HEALTH-ET001-731,Health,95.7,51.91,96,20,Sonic electric toothbrush with 3 brushing modes
+Coffee Maker Deluxe,HOME-CM001-732,Home & Kitchen,155.39,90.73,51,9,Programmable 12-cup coffee maker with thermal carafe
+Air Purifier,HOME-AP001-733,Home & Kitchen,185.68,124.35,59,7,HEPA filter air purifier for medium rooms
+Portable Speaker,ELEC-PS001-734,Electronics,73.68,33.08,264,27,Bluetooth speaker with 12hr battery and waterproof design
+Protein Powder 2lb,HEALTH-PP001-735,Health,54.43,25.66,321,47,"Whey protein isolate, vanilla flavor, 30 servings"
+Desk Organizer Set,OFFICE-DO001-736,Office Supplies,29.53,13.34,279,46,5-piece desk organizer with pen holder and tray
+Backpack Pro,BAGS-BP001-737,Bags & Luggage,76.2,32.71,210,23,Water-resistant backpack with laptop compartment
+Ceramic Dinner Set,HOME-DS001-738,Home & Kitchen,75.57,37.83,148,18,"16-piece ceramic dinner set, dishwasher safe"
+Women's Winter Jacket,FASHION-WJ001-739,Fashion,139.94,68.5,78,16,Waterproof winter jacket with thermal lining
+Yoga Mat Premium,Sports-YM001-740,Sports & Fitness,35.88,20.28,341,48,Eco-friendly non-slip yoga mat 6mm thick
+Women's Winter Jacket,FASHION-WJ001-741,Fashion,117.74,70.4,78,14,Waterproof winter jacket with thermal lining
+Children's Building Blocks,TOYS-CB001-742,Toys,47.25,21.08,339,37,200-piece educational building blocks set
+Digital Kitchen Scale,HOME-KS001-743,Home & Kitchen,26.08,11.5,310,59,Precision digital scale with LCD display
+Portable Speaker,ELEC-PS001-744,Electronics,71.92,32.6,270,32,Bluetooth speaker with 12hr battery and waterproof design
+Yoga Mat Premium,Sports-YM001-745,Sports & Fitness,33.43,20.04,276,47,Eco-friendly non-slip yoga mat 6mm thick
+Gaming Laptop,GAMING-GL001-746,Gaming,1525.42,1089.71,31,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Backpack Pro,BAGS-BP001-747,Bags & Luggage,75.92,33.31,213,22,Water-resistant backpack with laptop compartment
+Running Shoes Pro,Sports-RS001-748,Sports & Fitness,94.91,42.54,197,33,Lightweight running shoes with cushioned soles
+Air Purifier,HOME-AP001-749,Home & Kitchen,219.92,124.11,42,9,HEPA filter air purifier for medium rooms
+Women's Winter Jacket,FASHION-WJ001-750,Fashion,130.96,69.41,81,15,Waterproof winter jacket with thermal lining
+Men's Casual Shirt,FASHION-MS001-751,Fashion,39.21,16.98,337,45,"Cotton blend casual shirt, available in multiple colors"
+Wireless Gaming Mouse,GAMING-GM001-752,Gaming,98.24,44.27,169,31,RGB wireless mouse with 16000 DPI sensor
+Fitness Tracker Band,ELEC-FT001-753,Electronics,83.64,43.13,221,26,"Heart rate monitor, sleep tracking, waterproof"
+Air Purifier,HOME-AP001-754,Home & Kitchen,184.45,129.03,64,7,HEPA filter air purifier for medium rooms
+Wireless Gaming Mouse,GAMING-GM001-755,Gaming,82.49,40.88,284,26,RGB wireless mouse with 16000 DPI sensor
+Children's Building Blocks,TOYS-CB001-756,Toys,49.19,20.49,342,35,200-piece educational building blocks set
+Portable Speaker,ELEC-PS001-757,Electronics,69.5,38.11,176,35,Bluetooth speaker with 12hr battery and waterproof design
+Portable Speaker,ELEC-PS001-758,Electronics,71.15,36.39,244,26,Bluetooth speaker with 12hr battery and waterproof design
+Children's Building Blocks,TOYS-CB001-759,Toys,53.07,20.13,235,38,200-piece educational building blocks set
+Desk Organizer Set,OFFICE-DO001-760,Office Supplies,27.19,12.62,225,35,5-piece desk organizer with pen holder and tray
+Men's Casual Shirt,FASHION-MS001-761,Fashion,36.75,19.35,432,45,"Cotton blend casual shirt, available in multiple colors"
+Children's Building Blocks,TOYS-CB001-762,Toys,50.92,23.56,303,32,200-piece educational building blocks set
+Smartphone X12 Pro,ELEC-PH001-763,Electronics,1077.59,665.24,76,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Women's Winter Jacket,FASHION-WJ001-764,Fashion,131.88,67.87,88,13,Waterproof winter jacket with thermal lining
+Fitness Tracker Band,ELEC-FT001-765,Electronics,87.82,38.69,165,25,"Heart rate monitor, sleep tracking, waterproof"
+Fitness Tracker Band,ELEC-FT001-766,Electronics,76.21,44.75,192,28,"Heart rate monitor, sleep tracking, waterproof"
+Backpack Pro,BAGS-BP001-767,Bags & Luggage,75.5,33.45,185,28,Water-resistant backpack with laptop compartment
+Wireless Bluetooth Headphones,ELEC-BT001-768,Electronics,137.33,77.42,165,21,Noise-cancelling over-ear headphones with 30hr battery
+Coffee Maker Deluxe,HOME-CM001-769,Home & Kitchen,138.5,85.32,45,8,Programmable 12-cup coffee maker with thermal carafe
+Desk Organizer Set,OFFICE-DO001-770,Office Supplies,30.87,12.86,260,42,5-piece desk organizer with pen holder and tray
+Yoga Mat Premium,Sports-YM001-771,Sports & Fitness,34.21,17.87,293,49,Eco-friendly non-slip yoga mat 6mm thick
+Air Purifier,HOME-AP001-772,Home & Kitchen,212.93,117.19,48,9,HEPA filter air purifier for medium rooms
+Gaming Laptop,GAMING-GL001-773,Gaming,1522.63,1056.46,28,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Men's Casual Shirt,FASHION-MS001-774,Fashion,36.27,17.87,451,55,"Cotton blend casual shirt, available in multiple colors"
+Smartphone X12 Pro,ELEC-PH001-775,Electronics,931.84,636.89,92,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Desk Organizer Set,OFFICE-DO001-776,Office Supplies,31,13.28,387,34,5-piece desk organizer with pen holder and tray
+Protein Powder 2lb,HEALTH-PP001-777,Health,59.53,29.84,238,40,"Whey protein isolate, vanilla flavor, 30 servings"
+Women's Winter Jacket,FASHION-WJ001-778,Fashion,139.76,68.96,105,14,Waterproof winter jacket with thermal lining
+Running Shoes Pro,Sports-RS001-779,Sports & Fitness,85.43,46.42,259,24,Lightweight running shoes with cushioned soles
+Gaming Laptop,GAMING-GL001-780,Gaming,1558.45,1094.41,48,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Ceramic Dinner Set,HOME-DS001-781,Home & Kitchen,77.68,38.9,139,21,"16-piece ceramic dinner set, dishwasher safe"
+Backpack Pro,BAGS-BP001-782,Bags & Luggage,81.11,33.62,191,29,Water-resistant backpack with laptop compartment
+Wireless Bluetooth Headphones,ELEC-BT001-783,Electronics,138.02,72.22,114,20,Noise-cancelling over-ear headphones with 30hr battery
+Running Shoes Pro,Sports-RS001-784,Sports & Fitness,83.02,48.46,168,31,Lightweight running shoes with cushioned soles
+Gaming Laptop,GAMING-GL001-785,Gaming,1485.68,1076.63,49,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Smartphone X12 Pro,ELEC-PH001-786,Electronics,958.81,682.82,86,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Women's Winter Jacket,FASHION-WJ001-787,Fashion,118.37,70.24,92,15,Waterproof winter jacket with thermal lining
+Women's Winter Jacket,FASHION-WJ001-788,Fashion,131.28,62.15,71,16,Waterproof winter jacket with thermal lining
+Coffee Maker Deluxe,HOME-CM001-789,Home & Kitchen,141.18,78.3,67,10,Programmable 12-cup coffee maker with thermal carafe
+Wireless Gaming Mouse,GAMING-GM001-790,Gaming,96.97,48.41,164,24,RGB wireless mouse with 16000 DPI sensor
+Electric Toothbrush,HEALTH-ET001-791,Health,89.63,46.15,140,19,Sonic electric toothbrush with 3 brushing modes
+Gaming Laptop,GAMING-GL001-792,Gaming,1591.96,1021.52,30,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Yoga Mat Premium,Sports-YM001-793,Sports & Fitness,36.35,18.88,221,47,Eco-friendly non-slip yoga mat 6mm thick
+Smartphone X12 Pro,ELEC-PH001-794,Electronics,1082.97,592.58,81,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Portable Speaker,ELEC-PS001-795,Electronics,74.15,32.23,179,28,Bluetooth speaker with 12hr battery and waterproof design
+Ceramic Dinner Set,HOME-DS001-796,Home & Kitchen,79.11,39.39,150,21,"16-piece ceramic dinner set, dishwasher safe"
+Smartphone X12 Pro,ELEC-PH001-797,Electronics,971.21,597.16,61,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Fitness Tracker Band,ELEC-FT001-798,Electronics,79.84,38.85,162,21,"Heart rate monitor, sleep tracking, waterproof"
+Air Purifier,HOME-AP001-799,Home & Kitchen,218.78,113.53,40,6,HEPA filter air purifier for medium rooms
+Protein Powder 2lb,HEALTH-PP001-800,Health,55.91,26.15,324,42,"Whey protein isolate, vanilla flavor, 30 servings"
+Office Desk Lamp,OFFICE-DL001-801,Office Supplies,53.51,21.2,184,24,LED desk lamp with adjustable brightness and USB port
+Protein Powder 2lb,HEALTH-PP001-802,Health,64.02,26.05,258,38,"Whey protein isolate, vanilla flavor, 30 servings"
+Fitness Tracker Band,ELEC-FT001-803,Electronics,77.33,41.55,186,20,"Heart rate monitor, sleep tracking, waterproof"
+Ceramic Dinner Set,HOME-DS001-804,Home & Kitchen,81.33,43.37,154,19,"16-piece ceramic dinner set, dishwasher safe"
+Yoga Mat Premium,Sports-YM001-805,Sports & Fitness,38.31,20.16,242,59,Eco-friendly non-slip yoga mat 6mm thick
+Women's Winter Jacket,FASHION-WJ001-806,Fashion,130.42,58.96,77,14,Waterproof winter jacket with thermal lining
+Women's Winter Jacket,FASHION-WJ001-807,Fashion,130.64,64.18,116,12,Waterproof winter jacket with thermal lining
+Backpack Pro,BAGS-BP001-808,Bags & Luggage,81.29,37.02,186,21,Water-resistant backpack with laptop compartment
+Wireless Bluetooth Headphones,ELEC-BT001-809,Electronics,130.87,77.29,170,27,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Gaming Mouse,GAMING-GM001-810,Gaming,91.17,42.72,242,29,RGB wireless mouse with 16000 DPI sensor
+Backpack Pro,BAGS-BP001-811,Bags & Luggage,74.07,32.4,218,27,Water-resistant backpack with laptop compartment
+Ceramic Dinner Set,HOME-DS001-812,Home & Kitchen,80.3,41.5,102,21,"16-piece ceramic dinner set, dishwasher safe"
+Gaming Laptop,GAMING-GL001-813,Gaming,1661.95,1102.34,31,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Women's Winter Jacket,FASHION-WJ001-814,Fashion,133.28,68.07,76,13,Waterproof winter jacket with thermal lining
+Children's Building Blocks,TOYS-CB001-815,Toys,48.87,22.91,291,35,200-piece educational building blocks set
+Air Purifier,HOME-AP001-816,Home & Kitchen,192.82,114.83,60,9,HEPA filter air purifier for medium rooms
+Coffee Maker Deluxe,HOME-CM001-817,Home & Kitchen,153.68,83.1,65,8,Programmable 12-cup coffee maker with thermal carafe
+Protein Powder 2lb,HEALTH-PP001-818,Health,60.83,26.28,233,33,"Whey protein isolate, vanilla flavor, 30 servings"
+Yoga Mat Premium,Sports-YM001-819,Sports & Fitness,32.4,18.52,293,46,Eco-friendly non-slip yoga mat 6mm thick
+Protein Powder 2lb,HEALTH-PP001-820,Health,55.99,29.28,314,41,"Whey protein isolate, vanilla flavor, 30 servings"
+Coffee Maker Deluxe,HOME-CM001-821,Home & Kitchen,143.91,80.5,48,8,Programmable 12-cup coffee maker with thermal carafe
+Office Desk Lamp,OFFICE-DL001-822,Office Supplies,53.8,22.6,193,27,LED desk lamp with adjustable brightness and USB port
+Smartphone X12 Pro,ELEC-PH001-823,Electronics,964.23,635.39,66,13,"Latest flagship with 6.7"" OLED display and triple camera"
+Fitness Tracker Band,ELEC-FT001-824,Electronics,72.7,42.85,174,23,"Heart rate monitor, sleep tracking, waterproof"
+Women's Winter Jacket,FASHION-WJ001-825,Fashion,142.56,66.84,91,14,Waterproof winter jacket with thermal lining
+Office Desk Lamp,OFFICE-DL001-826,Office Supplies,48.64,20.47,183,22,LED desk lamp with adjustable brightness and USB port
+Running Shoes Pro,Sports-RS001-827,Sports & Fitness,87.17,45.15,226,33,Lightweight running shoes with cushioned soles
+Portable Speaker,ELEC-PS001-828,Electronics,76.33,31.66,151,28,Bluetooth speaker with 12hr battery and waterproof design
+Air Purifier,HOME-AP001-829,Home & Kitchen,196.67,122.53,63,6,HEPA filter air purifier for medium rooms
+Children's Building Blocks,TOYS-CB001-830,Toys,50.06,21.45,274,38,200-piece educational building blocks set
+Gaming Laptop,GAMING-GL001-831,Gaming,1653.63,1120.07,43,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Wireless Bluetooth Headphones,ELEC-BT001-832,Electronics,125.49,73.23,139,28,Noise-cancelling over-ear headphones with 30hr battery
+Office Desk Lamp,OFFICE-DL001-833,Office Supplies,50.94,24.08,138,22,LED desk lamp with adjustable brightness and USB port
+Backpack Pro,BAGS-BP001-834,Bags & Luggage,83.31,31.98,127,20,Water-resistant backpack with laptop compartment
+Ceramic Dinner Set,HOME-DS001-835,Home & Kitchen,81.18,36.55,92,21,"16-piece ceramic dinner set, dishwasher safe"
+Office Desk Lamp,OFFICE-DL001-836,Office Supplies,54.16,20.56,183,26,LED desk lamp with adjustable brightness and USB port
+Digital Kitchen Scale,HOME-KS001-837,Home & Kitchen,25.33,10.82,486,55,Precision digital scale with LCD display
+Digital Kitchen Scale,HOME-KS001-838,Home & Kitchen,24.22,10.16,462,52,Precision digital scale with LCD display
+Fitness Tracker Band,ELEC-FT001-839,Electronics,86.85,45.56,241,22,"Heart rate monitor, sleep tracking, waterproof"
+Portable Speaker,ELEC-PS001-840,Electronics,72.05,36.67,236,31,Bluetooth speaker with 12hr battery and waterproof design
+Men's Casual Shirt,FASHION-MS001-841,Fashion,38.18,17.62,420,44,"Cotton blend casual shirt, available in multiple colors"
+Portable Speaker,ELEC-PS001-842,Electronics,63.65,35.95,189,34,Bluetooth speaker with 12hr battery and waterproof design
+Ceramic Dinner Set,HOME-DS001-843,Home & Kitchen,73.54,40.14,125,18,"16-piece ceramic dinner set, dishwasher safe"
+Protein Powder 2lb,HEALTH-PP001-844,Health,64.87,29.28,192,32,"Whey protein isolate, vanilla flavor, 30 servings"
+Wireless Gaming Mouse,GAMING-GM001-845,Gaming,95.76,46.04,210,27,RGB wireless mouse with 16000 DPI sensor
+Ceramic Dinner Set,HOME-DS001-846,Home & Kitchen,75.71,37.43,89,18,"16-piece ceramic dinner set, dishwasher safe"
+Wireless Bluetooth Headphones,ELEC-BT001-847,Electronics,123.4,77.82,151,23,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Gaming Mouse,GAMING-GM001-848,Gaming,95.12,44.38,180,28,RGB wireless mouse with 16000 DPI sensor
+Wireless Gaming Mouse,GAMING-GM001-849,Gaming,91.51,48.7,180,26,RGB wireless mouse with 16000 DPI sensor
+Wireless Gaming Mouse,GAMING-GM001-850,Gaming,95.09,48.43,203,35,RGB wireless mouse with 16000 DPI sensor
+Fitness Tracker Band,ELEC-FT001-851,Electronics,87.96,42.56,233,27,"Heart rate monitor, sleep tracking, waterproof"
+Backpack Pro,BAGS-BP001-852,Bags & Luggage,76.49,35.63,137,25,Water-resistant backpack with laptop compartment
+Fitness Tracker Band,ELEC-FT001-853,Electronics,73.33,42.95,157,26,"Heart rate monitor, sleep tracking, waterproof"
+Women's Winter Jacket,FASHION-WJ001-854,Fashion,128.66,64.29,65,16,Waterproof winter jacket with thermal lining
+Backpack Pro,BAGS-BP001-855,Bags & Luggage,73.65,35.81,153,29,Water-resistant backpack with laptop compartment
+Electric Toothbrush,HEALTH-ET001-856,Health,92.5,44.6,156,22,Sonic electric toothbrush with 3 brushing modes
+Electric Toothbrush,HEALTH-ET001-857,Health,86.75,52.2,137,22,Sonic electric toothbrush with 3 brushing modes
+Gaming Laptop,GAMING-GL001-858,Gaming,1530.63,1185.72,49,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Coffee Maker Deluxe,HOME-CM001-859,Home & Kitchen,151.37,86,75,8,Programmable 12-cup coffee maker with thermal carafe
+Fitness Tracker Band,ELEC-FT001-860,Electronics,85.13,40.42,213,24,"Heart rate monitor, sleep tracking, waterproof"
+Desk Organizer Set,OFFICE-DO001-861,Office Supplies,31.43,14.35,343,33,5-piece desk organizer with pen holder and tray
+Digital Kitchen Scale,HOME-KS001-862,Home & Kitchen,27.39,10.12,370,71,Precision digital scale with LCD display
+Yoga Mat Premium,Sports-YM001-863,Sports & Fitness,32.97,16.84,235,45,Eco-friendly non-slip yoga mat 6mm thick
+Ceramic Dinner Set,HOME-DS001-864,Home & Kitchen,74.61,38.82,140,19,"16-piece ceramic dinner set, dishwasher safe"
+Coffee Maker Deluxe,HOME-CM001-865,Home & Kitchen,149.17,76.57,50,8,Programmable 12-cup coffee maker with thermal carafe
+Office Desk Lamp,OFFICE-DL001-866,Office Supplies,50.34,20.24,138,21,LED desk lamp with adjustable brightness and USB port
+Air Purifier,HOME-AP001-867,Home & Kitchen,200.05,131.56,52,9,HEPA filter air purifier for medium rooms
+Gaming Laptop,GAMING-GL001-868,Gaming,1568.65,1075.74,37,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Wireless Bluetooth Headphones,ELEC-BT001-869,Electronics,128.37,68.79,156,21,Noise-cancelling over-ear headphones with 30hr battery
+Coffee Maker Deluxe,HOME-CM001-870,Home & Kitchen,157.61,77.76,44,11,Programmable 12-cup coffee maker with thermal carafe
+Yoga Mat Premium,Sports-YM001-871,Sports & Fitness,31.63,16.85,266,59,Eco-friendly non-slip yoga mat 6mm thick
+Coffee Maker Deluxe,HOME-CM001-872,Home & Kitchen,158.84,88.55,60,10,Programmable 12-cup coffee maker with thermal carafe
+Protein Powder 2lb,HEALTH-PP001-873,Health,62.44,29.82,292,46,"Whey protein isolate, vanilla flavor, 30 servings"
+Desk Organizer Set,OFFICE-DO001-874,Office Supplies,30.9,12.74,393,46,5-piece desk organizer with pen holder and tray
+Yoga Mat Premium,Sports-YM001-875,Sports & Fitness,32.02,17.55,383,50,Eco-friendly non-slip yoga mat 6mm thick
+Office Desk Lamp,OFFICE-DL001-876,Office Supplies,48.73,23.61,182,29,LED desk lamp with adjustable brightness and USB port
+Wireless Bluetooth Headphones,ELEC-BT001-877,Electronics,135.04,69.74,109,26,Noise-cancelling over-ear headphones with 30hr battery
+Protein Powder 2lb,HEALTH-PP001-878,Health,60.93,30.03,254,43,"Whey protein isolate, vanilla flavor, 30 servings"
+Running Shoes Pro,Sports-RS001-879,Sports & Fitness,89.27,48.85,221,27,Lightweight running shoes with cushioned soles
+Portable Speaker,ELEC-PS001-880,Electronics,69.84,34.87,177,29,Bluetooth speaker with 12hr battery and waterproof design
+Fitness Tracker Band,ELEC-FT001-881,Electronics,81.92,44.04,139,21,"Heart rate monitor, sleep tracking, waterproof"
+Ceramic Dinner Set,HOME-DS001-882,Home & Kitchen,81.1,39.24,131,18,"16-piece ceramic dinner set, dishwasher safe"
+Digital Kitchen Scale,HOME-KS001-883,Home & Kitchen,25.21,10.68,349,56,Precision digital scale with LCD display
+Ceramic Dinner Set,HOME-DS001-884,Home & Kitchen,85.36,40.68,136,16,"16-piece ceramic dinner set, dishwasher safe"
+Ceramic Dinner Set,HOME-DS001-885,Home & Kitchen,84.27,37.97,136,23,"16-piece ceramic dinner set, dishwasher safe"
+Children's Building Blocks,TOYS-CB001-886,Toys,51.72,22.31,359,33,200-piece educational building blocks set
+Gaming Laptop,GAMING-GL001-887,Gaming,1499.88,1049.47,30,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Office Desk Lamp,OFFICE-DL001-888,Office Supplies,46.62,19.8,132,27,LED desk lamp with adjustable brightness and USB port
+Smartphone X12 Pro,ELEC-PH001-889,Electronics,1063.18,688.15,83,13,"Latest flagship with 6.7"" OLED display and triple camera"
+Gaming Laptop,GAMING-GL001-890,Gaming,1601.36,1019.47,33,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Office Desk Lamp,OFFICE-DL001-891,Office Supplies,51.18,22.15,146,26,LED desk lamp with adjustable brightness and USB port
+Coffee Maker Deluxe,HOME-CM001-892,Home & Kitchen,152.39,84.75,59,8,Programmable 12-cup coffee maker with thermal carafe
+Yoga Mat Premium,Sports-YM001-893,Sports & Fitness,37.66,19.04,241,44,Eco-friendly non-slip yoga mat 6mm thick
+Children's Building Blocks,TOYS-CB001-894,Toys,48,20.26,295,32,200-piece educational building blocks set
+Air Purifier,HOME-AP001-895,Home & Kitchen,212.22,109.45,47,7,HEPA filter air purifier for medium rooms
+Office Desk Lamp,OFFICE-DL001-896,Office Supplies,53.4,20.38,178,27,LED desk lamp with adjustable brightness and USB port
+Protein Powder 2lb,HEALTH-PP001-897,Health,56.99,28.46,197,44,"Whey protein isolate, vanilla flavor, 30 servings"
+Wireless Bluetooth Headphones,ELEC-BT001-898,Electronics,121.17,78.45,106,29,Noise-cancelling over-ear headphones with 30hr battery
+Protein Powder 2lb,HEALTH-PP001-899,Health,64.53,29.78,190,42,"Whey protein isolate, vanilla flavor, 30 servings"
+Backpack Pro,BAGS-BP001-900,Bags & Luggage,78.66,35.49,158,23,Water-resistant backpack with laptop compartment
+Electric Toothbrush,HEALTH-ET001-901,Health,91.07,47.14,112,20,Sonic electric toothbrush with 3 brushing modes
+Air Purifier,HOME-AP001-902,Home & Kitchen,185.93,125.43,56,6,HEPA filter air purifier for medium rooms
+Children's Building Blocks,TOYS-CB001-903,Toys,48.97,21.06,328,34,200-piece educational building blocks set
+Digital Kitchen Scale,HOME-KS001-904,Home & Kitchen,27.14,11.72,389,64,Precision digital scale with LCD display
+Electric Toothbrush,HEALTH-ET001-905,Health,92.84,44.69,94,21,Sonic electric toothbrush with 3 brushing modes
+Electric Toothbrush,HEALTH-ET001-906,Health,82.55,43.6,93,19,Sonic electric toothbrush with 3 brushing modes
+Running Shoes Pro,Sports-RS001-907,Sports & Fitness,83.03,45.5,187,29,Lightweight running shoes with cushioned soles
+Wireless Bluetooth Headphones,ELEC-BT001-908,Electronics,130.36,80.82,153,21,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Gaming Mouse,GAMING-GM001-909,Gaming,81.91,48.19,273,33,RGB wireless mouse with 16000 DPI sensor
+Children's Building Blocks,TOYS-CB001-910,Toys,53.91,21.05,204,36,200-piece educational building blocks set
+Protein Powder 2lb,HEALTH-PP001-911,Health,60.67,27.01,312,46,"Whey protein isolate, vanilla flavor, 30 servings"
+Children's Building Blocks,TOYS-CB001-912,Toys,47.36,20.15,285,36,200-piece educational building blocks set
+Smartphone X12 Pro,ELEC-PH001-913,Electronics,1045.37,590.48,84,13,"Latest flagship with 6.7"" OLED display and triple camera"
+Electric Toothbrush,HEALTH-ET001-914,Health,82.28,45.82,123,20,Sonic electric toothbrush with 3 brushing modes
+Portable Speaker,ELEC-PS001-915,Electronics,66.71,36.98,243,29,Bluetooth speaker with 12hr battery and waterproof design
+Wireless Bluetooth Headphones,ELEC-BT001-916,Electronics,133.49,72.47,106,21,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Gaming Mouse,GAMING-GM001-917,Gaming,98.98,47.39,212,29,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-918,Electronics,127.27,77.6,167,24,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-919,Toys,47.23,24.11,284,33,200-piece educational building blocks set
+Smartphone X12 Pro,ELEC-PH001-920,Electronics,1017.28,654.18,60,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Coffee Maker Deluxe,HOME-CM001-921,Home & Kitchen,140.85,80.49,57,10,Programmable 12-cup coffee maker with thermal carafe
+Digital Kitchen Scale,HOME-KS001-922,Home & Kitchen,24.96,10.47,302,59,Precision digital scale with LCD display
+Men's Casual Shirt,FASHION-MS001-923,Fashion,40.74,16.44,309,42,"Cotton blend casual shirt, available in multiple colors"
+Running Shoes Pro,Sports-RS001-924,Sports & Fitness,88.51,41.44,185,34,Lightweight running shoes with cushioned soles
+Yoga Mat Premium,Sports-YM001-925,Sports & Fitness,37.3,17.03,378,47,Eco-friendly non-slip yoga mat 6mm thick
+Ceramic Dinner Set,HOME-DS001-926,Home & Kitchen,83.3,39.58,130,23,"16-piece ceramic dinner set, dishwasher safe"
+Coffee Maker Deluxe,HOME-CM001-927,Home & Kitchen,135.51,87.72,58,9,Programmable 12-cup coffee maker with thermal carafe
+Digital Kitchen Scale,HOME-KS001-928,Home & Kitchen,24.92,11.01,317,56,Precision digital scale with LCD display
+Portable Speaker,ELEC-PS001-929,Electronics,73.25,36.52,153,33,Bluetooth speaker with 12hr battery and waterproof design
+Electric Toothbrush,HEALTH-ET001-930,Health,82.5,49.87,118,23,Sonic electric toothbrush with 3 brushing modes
+Electric Toothbrush,HEALTH-ET001-931,Health,97.06,44.58,137,20,Sonic electric toothbrush with 3 brushing modes
+Wireless Bluetooth Headphones,ELEC-BT001-932,Electronics,140.27,78.71,173,27,Noise-cancelling over-ear headphones with 30hr battery
+Coffee Maker Deluxe,HOME-CM001-933,Home & Kitchen,164.37,83.49,52,9,Programmable 12-cup coffee maker with thermal carafe
+Women's Winter Jacket,FASHION-WJ001-934,Fashion,137.29,64.68,107,12,Waterproof winter jacket with thermal lining
+Air Purifier,HOME-AP001-935,Home & Kitchen,182.1,128.95,48,7,HEPA filter air purifier for medium rooms
+Digital Kitchen Scale,HOME-KS001-936,Home & Kitchen,23.23,11.88,422,52,Precision digital scale with LCD display
+Gaming Laptop,GAMING-GL001-937,Gaming,1707.06,1090.61,42,5,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Coffee Maker Deluxe,HOME-CM001-938,Home & Kitchen,138.58,82.88,48,8,Programmable 12-cup coffee maker with thermal carafe
+Protein Powder 2lb,HEALTH-PP001-939,Health,59.18,29.74,285,33,"Whey protein isolate, vanilla flavor, 30 servings"
+Electric Toothbrush,HEALTH-ET001-940,Health,84.69,48.6,136,16,Sonic electric toothbrush with 3 brushing modes
+Fitness Tracker Band,ELEC-FT001-941,Electronics,81.69,44.33,204,22,"Heart rate monitor, sleep tracking, waterproof"
+Wireless Bluetooth Headphones,ELEC-BT001-942,Electronics,127.96,73.12,186,21,Noise-cancelling over-ear headphones with 30hr battery
+Coffee Maker Deluxe,HOME-CM001-943,Home & Kitchen,139.23,86.7,49,11,Programmable 12-cup coffee maker with thermal carafe
+Fitness Tracker Band,ELEC-FT001-944,Electronics,79.31,45.56,197,23,"Heart rate monitor, sleep tracking, waterproof"
+Air Purifier,HOME-AP001-945,Home & Kitchen,202.69,130.97,62,7,HEPA filter air purifier for medium rooms
+Coffee Maker Deluxe,HOME-CM001-946,Home & Kitchen,152.4,91.37,59,10,Programmable 12-cup coffee maker with thermal carafe
+Desk Organizer Set,OFFICE-DO001-947,Office Supplies,32.57,12.84,372,46,5-piece desk organizer with pen holder and tray
+Yoga Mat Premium,Sports-YM001-948,Sports & Fitness,35.97,18.93,353,55,Eco-friendly non-slip yoga mat 6mm thick
+Ceramic Dinner Set,HOME-DS001-949,Home & Kitchen,80.68,41.96,134,18,"16-piece ceramic dinner set, dishwasher safe"
+Yoga Mat Premium,Sports-YM001-950,Sports & Fitness,35.67,18.84,309,45,Eco-friendly non-slip yoga mat 6mm thick
+Wireless Bluetooth Headphones,ELEC-BT001-951,Electronics,135.38,70.43,133,26,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Bluetooth Headphones,ELEC-BT001-952,Electronics,130.18,78.2,189,25,Noise-cancelling over-ear headphones with 30hr battery
+Office Desk Lamp,OFFICE-DL001-953,Office Supplies,45.72,22.99,159,20,LED desk lamp with adjustable brightness and USB port
+Children's Building Blocks,TOYS-CB001-954,Toys,53.63,22.15,247,40,200-piece educational building blocks set
+Wireless Gaming Mouse,GAMING-GM001-955,Gaming,96.72,43.86,242,24,RGB wireless mouse with 16000 DPI sensor
+Running Shoes Pro,Sports-RS001-956,Sports & Fitness,98.23,41.49,184,28,Lightweight running shoes with cushioned soles
+Fitness Tracker Band,ELEC-FT001-957,Electronics,85.22,41.88,222,24,"Heart rate monitor, sleep tracking, waterproof"
+Protein Powder 2lb,HEALTH-PP001-958,Health,55.06,29.97,224,34,"Whey protein isolate, vanilla flavor, 30 servings"
+Smartphone X12 Pro,ELEC-PH001-959,Electronics,957.4,617.19,103,14,"Latest flagship with 6.7"" OLED display and triple camera"
+Wireless Bluetooth Headphones,ELEC-BT001-960,Electronics,118.41,83.03,119,29,Noise-cancelling over-ear headphones with 30hr battery
+Ceramic Dinner Set,HOME-DS001-961,Home & Kitchen,86.02,42.53,115,21,"16-piece ceramic dinner set, dishwasher safe"
+Gaming Laptop,GAMING-GL001-962,Gaming,1493.95,1034.72,39,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Protein Powder 2lb,HEALTH-PP001-963,Health,64.47,27.47,297,35,"Whey protein isolate, vanilla flavor, 30 servings"
+Air Purifier,HOME-AP001-964,Home & Kitchen,218.2,128.58,49,9,HEPA filter air purifier for medium rooms
+Smartphone X12 Pro,ELEC-PH001-965,Electronics,1087.02,682.64,97,12,"Latest flagship with 6.7"" OLED display and triple camera"
+Office Desk Lamp,OFFICE-DL001-966,Office Supplies,47.92,23.83,222,22,LED desk lamp with adjustable brightness and USB port
+Smartphone X12 Pro,ELEC-PH001-967,Electronics,920.66,681.83,73,16,"Latest flagship with 6.7"" OLED display and triple camera"
+Coffee Maker Deluxe,HOME-CM001-968,Home & Kitchen,137.78,79.98,63,8,Programmable 12-cup coffee maker with thermal carafe
+Office Desk Lamp,OFFICE-DL001-969,Office Supplies,53.76,20.43,135,26,LED desk lamp with adjustable brightness and USB port
+Women's Winter Jacket,FASHION-WJ001-970,Fashion,137.49,58.51,111,14,Waterproof winter jacket with thermal lining
+Electric Toothbrush,HEALTH-ET001-971,Health,94.16,46.75,148,23,Sonic electric toothbrush with 3 brushing modes
+Gaming Laptop,GAMING-GL001-972,Gaming,1593.25,1086.47,30,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Electric Toothbrush,HEALTH-ET001-973,Health,98.76,44.72,153,16,Sonic electric toothbrush with 3 brushing modes
+Running Shoes Pro,Sports-RS001-974,Sports & Fitness,86.88,45.36,196,32,Lightweight running shoes with cushioned soles
+Ceramic Dinner Set,HOME-DS001-975,Home & Kitchen,84.46,36.87,140,23,"16-piece ceramic dinner set, dishwasher safe"
+Desk Organizer Set,OFFICE-DO001-976,Office Supplies,27.75,13.3,325,39,5-piece desk organizer with pen holder and tray
+Wireless Gaming Mouse,GAMING-GM001-977,Gaming,86.92,41.76,199,29,RGB wireless mouse with 16000 DPI sensor
+Backpack Pro,BAGS-BP001-978,Bags & Luggage,85.87,33.3,179,25,Water-resistant backpack with laptop compartment
+Women's Winter Jacket,FASHION-WJ001-979,Fashion,124.49,60.68,102,15,Waterproof winter jacket with thermal lining
+Desk Organizer Set,OFFICE-DO001-980,Office Supplies,27.91,15.19,359,34,5-piece desk organizer with pen holder and tray
+Gaming Laptop,GAMING-GL001-981,Gaming,1451.67,1167.4,37,4,"RTX 4070, 32GB RAM, 1TB SSD, 240Hz display"
+Smartphone X12 Pro,ELEC-PH001-982,Electronics,1026.18,686.33,98,17,"Latest flagship with 6.7"" OLED display and triple camera"
+Portable Speaker,ELEC-PS001-983,Electronics,64.52,33.4,196,24,Bluetooth speaker with 12hr battery and waterproof design
+Wireless Bluetooth Headphones,ELEC-BT001-984,Electronics,124.26,81.04,159,28,Noise-cancelling over-ear headphones with 30hr battery
+Wireless Gaming Mouse,GAMING-GM001-985,Gaming,88.68,47.38,187,34,RGB wireless mouse with 16000 DPI sensor
+Fitness Tracker Band,ELEC-FT001-986,Electronics,80.34,41.53,223,24,"Heart rate monitor, sleep tracking, waterproof"
+Coffee Maker Deluxe,HOME-CM001-987,Home & Kitchen,142.29,89.06,56,9,Programmable 12-cup coffee maker with thermal carafe
+Electric Toothbrush,HEALTH-ET001-988,Health,90.83,43.29,110,20,Sonic electric toothbrush with 3 brushing modes
+Wireless Bluetooth Headphones,ELEC-BT001-989,Electronics,127.14,69.32,132,25,Noise-cancelling over-ear headphones with 30hr battery
+Protein Powder 2lb,HEALTH-PP001-990,Health,55.68,30.74,209,34,"Whey protein isolate, vanilla flavor, 30 servings"
+Smartphone X12 Pro,ELEC-PH001-991,Electronics,985.87,662.72,84,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Wireless Bluetooth Headphones,ELEC-BT001-992,Electronics,126.03,76.91,128,20,Noise-cancelling over-ear headphones with 30hr battery
+Smartphone X12 Pro,ELEC-PH001-993,Electronics,1076.31,679.82,84,15,"Latest flagship with 6.7"" OLED display and triple camera"
+Wireless Gaming Mouse,GAMING-GM001-994,Gaming,89.75,46.92,247,30,RGB wireless mouse with 16000 DPI sensor
+Wireless Bluetooth Headphones,ELEC-BT001-995,Electronics,137.86,76.49,186,23,Noise-cancelling over-ear headphones with 30hr battery
+Children's Building Blocks,TOYS-CB001-996,Toys,50.32,23,239,31,200-piece educational building blocks set
+Protein Powder 2lb,HEALTH-PP001-997,Health,58.19,28.16,302,46,"Whey protein isolate, vanilla flavor, 30 servings"
+Digital Kitchen Scale,HOME-KS001-998,Home & Kitchen,25.26,9.9,360,51,Precision digital scale with LCD display
+Air Purifier,HOME-AP001-999,Home & Kitchen,180.93,111.43,56,7,HEPA filter air purifier for medium rooms
+Portable Speaker,ELEC-PS001-1000,Electronics,71.95,32.25,158,26,Bluetooth speaker with 12hr battery and waterproof design

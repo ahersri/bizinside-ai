@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import {
   Grid,
@@ -50,7 +49,8 @@ import {
   LocalShipping,
   Reorder,
   Inventory as InventoryIcon,
-  Visibility
+  Visibility,
+  Refresh
 } from '@mui/icons-material';
 import { inventoryAPI, productAPI } from '../services/api';
 import { toast } from 'react-hot-toast';
@@ -58,7 +58,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 const validationSchema = yup.object({
-  product_id: yup.number().required('Product is required'),
+  product_id: yup.string().required('Product is required'),
   transaction_type: yup.string().oneOf(['IN', 'OUT', 'ADJUST']).required('Transaction type is required'),
   quantity: yup.number().min(1, 'Quantity must be at least 1').required('Quantity is required'),
   unit_price: yup.number().min(0, 'Price must be positive'),
@@ -85,9 +85,8 @@ const InventoryPage = () => {
     try {
       setLoading(true);
       setError(null);
-      
       console.log('Fetching inventory data...');
-      
+
       const [overviewResponse, productsResponse, transactionsResponse] = await Promise.all([
         inventoryAPI.getOverview(),
         productAPI.getProducts(),
@@ -116,7 +115,7 @@ const InventoryPage = () => {
       setInventoryData(safeInventoryData);
       setProducts(safeProductsData);
       setTransactions(safeTransactionsData);
-      
+
       // Calculate stats
       if (safeInventoryData.length > 0) {
         const totalValue = safeInventoryData.reduce((sum, item) => {
@@ -124,18 +123,18 @@ const InventoryPage = () => {
           const cost = item.cost_price || item.price || item.unit_cost || 0;
           return sum + (stock * cost);
         }, 0);
-        
+
         const lowStockItems = safeInventoryData.filter(item => {
           const stock = item.current_stock || item.stock || item.quantity || 0;
           const minStock = item.min_stock_level || item.min_stock || item.min_quantity || 0;
           return stock <= minStock && stock > 0;
         }).length;
-        
+
         const outOfStock = safeInventoryData.filter(item => {
           const stock = item.current_stock || item.stock || item.quantity || 0;
           return stock === 0;
         }).length;
-        
+
         setStats({
           totalValue,
           totalItems: safeInventoryData.length,
@@ -221,15 +220,16 @@ const InventoryPage = () => {
     const productName = item.product_name || item.name || item.productName || '';
     const sku = item.sku || item.product_code || item.code || '';
     
-    const matchesSearch = productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         sku.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = 
+      productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      sku.toLowerCase().includes(searchTerm.toLowerCase());
     
     const currentStock = item.current_stock || item.stock || item.quantity || 0;
     const minStock = item.min_stock_level || item.min_stock || item.min_quantity || 0;
     
-    const matchesStatus = filterStatus === 'all' || 
-                         (filterStatus === 'low' && currentStock <= minStock && currentStock > 0) ||
-                         (filterStatus === 'out' && currentStock === 0);
+    const matchesStatus = filterStatus === 'all' ||
+      (filterStatus === 'low' && currentStock <= minStock && currentStock > 0) ||
+      (filterStatus === 'out' && currentStock === 0);
     
     return matchesSearch && matchesStatus;
   });
@@ -251,8 +251,8 @@ const InventoryPage = () => {
         <Alert severity="error" sx={{ mt: 2, mb: 2 }}>
           {error}
         </Alert>
-        <Button 
-          variant="contained" 
+        <Button
+          variant="contained"
           onClick={fetchInventoryData}
           startIcon={<Refresh />}
         >
@@ -288,7 +288,6 @@ const InventoryPage = () => {
               Reorder
             </ToggleButton>
           </ToggleButtonGroup>
-          
           <Button
             variant="contained"
             startIcon={<Add />}
@@ -364,8 +363,8 @@ const InventoryPage = () => {
                       ) : (
                         <TrendingUp color="success" fontSize="small" />
                       )}
-                      <Typography 
-                        variant="body2" 
+                      <Typography
+                        variant="body2"
                         color={stats.lowStockItems > 0 ? 'error.main' : 'success.main'}
                         sx={{ ml: 0.5 }}
                       >
@@ -472,7 +471,7 @@ const InventoryPage = () => {
                 const unitCost = item.cost_price || item.price || item.unit_cost || 0;
                 const category = item.category || item.product_category || '';
                 const unit = item.unit_of_measure || item.unit || 'units';
-                
+
                 return (
                   <TableRow key={item.id || item._id || index}>
                     <TableCell>
@@ -531,12 +530,12 @@ const InventoryPage = () => {
                 <TableRow>
                   <TableCell colSpan={8} align="center">
                     <Alert severity="info" sx={{ my: 2 }}>
-                      {searchTerm || filterStatus !== 'all' 
-                        ? 'No inventory items match your search criteria' 
+                      {searchTerm || filterStatus !== 'all'
+                        ? 'No inventory items match your search criteria'
                         : 'No inventory items found'}
                     </Alert>
-                    <Button 
-                      variant="outlined" 
+                    <Button
+                      variant="outlined"
                       onClick={() => {
                         setSearchTerm('');
                         setFilterStatus('all');
@@ -581,6 +580,7 @@ const InventoryPage = () => {
                   </Select>
                 </FormControl>
               </Grid>
+
               <Grid item xs={12}>
                 <FormControl fullWidth>
                   <InputLabel>Transaction Type *</InputLabel>
@@ -596,6 +596,7 @@ const InventoryPage = () => {
                   </Select>
                 </FormControl>
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -608,6 +609,7 @@ const InventoryPage = () => {
                   helperText={formik.touched.quantity && formik.errors.quantity}
                 />
               </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -621,6 +623,7 @@ const InventoryPage = () => {
                   }}
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   fullWidth
@@ -637,8 +640,8 @@ const InventoryPage = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setTransactionDialogOpen(false)}>Cancel</Button>
-          <Button 
-            onClick={() => formik.handleSubmit()} 
+          <Button
+            onClick={() => formik.handleSubmit()}
             variant="contained"
             disabled={!formik.isValid}
           >

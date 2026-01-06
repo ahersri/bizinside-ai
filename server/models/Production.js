@@ -1,16 +1,12 @@
-// server/models/Production.js
-'use strict';
-const { Model } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
-  class Production extends Model {
-    static associate(models) {
-      Production.belongsTo(models.Business, { foreignKey: 'business_id' });
-      Production.belongsTo(models.Product, { foreignKey: 'product_id' });
-    }
-  }
-  
-  Production.init({
+module.exports = (sequelize) => {
+  const Production = sequelize.define('Production', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     business_id: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -19,43 +15,42 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    batch_number: {
-      type: DataTypes.STRING(100),
-      allowNull: false
-    },
-    production_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
+    batch_number: DataTypes.STRING(100),
+    production_date: DataTypes.DATE,
     quantity_produced: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 0
     },
     unit_cost: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
       defaultValue: 0
     },
     total_cost: {
       type: DataTypes.DECIMAL(12, 2),
-      allowNull: false,
       defaultValue: 0
     },
     status: {
       type: DataTypes.ENUM('planned', 'in_progress', 'completed', 'cancelled'),
       defaultValue: 'planned'
     },
-    notes: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    notes: DataTypes.TEXT,
+    created_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     }
   }, {
-    sequelize,
-    modelName: 'Production',
-    tableName: 'Productions',
-    timestamps: true
+    tableName: 'productions',
+    timestamps: false
   });
-  
+
+  Production.associate = function(models) {
+    // Will be set up after all models are loaded
+  };
+
   return Production;
 };
